@@ -1,0 +1,66 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+	    	<label class="layui-form-label">提现开关</label>
+	    	<div class="layui-input-block">
+	      		<input type="radio" name="off" value="1" title="开启" {if $info['off'] eq 1}checked=""{/if}>
+	      		<input type="radio" name="off" value="2" title="关闭" {if $info['off'] eq 2}checked=""{/if}>
+	    	</div>
+	    	<div class="layui-form-mid layui-word-aux">关闭后将不再接收提现申请</div>
+	  	</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">到账类型</label>
+			<div class="layui-input-block">
+				<input type="radio" name="type" value="1" title="即时到账" {if $info['type'] eq 1}checked=""{/if}>
+				<input type="radio" name="type" value="2" title="审核到账" {if $info['type'] eq 2}checked=""{/if}>
+			</div>
+			<div class="layui-form-mid layui-word-aux">审核到账需要后台审核到账</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">单笔最小金额</label>
+			<div class="layui-input-block">
+				<input type="text" name="min" autocomplete="off" placeholder="请输入单笔最小金额" class="layui-input" datatype="*" value="{$info['min']}">
+				<div class="layui-form-mid layui-word-aux"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">单笔最大金额</label>
+			<div class="layui-input-block">
+				<input type="text" name="max" autocomplete="off" placeholder="请输入单笔最大金额" class="layui-input" datatype="*" value="{$info['max']}">
+				<div class="layui-form-mid layui-word-aux"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">当日最大额</label>
+			<div class="layui-input-block">
+				<input type="text" name="day_max" autocomplete="off" placeholder="请输入当日最大提现额" class="layui-input" datatype="*" value="{$info['day_max']}">
+				<div class="layui-form-mid layui-word-aux">每个会员当日最多可提现金额</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">手续费</label>
+			<div class="layui-input-block">
+				<input type="text" name="rate" autocomplete="off" placeholder="请输入提现手续费" class="layui-input" datatype="*" value="{$info['rate']}">
+				<div class="layui-form-mid layui-word-aux">按每笔的百分比计算，如 5%，请填写0.05</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+layui.use('form',function(){
+	var form = layui.form
+});
+var mixin = {};
+</script>
+{/block}

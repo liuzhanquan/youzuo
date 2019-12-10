@@ -1,0 +1,60 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+    <ul class="layui-tab-title">
+        <li><a href="{:url('index')}">{$pathCurrent['name']}</a></li>
+        <li class="layui-this">编辑</li>
+    </ul>
+</div>
+<div class="layui-card-body">
+    <div class="layui-container">
+        <form class="layui-form" data-model="form-submit">
+        <table class="layui-table">
+            <colgroup>
+                <col width="300">
+                <col width="50">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>商品名称</th>
+                <th>数量</th>
+                <th>增加/减少</th>
+            </tr>
+            </thead>
+            <tbody>
+                {foreach $goods as $value}
+                <tr>
+                    <td>{$value.title}</td>
+                    <td>{$value.stock}</td>
+                    <td><select name="type[{$value.id}]"><option value="1">增加</option><option value="2">减少</option></select><input type="number" class="layui-input" name="goods[{$value.id}]" value="0" datatype="*"></td>
+                </tr>
+                {/foreach}
+            </tbody>
+        </table>
+
+            <div class="layui-row">
+                <div class="layui-col-xs12">
+                    <div class="grid-demo grid-demo-bg1">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input type="hidden" name="id" value="{$id ?? ''}">
+                                <button class="layui-btn layui-btn-normal">保存</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+    var mixin = {};
+    layui.use('form',function(){
+        var form = layui.form
+    });
+</script>
+{/block}

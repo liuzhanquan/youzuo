@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="admin-sm">
+<head>
+<meta charset="utf-8">
+<title>平台管理中心</title>
+<link rel="icon" sizes="32*32" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/static/css/font.css">
+<link rel="stylesheet" type="text/css" href="/static/css/admin.css">
+<link rel="stylesheet" type="text/css" href="//unpkg.com/iview/dist/styles/iview.css">
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript" src="/static/iview/iview.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/do.js"></script>
+<script src="/static/lib/layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/admin.js"></script>
+<script type="text/javascript" src="/static/js/package.js" data-path="/static/js/" data-root="/{:request()->controller()}/"  data-src="/static/js/common"></script>
+</head>
+<body>
+
+
+<div id="app">
+	{block name="content"}{/block}
+</div>
+<script type="text/javascript">
+var webRoot = "{:request()->root(true)}/";
+var webControl = "{:request()->controller()}";
+Do.ready('common',function(){ base.frame(); });
+</script>
+{block name="js"}{/block}
+</body>
+</html>

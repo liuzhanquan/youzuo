@@ -1,0 +1,113 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+			<legend>小程序信息</legend>
+		</fieldset>
+
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">小程序名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="app_name" autocomplete="off" placeholder="小程序名称" class="layui-input" datatype="*" value="{$info['app_name']}">
+				<div class="layui-form-mid layui-word-aux"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">小程序简介</label>
+			<div class="layui-input-block">
+				<input type="text" name="app_desc" autocomplete="off" placeholder="AppSecret(小程序密钥)" class="layui-input" datatype="*" value="{$info['app_desc']}">
+				<div class="layui-form-mid layui-word-aux"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">小程序logo</label>
+			<div class="layui-input-block">
+				<input type="hidden" class="layui-input" name="app_logo" id="image" datatype="*" nullmsg="请上传app_logo" value="{$info['app_logo'] ?? ''}">
+				<button class="layui-btn layui-btn-warm" type="button" data-model="form-upload" data-target="#image" data-preview="#uploadImage_2">上传图片</button>
+			</div>
+			<div class="layui-input-block">
+				<div class="upload-prview">
+					<img style="width:expression(this.width > 105 ? 105px : this.width)" src="{$info['app_logo'] ?? ''}" id="uploadImage_2">
+				</div>
+				<div class="layui-form-mid layui-word-aux">(推荐尺寸为正方形尺寸)</div>
+			</div>
+		</div>
+
+
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+		  	<legend>基本设置</legend>
+		</fieldset>
+		<div class="layui-form-item">
+			<label class="layui-form-label">AppID</label>
+			<div class="layui-input-block">
+				<input type="text" name="appid" autocomplete="off" placeholder="微信小程序AppID" class="layui-input" datatype="*" value="{$info['appid']}">
+				<div class="layui-form-mid layui-word-aux"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">小程序密钥</label>
+			<div class="layui-input-block">
+				<input type="text" name="secret" autocomplete="off" placeholder="AppSecret(小程序密钥)" class="layui-input" datatype="*" value="{$info['secret']}">
+				<div class="layui-form-mid layui-word-aux"></div>
+			</div>
+		</div>
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+		  	<legend>微信支付</legend>
+		</fieldset>
+		<div class="layui-form-item">
+			<label class="layui-form-label">商户号</label>
+			<div class="layui-input-block">
+				<input type="text" name="mch_id" autocomplete="off" placeholder="商户号(Mch_ID)" class="layui-input" datatype="*" value="{$info['mch_id']}">
+				<div class="layui-form-mid layui-word-aux"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">支付密钥</label>
+			<div class="layui-input-block">
+				<input type="text" name="apikey" autocomplete="off" placeholder="支付密钥(APIKEY)" class="layui-input" datatype="*" value="{$info['apikey']}">
+				<div class="layui-form-mid layui-word-aux"></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">CERT证书文件</label>
+			<div class="layui-input-block">
+				<input type="hidden" name="cert_file" autocomplete="off" id="cert_file" placeholder="微信小程序AppID" class="layui-input" datatype="*" readonly="" nullmsg="请上传CERT证书文件" value="{$info['cert_file']}">
+				<button class="layui-btn layui-btn-warm" type="button" data-model="form-upload" data-target="#cert_file">上传证书</button>
+			</div>
+			<div class="layui-form-mid layui-word-aux">
+				{notempty name="$info['cert_file']"}
+				<span class="layui-badge layui-bg-blue">已上传</span>
+				{/notempty}
+				下载证书 cert.zip 中的 apiclient_cert.pem 文件
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">KEY密钥文件</label>
+			<div class="layui-input-block">
+				<input type="hidden" name="key_file" autocomplete="off" id="key_file" placeholder="微信小程序AppID" class="layui-input" datatype="*" readonly="" nullmsg="请上传KEY密钥文件" value="{$info['key_file']}">
+				<button class="layui-btn layui-btn-warm" type="button" data-model="form-upload" data-target="#key_file">上传证书</button>
+			</div>
+			<div class="layui-form-mid layui-word-aux">
+				{notempty name="$info['key_file']"}
+				<span class="layui-badge layui-bg-blue">已上传</span>
+				{/notempty}
+				下载证书 cert.zip 中的 apiclient_key.pem 文件
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+</script>
+{/block}

@@ -1,0 +1,46 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="card-right-btn">
+	<a href="{:url('sms')}" class="layui-btn layui-btn-normal layui-btn-xs">短信配置</a>
+	<a href="{:url('sms_tpl')}" class="layui-btn layui-btn-warm layui-btn-xs">短信模板</a>
+</div>
+<div data-model="table-bind">
+	<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+</div>
+<script type="text/html" id="barTar">
+  	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
+</script>
+
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+	var table = layui.table;
+	table.render({
+		elem: '#data_table',
+		limit:20,
+		url:SlefUrl,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
+	      	,{field:'phone', title: '手机号码',width:300}
+	      	,{field:'content', title: '发送内容'}
+	      	,{field:'op', title: '操作',toolbar: '#barTar', width:100,align:'center'}
+	    ]],
+	    page: true
+	});
+	table.on('tool(data_table)', function(obj){
+		var data = obj.data;
+		data.table = "smslog";
+		if(obj.event === 'del'){
+			layer.confirm('确定删除吗？', function(index){
+	        	layer.close(index);
+	       		form.formDel(data,obj);
+	      	});
+		}
+	});
+});
+</script>
+{/block}

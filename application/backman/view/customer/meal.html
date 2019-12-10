@@ -1,0 +1,64 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+    <ul class="layui-tab-title">
+        <li><a href="{:url('index')}">{$pathCurrent['name']}</a></li>
+        <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}商品</li>
+    </ul>
+</div>
+<div class="layui-card-body">
+    <form class="layui-form" data-model="form-submit">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>基本设置</legend>
+        </fieldset>
+        <div class="layui-form-item">
+            <label class="layui-form-label">标题</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="title" value="{$info['title']}" datatype="*">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">商品图片库</label>
+            <div class="layui-input-block">
+                <div class="photo-group">
+                    <ul class="clearfloat" id="images-thumbnails">
+                        {notempty name="photo"}
+                        {foreach $photo as $vo}
+                        <li><a href="{$vo}" target="_blank"><img src="{$vo}"></a><div class="info"><a class="del">x</a></div><input type="hidden" name="photo[]" value="{$vo}"></li>
+                        {/foreach}
+                        {/notempty}
+                        <li>
+                            <div class="rc-upload">
+                                <a class="add-goods" href="javascript:;" data-model="upload-photo"
+                                   data-img-list='false'
+                                   data-img-name="photo"
+                                   data-img-warp="#images-thumbnails"
+                                   data-id="imageUpload">+ 添加图片</a>
+                            </div>
+                            <script type="text/plain" id="imageUpload" style="display:none;" ></script>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="layui-input-block">
+                <div class="layui-form-mid layui-word-aux">（推荐尺寸为750x750px，大小不超过2M，支持jpeg、jpg、png、gif、jpeg格式，最多上传9张）</div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input type="hidden" name="id" value="{$info['id']}">
+                <button class="layui-btn layui-btn-normal">保存</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+    var mixin = {};
+    layui.use('form',function(){
+        var form = layui.form
+    });
+</script>
+{/block}

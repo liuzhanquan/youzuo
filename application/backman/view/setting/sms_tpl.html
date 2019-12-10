@@ -1,0 +1,51 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<div class="card-right-btn">
+		<a href="{:url('sms_tpl_op')}" class="layui-btn layui-btn-normal layui-btn-xs">新增短信模板</a>
+		<a href="{:url('sms')}" class="layui-btn layui-btn-normal layui-btn-xs">短信配置</a>
+		<a href="{:url('sms_log')}" class="layui-btn layui-btn-warm layui-btn-xs">发送记录</a>
+	</div>
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+<script type="text/html" id="barTar">
+	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
+</script>
+
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+	var table = layui.table;
+	table.render({
+		elem: '#data_table',
+		limit:20,
+		url:SlefUrl,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
+	      	,{field:'title',width:300, title: '标题'}
+	      	,{field:'code',width:200, title: '模板代码'}
+	      	,{field:'content', title: '模板内容'}
+	      	,{field:'op', title: '操作',toolbar: '#barTar', width:100,align:'center'}
+	    ]],
+	    page: true
+	});
+	table.on('tool(data_table)', function(obj){
+		var data = obj.data;
+		data.table = "smstpl";
+		if(obj.event === 'del'){
+			layer.confirm('确定删除吗？', function(index){
+	        	layer.close(index);
+	       		form.formDel(data,obj);
+	      	});
+		}
+	});
+});
+</script>
+{/block}

@@ -1,0 +1,60 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li class="layui-this">{$pathCurrent['name']}</li>
+	    <li><a href="{:url('video_op')}">新增视频素材</a></li>
+	    <li><a href="{:url('category_video')}">分类管理</a></li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+<script type="text/html" id="barTar">
+	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
+  	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="video">删除</a>
+</script>
+<script type="text/html" id="sysTar">
+	{{#  if(d.status == 1){ }}
+  	<button type="button" class="layui-btn layui-btn-normal">显示</button>
+  	{{#  } else { }}
+  	<button type="button" class="layui-btn layui-btn-danger">关闭</button>
+  	{{#  } }}
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+	var table = layui.table;
+	table.render({
+		elem: '#data_table',
+		url:SlefUrl,
+		limit:20,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
+	      	,{field:'title', title: '标题'}
+	      	,{field:'cname', title: '所属分类'}
+	      	,{field:'timestamp', title: '添加时间',width:150}
+	      	,{field:'status', title: '状态',toolbar: '#sysTar',width:150,align:'center'}
+	      	,{field:'op', title: '操作',toolbar: '#barTar', width:150,align:'center'}
+	    ]],
+	    page: true
+	});
+	table.on('tool(data_table)', function(obj){
+		var data = obj.data;
+		data.table = "video";
+		if(obj.event === 'del'){
+			layer.confirm('确定删除吗？', function(index){
+	        	layer.close(index);
+	       		form.formDel(data,obj);
+	      	});
+		}
+	});
+});
+</script>
+{/block}

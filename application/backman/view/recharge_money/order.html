@@ -1,0 +1,165 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+    <ul class="layui-tab-title">
+        <li class="layui-this">{$pathCurrent['name']}</li>
+    </ul>
+</div>
+<div class="demoTable" style="margin-top: 25px;">
+    订单号：
+    <div class="layui-inline">
+        <input class="layui-input" name="order_sn" id="order_sn" autocomplete="off">
+    </div>
+    <button class="layui-btn" data-type="reload">搜索</button>
+</div>
+<div class="layui-card-body">
+    <div data-model="table-bind">
+        <table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+    </div>
+</div>
+<!--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>-->
+<script type="text/html" id="barTar">
+    {{#  if(d.type == 2 && d.pay_status == 1){ }}
+    <a class="layui-btn layui-btn-xs" href="{{d.op}}">审核</a>
+    {{#  } else { }}
+    <button type="button" style="background-color: #ccc;" disabled class="layui-btn layui-btn-danger">审核</button>
+    {{#  } }}
+</script>
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="getCheckData">批量显示</button>
+        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">批量禁止</button>
+    </div>
+</script>
+<script type="text/html" id="image">
+    <img src="{{d.voucher}}" height="30">
+</script>
+<script type="text/html" id="sysTar">
+    {{#  if(d.status == 1){ }}
+    <button type="button" class="layui-btn layui-btn-normal">正常</button>
+    {{#  } else { }}
+    <button type="button" class="layui-btn layui-btn-danger">关闭</button>
+    {{#  } }}
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+    var mixin = {};
+    var SlefUrl = this.location.href;
+    layui.use('table', function(){
+        var table = layui.table;
+        table.render({
+            elem: '#data_table',
+            url:SlefUrl,
+            limit:20,
+            cellMinWidth: 80,
+            cols: [[
+                //{type:'checkbox',fixed: 'left'},
+                {field:'id',width:80, title: 'ID', sort: true,align:'center'}
+                ,{field:'order_sn', sort: true, width:200, title: '订单号'}
+                ,{field:'agent', sort: true, width:180, title: '代理名称'}
+                ,{field:'money', title: '金额'}
+                ,{field:'user_name', title: '用户'}
+                ,{field:'type_name', title: '类型'}
+                ,{field:'voucher',toolbar: '#image', width:80, title: '凭证'}
+                ,{field:'pay_status_name', title: '状态'}
+                ,{field:'created_at', title: '创建时间',width:150}
+                ,{field:'op', title: '操作',toolbar: '#barTar', width:150,align:'center'}
+            ]],
+            page: true,
+            id: 'testReload'
+        });
+        table.on('tool(data_table)', function(obj){
+            var data = obj.data;
+            data.table = "goods";
+            if(obj.event === 'del'){
+                layer.confirm('确定删除吗？', function(index){
+                    layer.close(index);
+                    form.formDel(data,obj);
+                });
+            }
+        });
+
+        //头工具栏事件
+        table.on('toolbar(data_table)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch(obj.event){
+                case 'getCheckData':
+                    //批量修改，
+                    var data = checkStatus.data;
+                    if(data.length == 0){
+                        layer.alert('至少选择一条数据');
+                        return;
+                    }
+//                table.render({
+//                    elem: '#demp'
+//                    ,url: 'update_status'
+//                    ,parseData: function(res){ //res 即为原始返回的数据
+//                        console.log(res);
+//                    }
+//                    //,…… //其他参数
+//                });
+                    $.ajax({
+                        type: "POST",
+                        url: "update_status",
+                        data: {data:JSON.stringify(data),table:'recharge_money',filed:'status',filed_value:1},
+                        dataType: "json",
+                        success: function(data){
+                            layer.msg(data.msg);
+                            if(data.code == 1){
+                                window.location.href = SlefUrl;
+                            }
+                        }
+                    });
+                    return;
+                    //layer.alert(JSON.stringify(data));
+                    break;
+                case 'getCheckLength':
+                    var data = checkStatus.data;
+                    if(data.length == 0){
+                        layer.alert('至少选择一条数据');
+                        return;
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: "update_status",
+                        data: {data:JSON.stringify(data),table:'recharge_money',filed:'status',filed_value:2},
+                        dataType: "json",
+                        success: function(data){
+                            layer.msg(data.msg);
+                            if(data.code == 1){
+                                window.location.href = SlefUrl;
+                            }
+                        }
+                    });
+                    return;
+                    layer.msg('选中了：'+ data.length + ' 个');
+                    break;
+                case 'isAll':
+                    layer.msg(checkStatus.isAll ? '全选': '未全选');
+                    break;
+            };
+        });
+        var $ = layui.$, active = {
+            reload: function(){
+                var order_sn = $('#order_sn');
+
+                //执行重载
+                table.reload('testReload', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    ,where: {
+                        order_sn: order_sn.val()
+                    }
+                }, 'data');
+            }
+        };
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+</script>
+{/block}

@@ -1,0 +1,35 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('adver')}">{$pathCurrent['name']}</a></li>
+	    <li><a href="{:url('adver_group')}">广告组</a></li>
+	    <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}广告组</li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+			<label class="layui-form-label">组名称</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="name" value="{$info['name']}" datatype="*">
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	    		<input type="hidden" name="id" value="{$info['id']}">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+layui.use('form',function(){
+	var form = layui.form
+});
+</script>
+{/block}

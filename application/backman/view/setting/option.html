@@ -1,0 +1,68 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('user')}">{$pathCurrent['name']}</a></li>
+	    <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}管理员</li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+			<label class="layui-form-label">登陆账号</label>
+			<div class="layui-input-block">
+				{empty name='info'}
+	           	<input type="text" class="layui-input" name="username" value="{$info['username']}" datatype="*">
+	           	{else /}
+	           	<input type="text" class="layui-input" name="username" value="{$info['username']}" disabled="">
+	           	{/empty}
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">所属权限组</label>
+			<div class="layui-input-block">
+				<select name="role_id" lay-filter="aihao">
+					{foreach $group as $vo}
+	           		<option value="{$vo['id']}" {if $vo['id'] eq $info['role_id']}selected=""{/if}>{$vo['name']}</option>
+	           		{/foreach}
+				</select>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">新密码</label>
+			<div class="layui-input-block">
+	           	<input type="password" class="layui-input" name="password" datatype="*">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">重复新密码</label>
+			<div class="layui-input-block">
+	           	<input type="password" class="layui-input" datatype="*" recheck="password">
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<label class="layui-form-label">状态</label>
+	    	<div class="layui-input-block">
+	    		{php}$state = isset($info['status']) ? $info['status'] : '1';{/php}
+	      		<input type="radio" name="status" value="1" title="开启" {if $state eq 1} checked="" {/if}>
+	      		<input type="radio" name="status" value="2" title="冻结" {if $state eq 2} checked="" {/if}>
+	    	</div>
+	  	</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	    		<input type="hidden" name="id" value="{$info['id']}">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+layui.use('form',function(){
+	var form = layui.form
+});
+</script>
+{/block}

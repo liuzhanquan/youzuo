@@ -1,0 +1,42 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		{foreach $list as $vo}
+		{if $vo['is_radio'] eq 1}
+		<div class="layui-form-item">
+	    	<label class="layui-form-label">{$vo['title']}</label>
+	    	<div class="layui-input-block">
+	      		<input type="radio" name="{$vo['name']}" value="1" title="开启" {if $vo['value'] eq 1} checked="" {/if}>
+	      		<input type="radio" name="{$vo['name']}" value="2" title="关闭" {if $vo['value'] eq 2} checked="" {/if}>
+	    	</div>
+	    	<div class="layui-form-mid layui-word-aux">{$vo['remark']}</div>
+	  	</div>
+		{else /}
+		<div class="layui-form-item">
+			<label class="layui-form-label">{$vo['title']}</label>
+			<div class="layui-input-block">
+				<input type="text" name="{$vo['name']}" lay-verify="title" autocomplete="off" placeholder="请输入{$vo['title']}" class="layui-input" {if $vo['is_must'] eq 1} datatype="*" {/if} value="{$vo['value']}">
+				<div class="layui-form-mid layui-word-aux">{$vo['remark']}</div>
+			</div>
+		</div>
+		{/if}
+		{/foreach}
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+layui.use('form',function(){
+	var form = layui.form
+});
+var mixin = {};
+</script>
+{/block}

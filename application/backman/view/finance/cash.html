@@ -1,0 +1,186 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+
+<div class="layui-card-body">
+	<div class="demoTable">
+		提现类型：
+		<div class="layui-inline" style="width: 150px;">
+			<select class="layui-input" name="type" id="type" autocomplete="off">
+				<option value="">请选择提现类型</option>
+				<option value="2">普通</option>
+				<option value="1">代理</option>
+			</select>
+		</div>
+		到账类型：
+		<div class="layui-inline" style="width: 150px;">
+			<select class="layui-input" name="pay_type" id="pay_type" autocomplete="off">
+				<option value="">请选择到账类型</option>
+				<option value="2">支付宝</option>
+				<option value="1">银行卡</option>
+				<option value="3">微信</option>
+			</select>
+		</div>
+		卡号/微信/支付宝：
+		<div class="layui-inline">
+			<input class="layui-input" name="card" id="card" autocomplete="off">
+		</div>
+		姓名：
+		<div class="layui-inline">
+			<input class="layui-input" name="name" id="name" autocomplete="off">
+		</div>
+		<button class="layui-btn" data-type="reload">搜索</button>
+	</div>
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+<script type="text/html" id="barTar">
+	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
+</script>
+<script type="text/html" id="toolbarDemo">
+	<div class="layui-btn-container">
+		<button class="layui-btn layui-btn-sm" lay-event="getCheckData">批量通过</button>
+		<button class="layui-btn layui-btn-sm" lay-event="getCheckLength">批量拒绝</button>
+	</div>
+</script>
+<script type="text/html" id="sysTar">
+	{{#  if(d.status == 1){ }}
+	<button type="button" class="layui-btn layui-btn-normal">正常</button>
+	{{#  } else { }}
+	<button type="button" class="layui-btn layui-btn-danger">关闭</button>
+	{{#  } }}
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+    var mixin = {};
+    var SlefUrl = this.location.href;
+    layui.use('table', function(){
+        var table = layui.table;
+        table.render({
+            elem: '#data_table',
+            url:SlefUrl,
+            limit:20,
+            cellMinWidth: 80,
+            toolbar: '#toolbarDemo',
+            cols: [[
+                {type:'checkbox',fixed: 'left'},
+                {field:'id',width:80, title: 'ID', sort: true,align:'center'}
+                ,{field:'type_name', sort: true, width:80, title: '提现类型'}
+                ,{field:'user_name', title: '所属会员'}
+                ,{field:'name', title: '姓名'}
+                ,{field:'crad', title: '卡号/微信/支付宝'}
+                ,{field:'open_name', title: '开户支行'}
+                ,{field:'rate', title: '费率'}
+                ,{field:'money', title: '提现金额'}
+                ,{field:'rel_money', width:120, title: '实到金额',align:'center'}
+                ,{field:'status_name', width:120, title: '状态'}
+                ,{field:'pay_type_name', width:120, title: '到账类型'}
+                ,{field:'make_money_type_name', width:120, title: '到账时间'}
+                ,{field:'make_money_status_name', width:120, title: '到账状态'}
+                ,{field:'make_money_time', width:120, title: '打款时间'}
+                ,{field:'created_at', title: '创建时间',width:150}
+                ,{field:'op', title: '操作',toolbar: '#barTar', width:150,align:'center'}
+            ]],
+            page: true,
+            id: 'testReload'
+        });
+        table.on('tool(data_table)', function(obj){
+            var data = obj.data;
+            data.table = "goods";
+            if(obj.event === 'del'){
+                layer.confirm('确定删除吗？', function(index){
+                    layer.close(index);
+                    form.formDel(data,obj);
+                });
+            }
+        });
+
+        //头工具栏事件
+        table.on('toolbar(data_table)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch(obj.event){
+                case 'getCheckData':
+                    //批量修改，
+                    var data = checkStatus.data;
+                    if(data.length == 0){
+                        layer.alert('至少选择一条数据');
+                        return;
+                    }
+//                table.render({
+//                    elem: '#demp'
+//                    ,url: 'update_status'
+//                    ,parseData: function(res){ //res 即为原始返回的数据
+//                        console.log(res);
+//                    }
+//                    //,…… //其他参数
+//                });
+                    $.ajax({
+                        type: "POST",
+                        url: "update_status",
+                        data: {data:JSON.stringify(data),table:'agent_withdraw',filed:'status',filed_value:2},
+                        dataType: "json",
+                        success: function(data){
+                            layer.msg(data.msg);
+                            if(data.code == 1){
+                                window.location.href = SlefUrl;
+                            }
+                        }
+                    });
+                    return;
+                    //layer.alert(JSON.stringify(data));
+                    break;
+                case 'getCheckLength':
+                    var data = checkStatus.data;
+                    if(data.length == 0){
+                        layer.alert('至少选择一条数据');
+                        return;
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: "update_status",
+                        data: {data:JSON.stringify(data),table:'agent_withdraw',filed:'status',filed_value:3},
+                        dataType: "json",
+                        success: function(data){
+                            layer.msg(data.msg);
+                            if(data.code == 1){
+                                window.location.href = SlefUrl;
+                            }
+                        }
+                    });
+                    return;
+                    layer.msg('选中了：'+ data.length + ' 个');
+                    break;
+                case 'isAll':
+                    layer.msg(checkStatus.isAll ? '全选': '未全选');
+                    break;
+            };
+        });
+        var $ = layui.$, active = {
+            reload: function(){
+                var card = $('#card');
+                var name = $('#name');
+                var type = $('#type');
+                var pay_type = $('#pay_type');
+
+                //执行重载
+                table.reload('testReload', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    ,where: {
+                        type: type.val(),
+                        name: name.val(), card: card.val(),pay_type:pay_type.val()
+                    }
+                }, 'data');
+            }
+        };
+
+        $('.demoTable .layui-btn').on('click', function(){
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+</script>
+{/block}

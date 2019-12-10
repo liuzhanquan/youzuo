@@ -1,0 +1,66 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('adver')}">{$pathCurrent['name']}</a></li>
+	    <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}广告</li>
+	    <li><a href="{:url('adver_group')}">广告组</a></li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+			<label class="layui-form-label">广告标题</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="title" value="{$info['title']}" datatype="*">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">所属广告组</label>
+			<div class="layui-input-block">
+				<select name="parent_id" lay-filter="aihao">
+					{foreach $group as $vo}
+	           		<option value="{$vo['id']}" {if $vo['id'] eq $info['parent_id']}selected=""{/if}>{$vo['name']}</option>
+	           		{/foreach}
+				</select>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">广告图片</label>
+			<div class="layui-input-block">
+	           	<input type="hidden" class="layui-input" name="image" id="image" datatype="*" nullmsg="请上传广告图片" value="{$info['image']}">
+	           	<button class="layui-btn layui-btn-warm" type="button" data-model="form-upload" data-target="#image" data-preview="#uploadImage_2">上传图片</button>
+			</div>
+			<div class="layui-input-block">
+				<div class="upload-prview">
+	        		<img style="width:expression(this.width > 105 ? 105px : this.width)" src="{$info['image']}" id="uploadImage_2">
+	        	</div>
+				<div class="layui-form-mid layui-word-aux">(推荐尺寸为750px*300px，大小不超过200k，支持jpeg、jpg、png、gif、jpeg格式)</div>
+        	</div>
+		</div>
+		<div class="layui-form-item">
+	    	<label class="layui-form-label">状态</label>
+	    	<div class="layui-input-block">
+	    		{php}$state = isset($info['status']) ? $info['status'] : '1';{/php}
+	      		<input type="radio" name="status" value="1" title="开启" {if $state eq 1} checked="" {/if}>
+	      		<input type="radio" name="status" value="2" title="关闭" {if $state eq 2} checked="" {/if}>
+	    	</div>
+	  	</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	    		<input type="hidden" name="id" value="{$info['id']}">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+layui.use('form',function(){
+	var form = layui.form
+});
+</script>
+{/block}

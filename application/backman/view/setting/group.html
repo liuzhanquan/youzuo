@@ -1,0 +1,60 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li class="layui-this"><a href="{:url('group')}">{$pathCurrent['name']}</a></li>
+	    <li><a href="{:url('group_op')}">新增权限组</a></li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+<script type="text/html" id="barTar">
+	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
+	{{#  if(d.is_sys == 0){ }}
+  	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
+  	{{#  } }}
+</script>
+<script type="text/html" id="sysTar">
+	{{#  if(d.is_sys == 0){ }}
+  	<button type="button" class="layui-btn layui-btn-danger">否</button>
+  	{{#  } else { }}
+  	<button type="button" class="layui-btn layui-btn-normal">是</button>
+  	{{#  } }}
+</script>
+
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+	var table = layui.table;
+	table.render({
+		elem: '#data_table',
+		limit:20,
+		url:SlefUrl,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
+	      	,{field:'name',title: '组别名称'}
+	      	,{field:'is_sys',width:100, toolbar: '#sysTar',title: '系统内置',align:'center'}
+	      	,{field:'op', title: '操作',toolbar: '#barTar', width:150}
+	    ]],
+	    page: true
+	});
+	table.on('tool(data_table)', function(obj){
+		var data = obj.data;
+		data.table = "group";
+		if(obj.event === 'del'){
+			layer.confirm('确定删除吗？', function(index){
+	        	layer.close(index);
+	       		form.formDel(data,obj);
+	      	});
+		}
+	});
+});
+</script>
+{/block}

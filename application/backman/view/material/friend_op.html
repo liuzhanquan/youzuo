@@ -1,0 +1,104 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('friend')}">{$pathCurrent['name']}</a></li>
+	    <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}素材</li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+			<label class="layui-form-label">内容</label>
+			<div class="layui-input-block">
+				<textarea placeholder="请输入内容" class="layui-textarea" name="content" datatype="*" style="height: 150px;">{$info['content']}</textarea>
+			</div>
+		</div>
+		<div class="layui-form-item" {notempty name="info"}style="display: none;"{/notempty}>
+	    	<label class="layui-form-label">类型</label>
+	    	<div class="layui-input-block">
+	    		{php}$state = isset($info['type']) ? $info['type'] : '1';{/php}
+	      		<input type="radio" name="type" value="1" title="照片" lay-filter="method" {if $state eq 1} checked="" {/if} >
+	      		<input type="radio" name="type" value="2" title="视频" lay-filter="method" {if $state eq 2} checked="" {/if} >
+	    	</div>
+	  	</div>
+	  	<div id="photo" {if $state eq 2}style="display: none;"{/if}>
+	  		<div class="layui-form-item">
+				<label class="layui-form-label">图片库</label>
+				<div class="layui-input-block">
+					<div class="photo-group">
+						<ul class="clearfloat" id="images-thumbnails">
+							{notempty name="photo"}
+							{foreach $photo as $vo}
+							<li><a href="{$vo}" target="_blank"><img src="{$vo}"></a><div class="info"><a class="del">x</a></div><input type="hidden" name="image[]" value="{$vo}"></li>
+							{/foreach}
+							{/notempty}
+							<li>
+								<div class="rc-upload">
+								<a class="add-goods" href="javascript:;" data-model="upload-photo"
+			                        data-img-list='false'
+			                        data-img-name="image"
+			                        data-img-warp="#images-thumbnails"
+			                        data-id="imageUpload">+ 添加图片</a>
+								</div>
+								<script type="text/plain" id="imageUpload" style="display:none;" ></script>
+							</li>
+						</ul>
+					</div>
+	        	</div>
+				<div class="layui-input-block">
+					<div class="layui-form-mid layui-word-aux">（推荐尺寸为750px*1024px，大小不超过200k，支持jpeg、jpg、png、gif、jpeg格式，最多上传9张）</div>
+	        	</div>
+			</div>
+	  	</div>
+	  	<div id="videos" {if $state eq 1}style="display: none;"{/if}>
+			<div class="layui-form-item">
+				<label class="layui-form-label">视频</label>
+				<div class="layui-input-block">
+		           	<input type="hidden" class="layui-input" name="video" id="video" value="{$info['video']}">
+		           	<button class="layui-btn layui-btn-warm" type="button" data-model="form-upload" data-target="#video">上传视频</button>
+				</div>
+				<div class="layui-input-block">
+					<div class="layui-form-mid layui-word-aux">(支持mp4,rmvb,3gp,amv,avi格式)</div>
+	        	</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">视频时长</label>
+				<div class="layui-input-block">
+					<input type="text" class="layui-input" name="video_time" value="{$info['video_time']}">
+					<div class="layui-form-mid layui-word-aux">单位：秒，开启【七牛云存储】后系统将自动获取,可不填写</div>
+				</div>
+			</div>
+	  	</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">排序</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="sort" value="{:isset($info['sort']) ? $info['sort'] : '10000'}" datatype="*">
+				<div class="layui-form-mid layui-word-aux">数字越小越靠前</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	    		<input type="hidden" name="id" value="{$info['id']}">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+layui.use('form',function(){
+	var form = layui.form;
+	form.on('radio(method)', function(data){
+		var $video = $('#videos'),$photo = $('#photo');
+        if (data.value === '2')
+        	$video.show() && $photo.hide();
+        else
+        	$video.hide() && $photo.show();
+	})
+});
+</script>
+{/block}

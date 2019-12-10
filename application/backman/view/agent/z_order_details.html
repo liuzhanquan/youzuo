@@ -1,0 +1,203 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+    <ul class="layui-tab-title">
+        <li class="layui-this">订单信息</li>
+    </ul>
+</div>
+<div class="layui-card-body">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>基本信息</legend>
+    </fieldset>
+    <div class="layui-row">
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">订单数量：{$order.num}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo">创建时间：{$order.created_at}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">下单用户：{$order.agent.name}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo">订单金额：{$order.money} (元)</div>
+        </div>
+    </div>
+    <div class="layui-row">
+        <div class="layui-col-xs3">
+            <div class="grid-demo">订单类型：{$order.goods_type_name}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo">订单状态：{$order.status_name}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo">发货类型：{$order.type_name}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo">支付状态：{$order.pay_status_name}</div>
+        </div>
+    </div>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>商品信息</legend>
+    </fieldset>
+    <div class="layui-row">
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">商品名称</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1" style="    text-align: center;">数量</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">价格</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">金额</div>
+        </div>
+    </div>
+
+    {foreach $order.goods as $vo}
+    <div class="layui-row">
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">{$vo.goods_name}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1" style="    text-align: center;">{$vo.num}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">{$vo.price}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">{$vo.money}</div>
+        </div>
+    </div>
+    {/foreach}
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>收货信息</legend>
+    </fieldset>
+    {if condition="$order.type eq 2"}
+    <div class="layui-row">
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">姓名</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1" style="    text-align: center;">手机</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">收货地址</div>
+        </div>
+        {/if}
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">备注</div>
+        </div>
+    </div>
+    <div class="layui-row">
+        {if condition="$order.type eq 2"}
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">{$order.address.name}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1" style="    text-align: center;">{$order.address.phone}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">{$order.address.province}{$order.address.city}{$order.address.area}{$order.address.address}</div>
+        </div>
+        {/if}
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">{$order.remarks}</div>
+        </div>
+    </div>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>审核记录</legend>
+    </fieldset>
+    <div class="layui-row">
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">审核人</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1" style="    text-align: center;">审核时间</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">审核说明</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">审核状态</div>
+        </div>
+    </div>
+    {foreach $order.log as $voS}
+    <div class="layui-row">
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">{$voS.admin_name}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1" style="    text-align: center;">{$voS.created_at}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">{$voS.msg}</div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo grid-demo-bg1">{$voS.status_name}</div>
+        </div>
+    </div>
+    {/foreach}
+
+
+
+    {if condition="$order.status eq 1 && $order.pay_status eq 2"}
+    <form class="layui-form" data-model="form-submit">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>申请审核</legend>
+        </fieldset>
+        {if condition="$order.type eq 2"}
+        <div class="layui-form-item">
+            <label class="layui-form-label">物流公司</label>
+            <div class="layui-input-block">
+                <select name="logistics_id">
+                    {foreach $order.logistics as $vo}
+                    <option value="{$vo.id}" {if $order.logistics_id eq $vo.id}selected=""{/if}>{$vo.name}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">单号</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="logistics_sn" value="{$order.logistics_sn ?? ''}">
+            </div>
+        </div>
+        {/if}
+        <div class="layui-form-item">
+            <label class="layui-form-label">审核说明</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="msg" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-block">
+                <select name="status">
+                    <option value="2" {if $order.status eq 2}selected=""{/if}>已通过，并发货</option>
+                    <option value="3" {if $order.status eq 3}selected=""{/if}>已拒绝</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input type="hidden" name="id" value="{$order.id}">
+                <input type="hidden" name="type" value="{$order.type}">
+                <button class="layui-btn layui-btn-normal">保存</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+    {/if}
+
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+    var mixin = {};
+    layui.use('form',function(){
+        var form = layui.form
+    });
+</script>
+{/block}

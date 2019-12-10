@@ -1,0 +1,101 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<div class="tableOp">
+		<form class="layui-form">
+			<div class="layui-row layui-col-space10">
+				<div class="layui-col-md3">
+					<div class="layui-form-item">
+						<label class="layui-form-label">充值时间</label>
+						<div class="layui-input-block">
+				           	<input type="text" class="layui-input" datatype="*" name="time" id="endtime" placeholder="yyyy-MM-dd HH:mm:ss" readonly="" value="{$time}">
+						</div>
+					</div>
+				</div>
+				<div class="layui-col-md2">
+					<div class="layui-form-item">
+						<label class="layui-form-label">状态</label>
+						<div class="layui-input-block">
+							<select name="state">
+								<option value="">全部</option>
+								<option value="0" {if $key eq '0'}selected{/if}>待处理</option>
+								<option value="1" {if $key eq '1'}selected{/if}>已充值</option>
+								<option value="2" {if $key eq '2'}selected{/if}>已拒绝</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="layui-col-md2">
+					<div class="layui-form-item">
+			      		<button class="layui-btn layui-btn-normal" style="height: 36px;min-width: 80px;" lay-submit="" lay-filter="search">搜索</button>
+				  	</div>
+				</div>
+				<!--  -->
+			</div>
+		</form>
+	</div>
+	<!--  -->
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+<script type="text/html" id="barTar">
+	{{#  if(d.status == 0){ }}
+	<button class="layui-btn layui-btn-xs layui-btn-normal" lay-event="del" data-del data-id="{{d.id}}">通过</button>
+  	{{#  } else { }}
+  	-
+	{{#  } }}
+</script>
+<script type="text/html" id="sysTar">
+	{{#  if(d.status == 1){ }}
+  	<button type="button" class="layui-btn layui-btn-normal">已充值</button>
+	{{#  }else if(d.status == 2){ }}
+  	<button type="button" class="layui-btn layui-btn-danger">已拒绝</button>
+  	{{#  } else { }}
+  	<button type="button" class="layui-btn layui-btn-danger">待处理</button>
+  	{{#  } }}
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use(['table','laydate'], function(){
+	var table = layui.table;
+	var laydate = layui.laydate;
+	laydate.render({
+	    elem: '#endtime',
+	    type: 'datetime',
+	    format: 'yyyy/MM/dd HH:mm:ss',
+	    range: true
+	 });
+	table.render({
+		elem: '#data_table',
+		url:SlefUrl,
+		limit:20,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'name', title: '充值商户',width:150}
+	      	,{field:'money', title: '充值金额'}
+	      	,{field:'name', title: '银行卡姓名',width:150,align:'center'}
+	      	,{field:'money', title: '银行卡'}
+	      	,{field:'timestamp', title: '充值时间',width:150,align:'center'}
+	      	,{field:'status', title: '状态',toolbar: '#sysTar',width:150,align:'center'}
+	      	,{field:'op', title: '操作',toolbar: '#barTar',width:100,align:'center'}
+	    ]],
+	    page: true
+	});
+	table.on('tool(data_table)', function(obj){
+		var data = obj.data;
+		data.table = "mch";
+		if(obj.event === 'del'){
+			layer.confirm('确认充值该金额到商户账户吗？', function(index){
+	        	layer.close(index);
+	       		form.formDel(data,obj);
+	      	});
+		}
+	});
+});
+</script>
+{/block}

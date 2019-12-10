@@ -1,0 +1,63 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+	    	<label class="layui-form-label">默认上传方式</label>
+	    	<div class="layui-input-block">
+	      		<input type="radio" name="type" value="1" title="本地" lay-filter="method" {if $info['type'] eq 1}checked=""{/if}>
+	      		<input type="radio" name="type" value="2" title="七牛云存储" lay-filter="method" {if $info['type'] eq 2}checked=""{/if}>
+	    	</div>
+	  	</div>
+	  	<div id="qiniu" {if $info['type'] eq 1}style="display: none;"{/if}>
+	  		<div class="layui-form-item">
+				<label class="layui-form-label">存储空间名称</label>
+				<div class="layui-input-block">
+					<input type="text" class="layui-input" name="bucket" value="{$info['bucket']}" placeholder="存储空间名称(Bucket)">
+				</div>
+			</div>
+	  		<div class="layui-form-item">
+				<label class="layui-form-label">ACCESS_KEY</label>
+				<div class="layui-input-block">
+					<input type="text" class="layui-input" name="ak" value="{$info['ak']}" placeholder="ACCESS_KEY(AK)">
+				</div>
+			</div>
+	  		<div class="layui-form-item">
+				<label class="layui-form-label">SECRET_KEY</label>
+				<div class="layui-input-block">
+					<input type="text" class="layui-input" name="sk" value="{$info['sk']}" placeholder="SECRET_KEY(SK)">
+				</div>
+			</div>
+	  		<div class="layui-form-item">
+				<label class="layui-form-label">空间域名</label>
+				<div class="layui-input-block">
+					<input type="text" class="layui-input" name="domain" value="{$info['domain']}" placeholder="空间域名(Domain)">
+					<div class="layui-form-mid layui-word-aux">请补全http:// 或 https://，例如：http://static.cloud.com/</div>
+				</div>
+			</div>
+	  	</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+layui.use('form',function(){
+	var form = layui.form;
+	form.on('radio(method)', function(data){
+		var $first = $('#qiniu');
+        if (data.value === '2')
+            $first.show();
+        else
+            $first.hide();
+	})
+});
+var mixin = {};
+</script>
+{/block}

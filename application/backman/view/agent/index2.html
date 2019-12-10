@@ -1,0 +1,148 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+		<li><a href="{:url('index')}">代理列表</a></li>
+		<li class="layui-this">正常</li>
+		<li><a href="{:url('index3')}">待审核</a></li>
+	</ul>
+</div>
+<div class="demoTable" style="margin-top: 25px;">
+	姓名：
+	<div class="layui-inline">
+		<input class="layui-input" name="name" id="user_name" autocomplete="off">
+	</div>
+	手机号码：
+	<div class="layui-inline">
+		<input class="layui-input" name="phone" id="phone" autocomplete="off">
+	</div>
+	<button class="layui-btn" data-type="reload">搜索</button>
+</div>
+<div class="layui-card-body">
+	<!--<a href="{:url('addlink')}" class="layui-btn">生成代理申请链接</a>-->
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+	<!--<a class="layui-btn layui-btn-xs" href="{{d.stock}}">查看云仓</a>-->
+</div>
+<script type="text/html" id="toolBar"></script>
+<script type="text/html" id="barTar">
+	<a class="layui-btn layui-btn-xs" href="{{d.purchase}}">进货记录</a>
+	<a class="layui-btn layui-btn-xs" href="{{d.goodss}}">编辑云仓</a>
+	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
+</script>
+
+<script type="text/html" id="barTar2">
+	<a href="{{d.small_ticket}}" target="_blank"><img width="50" src="{{d.small_ticket}}"></a>
+</script>
+<script type="text/html" id="headimgurl">
+	<img src="{{d.headimgurl}}" width="30" height="30">
+</script>
+<script type="text/html" id="sysTar">
+	{{#  if(d.status == 1){ }}
+  	<button type="button" class="layui-btn layui-btn-normal">正常</button>
+	{{#  }else if(d.status == 2){ }}
+  	<button type="button" class="layui-btn layui-btn-normal">已拒绝</button>
+  	{{#  } else { }}
+  	<button type="button" class="layui-btn layui-btn-danger">待审核</button>
+  	{{#  } }}
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use(['table','form'], function(){
+	var table = layui.table,
+	form = layui.form;
+	table.render({
+		elem: '#data_table',
+		toolbar: '#toolBar',
+		url:SlefUrl,
+		limit:20,
+		cellMinWidth: 80,
+		cols: [[
+            {field:'id', title: 'ID',width:60},
+            {field:'headimgurl',width:60, title: '头像',toolbar: '#headimgurl', align:'center'}
+	      	,{field:'name', title: '姓名', sort: true,align:'center',width:100}
+	      	,{field:'phone', title: '手机号码',width:110, sort: true,align:'center'}
+	      	//,{field:'nickname', title: '昵称',width:60}
+	      	,{field:'parent', title: '上代',align:'center',width:80}
+	      	,{field:'level_name', title: '等级',align:'center',width:80}
+	      	,{field:'money', title: '余额', sort: true,align:'center',width:110}
+	      	,{field:'code', title: '邀请码',align:'center',width:77}
+	      	,{field:'small_ticket', title: '凭证',toolbar: '#barTar2',align:'center',width:80}
+	      	,{field:'reg_time', title: '注册时间',width:150}
+	      	,{field:'status_name', title: '状态',align:'center',width:70}
+	      	,{field:'op', title: '操作',toolbar: '#barTar', width:296,align:'center'}
+	    ]],
+	    page: true,
+        id: 'testReload'
+	});
+	table.on('tool(data_table)', function(obj){
+		var data = obj.data;
+		data.table = "agent";
+		if(obj.event === 'del'){
+			layer.confirm('确定删除吗？', function(index){
+	        	layer.close(index);
+	       		form.formDel(data,obj);
+	      	});
+		}
+	});
+	var formId = '';
+	form.on('select(gruop_id)', function(data){
+		formId = data.value;
+	})
+	var $ = layui.$, active = {
+		getCheckData:function(){
+			var checkStatus = table.checkStatus("data_table");
+			var data = checkStatus.data;
+			if(!formId){
+				layer.msg('请先选择标签组');
+				return '';
+			}
+			if(data.length <= 0){
+				layer.msg('请选择会员');
+				return '';
+			}
+			var checkIds = {};
+			for(var item in data){
+				checkIds[item] = data[item].uid;
+			}
+			$.post("{:url('ajax_op')}",{group:formId,uid:checkIds,type:'group'},function(res){
+				if(res.code == 1){
+					layer.msg(res.msg, {icon: 6},function(){
+						table.reload('data_table');
+					});
+				}else{
+					layer.msg(res.msg, {icon: 5});
+				}
+			},'JSON');
+		}
+	};
+
+    var $ = layui.$, active = {
+        reload: function(){
+            var phone = $('#phone');
+            var name = $('#user_name');
+
+            //执行重载
+            table.reload('testReload', {
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+                ,where: {
+                    phone: phone.val(), name: name.val()
+                }
+            }, 'data');
+        }
+    };
+
+    $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
+});
+
+</script>
+{/block}

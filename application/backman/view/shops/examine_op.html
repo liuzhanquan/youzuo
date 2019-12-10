@@ -1,0 +1,109 @@
+{extend name="layout" /}
+{block name="content"}
+<style type="text/css">
+.ivu-upload-list{display: none;}
+</style>
+<div id="app2">
+	<div class="layui-tab layui-tab-brief">
+		<ul class="layui-tab-title">
+		    <li><a href="{:url('examine')}">{$pathCurrent['name']}</a></li>
+		    <li class="layui-this">新增问卷题目</li>
+		    <li><a href="{:url('examine_list')}">会员作答列表</a></li>
+		    <li><a href="{:url('examine_goods')}">答案产品套餐</a></li>
+	  	</ul>
+	</div>
+	<div class="layui-card-body">
+		<form class="layui-form" data-model="form-submit">
+			<div class="layui-form-item">
+				<label class="layui-form-label">题目标题</label>
+				<div class="layui-input-block">
+					<input type="text" class="layui-input" name="title" value="{$info['title']}" datatype="*">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">排序</label>
+				<div class="layui-input-block">
+					<input type="text" class="layui-input" name="sort" value="{:isset($info['sort']) ? $info['sort'] : '100'}" datatype="*">
+					<div class="layui-form-mid layui-word-aux">数字越小越靠前</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">题目答案</label>
+				<div class="layui-input-block">
+					<div class="ivu-input-group ivu-input-group-with-append" style="margin-bottom: 10px" v-for="(item, index2) in formDynamic.items" v-if="item.status" :key="index2">
+						<div class="ivu-input-group-prepend"><span>答案</span></div>
+						<input type="text" class="ivu-input ivu-input-default" :name="item.day" datatype="*" :value="item.day_val">
+						<div class="ivu-input-group-append"><span>示例图</span></div>
+						<input type="text" class="ivu-input ivu-input-default" :name="item.point" :value="item.point_val">
+						<div class="ivu-input-group-append">
+							<Upload action="{:url('upload/alone')}" name="file" :on-success="handleUpload" :on-progress="uploadPro">
+								<i-button @click="pushBtn(index2)">上传图片</i-button>
+							</Upload>
+						</div>
+						<div class="ivu-input-group-append"><i-button @click="handleRemove(index2)">删除</i-button></div>
+					</div>
+					<Row>
+		                <i-col span="12">
+		                    <i-button type="dashed" size="default" @click="handleAdd">添加答案</i-button>
+		                </i-col>
+		            </Row>
+				</div>
+			</div>
+			<div class="layui-form-item">
+		    	<div class="layui-input-block">
+		    		<input type="hidden" name="id" value="{$info['id']}">
+		      		<button class="layui-btn layui-btn-normal">保存</button>
+		      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+		    	</div>
+		  	</div>
+		</form>
+	</div>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var vueData2 = new Vue({
+	el:"#app2",
+	data:{
+		data:{},
+		index: {$index},
+		upIndex:0,
+		formDynamic:{
+			items:[{$item|raw}]
+		}
+	},
+	methods:{
+		handleAdd:function(){
+			this.index++;
+            this.formDynamic.items.push({
+                day: 'answer['+this.index+'][text]',
+                day_val:'',
+                point: 'answer['+this.index+'][img]',
+                point_val:'',
+                index: this.index,
+                status: 1
+            });
+		},
+        handleRemove (index) {
+            this.formDynamic.items[index].status = 0;
+        },
+        pushBtn (index){
+        	this.upIndex = index;
+        },
+        uploadPro (){
+        	this.$Message.loading('图片上传中');
+        },
+        handleUpload (response, file, fileList){
+        	// this.$Message.destroy()
+        	if(response.status == 1){
+	        	this.$Message.success('上传成功');
+	            this.formDynamic.items[this.upIndex].point_val = response.data.url;
+        	}else{
+        		this.$Message.error('上传失败');
+        	}
+        }
+	}
+});
+var mixin = {};
+</script>
+{/block}

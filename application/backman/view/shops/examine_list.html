@@ -1,0 +1,50 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('examine')}">{$pathCurrent['name']}</a></li>
+	    <li><a href="{:url('examine_op')}">新增问卷题目</a></li>
+	    <li class="layui-this">会员作答列表</li>
+	    <li><a href="{:url('examine_goods')}">答案产品套餐</a></li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+
+<script type="text/html" id="image">
+	<img src="{{d.headimgurl}}" height="30">
+</script>
+<script type="text/html" id="barTar">
+	<a class="layui-btn layui-btn-xs" href="{{d.op}}">查看</a>
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+	var table = layui.table;
+	table.render({
+		elem: '#data_table',
+		url:SlefUrl,
+		limit:20,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
+	      	,{field:'headimgurl', title: '头像',toolbar: '#image'}
+	      	,{field:'nickname', title: '昵称'}
+	      	,{field:'name', title: '姓名'}
+	      	,{field:'sex', title: '性别'}
+	      	,{field:'bridata', title: '出生年月'}
+	      	,{field:'address', title: '现所在地'}
+	      	,{field:'timestamp', title: '提交时间',sort: true,width:150,align:'center'}
+	      	,{field:'op', title: '操作',toolbar: '#barTar', width:100,align:'center'}
+	    ]],
+	    page: true
+	});
+});
+</script>
+{/block}

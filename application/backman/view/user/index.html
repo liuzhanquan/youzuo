@@ -1,0 +1,109 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<div class="tableOp">
+		<div class="layui-row layui-col-space10">
+			<div class="layui-col-md2">
+				<form class="layui-form">
+					<select name="gruop_id" lay-filter="gruop_id">
+						<option value="">请选择标签组</option>
+						{foreach $group as $vo}
+						<option value="{$vo['id']}">{$vo['name']}</option>
+						{/foreach}
+					</select>
+				</form>
+			</div>
+			<div class="layui-col-md1">
+				<div class="layui-btn-group topTable">
+					<button class="layui-btn" data-type="getCheckData" style="height: 38px;">修改分组</button>
+				</div>
+			</div>
+			<!--  -->
+		</div>
+	</div>
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+<script type="text/html" id="toolBar"></script>
+<script type="text/html" id="barTar">
+	<a class="layui-btn layui-btn-xs" href="{{d.op}}">查看</a>
+</script>
+<script type="text/html" id="headimgurl">
+	<img src="{{d.headimgurl}}" width="30" height="30">
+</script>
+<script type="text/html" id="sysTar">
+	{{#  if(d.status == 1){ }}
+  	<button type="button" class="layui-btn layui-btn-normal">正常</button>
+  	{{#  } else { }}
+  	<button type="button" class="layui-btn layui-btn-danger">关闭</button>
+  	{{#  } }}
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use(['table','form'], function(){
+	var table = layui.table,
+	form = layui.form;
+	table.render({
+		elem: '#data_table',
+		toolbar: '#toolBar',
+		url:SlefUrl,
+		limit:20,
+		cellMinWidth: 80,
+		cols: [[
+			{type: 'checkbox', width:80,fixed: 'left'}
+	      	,{field:'uid',width:80, title: 'ID', sort: true,align:'center'}
+	      	,{field:'headimgurl',width:80, title: '头像',toolbar: '#headimgurl', align:'center'}
+	      	,{field:'nickname', title: '昵称'}
+	      	,{field:'money', title: '余额', width:100,align:'center'}
+	      	,{field:'agent_name', title: '所属代理', width:100,align:'center'}
+          	,{field:'p_name', title: '上级', width:100,align:'center'}
+	      	,{field:'group', title: '所属标签', width:100,align:'center'}
+	      	,{field:'address', title: '所在地', width:100,align:'center'}
+	      	,{field:'reg_time', title: '注册时间', width:150}
+	    ]],
+	    page: true
+	});
+	var formId = '';
+	form.on('select(gruop_id)', function(data){
+		formId = data.value;
+	})
+	var $ = layui.$, active = {
+		getCheckData:function(){
+			var checkStatus = table.checkStatus("data_table");
+			var data = checkStatus.data;
+			if(!formId){
+				layer.msg('请先选择标签组');
+				return '';
+			}
+			if(data.length <= 0){
+				layer.msg('请选择会员');
+				return '';
+			}
+			var checkIds = {};
+			for(var item in data){
+				checkIds[item] = data[item].uid;
+			}
+			$.post("{:url('ajax_op')}",{group:formId,uid:checkIds,type:'group'},function(res){
+				if(res.code == 1){
+					layer.msg(res.msg, {icon: 6},function(){
+						table.reload('data_table');
+					});
+				}else{
+					layer.msg(res.msg, {icon: 5});
+				}
+			},'JSON');
+		}
+	};
+	$('.topTable .layui-btn').on('click', function(){
+    	var type = $(this).data('type');
+    	active[type] ? active[type].call(this) : '';
+  	});
+});
+
+</script>
+{/block}

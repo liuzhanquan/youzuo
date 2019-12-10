@@ -1,0 +1,89 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('video')}">{$pathCurrent['name']}</a></li>
+	    <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}视频素材</li>
+	    <li><a href="{:url('category_video')}">分类管理</a></li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+			<label class="layui-form-label">视频标题</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="title" value="{$info['title'] ?? ''}" datatype="*">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">所属分类</label>
+			<div class="layui-input-block">
+				<select name="cid" lay-filter="aihao">
+					{present name="$info.cid"}
+					{foreach $group as $vo}
+					<option value="{$vo['id']}" {if $vo['id'] eq $info['cid']}selected=""{/if}>{$vo['cname']}</option>
+					{/foreach}
+					{else/}
+					{foreach $group as $vo}
+					<option value="{$vo['id']}">{$vo['cname']}</option>
+					{/foreach}
+					{/present}
+
+				</select>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">视频封面</label>
+			<div class="layui-input-block">
+	           	<input type="hidden" class="layui-input" name="image" id="image" value="{$info['image'] ?? ''}">
+	           	<button class="layui-btn layui-btn-warm" type="button" data-model="form-upload" data-target="#image" data-preview="#uploadImage_2">上传图片</button>
+			</div>
+			<div class="layui-input-block">
+				<div class="upload-prview">
+	        		<img style="width:expression(this.width > 105 ? 105px : this.width)" src="{$info['image'] ?? ''}" id="uploadImage_2">
+	        	</div>
+				<div class="layui-form-mid layui-word-aux">(推荐尺寸为300px*150px，大小不超过200k，支持jpeg、jpg、png、gif、jpeg格式，如不上传，必须是开启【七牛云存储】后系统将自动获取视频截屏)</div>
+        	</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">视频</label>
+			<div class="layui-input-block">
+	           	<input type="hidden" class="layui-input" name="video" id="video" value="{$info['video'] ?? ''}">
+	           	<button class="layui-btn layui-btn-warm" type="button" data-model="form-upload" data-target="#video">上传视频</button>
+			</div>
+			<div class="layui-input-block">
+				<div class="layui-form-mid layui-word-aux">(支持mp4,rmvb,3gp,amv,avi格式)</div>
+        	</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">视频时长</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="video_time" value="{$info['video_time'] ?? ''}">
+				<div class="layui-form-mid layui-word-aux">单位：秒，开启【七牛云存储】后系统将自动获取,可不填写</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">排序</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="sort" value="{:isset($info['sort']) ? $info['sort'] : '100'}" datatype="*">
+				<div class="layui-form-mid layui-word-aux">数字越小越靠前</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	    		<input type="hidden" name="id" value="{$info['id'] ?? ''}">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+layui.use('form',function(){
+	var form = layui.form
+});
+</script>
+{/block}

@@ -1,0 +1,44 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li class="layui-this">{$pathCurrent['name']}</li>
+	    <li><a href="{:url('level_op')}">新增等级</a></li>
+  	</ul>
+</div>
+<div class="layui-card-body" data-model="table-bind">
+	<blockquote class="layui-elem-quote layui-quote-nm">注：代理等级最多支持2级</blockquote>
+	<table class="layui-table" data-table>
+		<thead>
+	      	<tr>
+	        	<th width="80"><center>ID</center></th>
+	        	<th>代理等级</th>
+	        	<th width="150"><center>操作</center></th>
+	      	</tr> 
+	    </thead>
+	    <tbody>
+	    	{empty name="$list"}
+	    	<tr>
+	    		<td colspan="3"><center>无数据</center></td>
+	    	</tr>
+	    	{else /}
+	    	{foreach $list as $vo}
+	    	<tr>
+	    		<td><center>{$vo['id']}</center></td>
+	    		<td style="width: 200px;">{$vo['cname']|raw}</td>
+	    		<td>
+	    			<a class="layui-btn layui-btn-xs" href="{:url('level_op',['id'=>$vo['id']])}">编辑</a>
+					<a class="layui-btn layui-btn-xs"  href="{:url('settpl',['id'=>$vo['id']])}">设置授权书</a>
+	    		</td>
+	    	</tr>
+	    	{/foreach}
+	    	{/empty}
+	    </tbody>
+	</table>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+</script>
+{/block}

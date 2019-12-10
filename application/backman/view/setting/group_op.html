@@ -1,0 +1,66 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('group')}">{$pathCurrent['name']}</a></li>
+	    <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}权限组</li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<form class="layui-form layui-form-pane" data-model="form-submit">
+		<div class="layui-form-item">
+			<label class="layui-form-label">组别名称</label>
+			<div class="layui-input-block">
+	           	<input type="text" class="layui-input" name="name" datatype="*" value="{$info['name']}">
+			</div>
+		</div>
+		<div class="layui-form-item layui-form-text">
+			<label class="layui-form-label">拥有权限 <span>( 勾选即代表赋予权限 )</span></label>
+			<table  class="layui-table layui-input-block">
+				<tbody>
+					{foreach $topNav as $vo}
+					<tr>
+						<td width="150">
+							<input type="checkbox" name="menu_power[]" value="{$vo['id']}" lay-skin="primary" {php}if(in_array($vo['id'],$menu)){ echo 'checked';}{/php} title="{$vo['name']}" lay-filter="father">
+						</td>
+						<td style="padding: 0;">
+							<table  class="layui-table layui-input-block">
+								{volist name="vo.children" id="sub"}
+								<tr>
+									<td style="border-width: 0;border-top-width: 1px;">
+										<input type="checkbox" name="menu_power[]" value="{$sub['id']}" lay-skin="primary" {php}if(in_array($sub['id'],$menu)){ echo 'checked';}{/php} title="{$sub['name']}" lay-filter="son">
+									</td>
+								</tr>
+								{/volist}
+							</table>
+						</td>
+					</tr>
+					{/foreach}
+				</tbody>
+			</table>
+		</div>
+		<div class="layui-form-item">
+			<input type="hidden" name="id" value="{$info['id']}">
+	  		<button class="layui-btn layui-btn-normal">保存</button>
+	  		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+layui.use('form',function(){
+	var form = layui.form;
+	form.on('checkbox(father)', function(data){
+		if(data.elem.checked){
+            $(data.elem).parent().siblings('td').find('input').prop("checked", true);
+            form.render(); 
+        }else{
+           $(data.elem).parent().siblings('td').find('input').prop("checked", false);
+            form.render();  
+        }
+	})
+});
+</script>
+{/block}

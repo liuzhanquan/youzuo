@@ -1,0 +1,116 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('express')}">{$pathCurrent['name']}</a></li>
+	    <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}运费模板</li>
+	    <li><a href="{:url('ex_company')}">物流公司</a></li>
+        <li><a href="{:url('ex_company_op')}">新增物流公司</a></li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit" id="my-form">
+		<div class="layui-form-item">
+			<label class="layui-form-label">模版名称</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="delivery[name]" datatype="*" value="{$info['name']}">
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<label class="layui-form-label">计费方式</label>
+	    	<div class="layui-input-block">
+	    		{php}$state = isset($info['method']) ? $info['method']['value'] : '1';{/php}
+	      		<input type="radio" name="delivery[method]" value="1" title="按件数" {if $state eq 1} checked="" {/if} lay-filter="method">
+	      		<input type="radio" name="delivery[method]" value="2" title="按重量" {if $state eq 2} checked="" {/if} lay-filter="method">
+	    	</div>
+	  	</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">区域及运费</label>
+			<div class="layui-input-block">
+				<table class="layui-table regional-table">
+					<tbody>
+						<tr>
+                            <th width="42%">可配送区域</th>
+                            <th><span class="first">{if $state eq 1}首件 (个){else /}首重 (Kg){/if}</span></th>
+                            <th>运费 (元)</th>
+                            <th><span class="additional">{if $state eq 1}续件 (个){else /}续重 (Kg){/if}</span></th>
+                            <th>续费 (元)</th>
+                        </tr>
+                        {if isset($info['rule'])}
+                        {foreach $info['rule'] as $item}
+                        <tr>
+                            <td class="am-text-left">
+                                <p class="selected-content am-margin-bottom-xs">
+                                    {$item['region_content']}
+                                </p>
+                                <p class="operation am-margin-bottom-xs">
+                                    <a class="edit" href="javascript:;">编辑</a>
+                                    <a class="delete" href="javascript:;">删除</a>
+                                </p>
+                                <input type="hidden" name="delivery[rule][region][]" value="{$item['region']}" class="layui-input">
+                            </td>
+                            <td>
+                                <input type="number" name="delivery[rule][first][]" class="layui-input" value="{$item['first']}" required>
+                            </td>
+                            <td>
+                                <input type="number" name="delivery[rule][first_fee][]" value="{$item['first_fee']}" required class="layui-input">
+                            </td>
+                            <td>
+                                <input type="number" name="delivery[rule][additional][]" value="{$item['additional']}" class="layui-input">
+                            </td>
+                            <td>
+                                <input type="number" name="delivery[rule][additional_fee][]" value="{$item['additional_fee']}" class="layui-input">
+                            </td>
+                        </tr>
+                        {/foreach}
+                        {/if}
+						<tr>
+							<td colspan="5">
+								<button type="button" class="layui-btn layui-btn-primary add-region">点击添加可配送区域和运费</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	    		<input type="hidden" name="id" value="{$info['id']}">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+<div class="regional-choice"></div>
+{/block}
+{block name="js"}
+<script type="text/javascript" src="/static/js/app.js"></script>
+<script type="text/javascript" src="/static/js/delivery.js"></script>
+<script type="text/javascript">
+var mixin = {};
+layui.use('form',function(){
+	var form = layui.form;
+	form.on('radio(method)', function(data){
+		var $first = $('.first')
+            , $additional = $('.additional');
+        if (data.value === '2')
+            $first.text('首重 (Kg)') && $additional.text('续重 (Kg)');
+        else
+            $first.text('首件 (个)') && $additional.text('续件 (个)');
+	})
+});
+$(function () {
+    // 初始化区域选择界面
+    var datas = JSON.parse('{$regionData|raw}');
+    // 配送区域表格
+    new Delivery({
+        table: '.regional-table',
+        regional: '.regional-choice',
+        datas: datas
+    });
+
+});
+</script>
+{/block}

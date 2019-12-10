@@ -1,0 +1,256 @@
+<link rel="stylesheet" type="text/css" href="/static/admin/css/tpleditor.css">
+<script type="text/javascript" src="/static/admin/js/drag.js?v=20180517"></script>
+<link rel="stylesheet" href="/static/admin/js/colpick/colpick.css?v=20180517" />
+<script type="text/javascript" src="/static/admin/js/colpick/colpick.js?v=20180517"></script>
+
+<div class="page-sq-template" id="canv">
+	<!--编辑-->
+    <div class="page-template-edtior" style="height: 70px;">
+        <div class="top-edtior">
+            <!-- <span id="js-example-data">使用模拟数据</span>|<span id="js-example-title">使用组件标题</span><br> -->
+            <!-- <span id="js-editall">编辑</span>|<span id="js-preview">预览</span>| -->
+            <span id="js-reset-all">重置</span>|<span id="js-select-all" data-select-all="0">全选</span>
+        </div>
+        <div class="btttom-edtior">
+            <select id="js-font-size">
+                <option value="">字号</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+                <option value="22">22</option>
+                <option value="24">24</option>
+                <option value="26">26</option>
+                <option value="28">28</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="80">80</option>
+                <option value="90">90</option>
+                <option value="100">100</option>
+                <option value="110">110</option>
+                <option value="120">120</option>
+            </select>
+            <!-- <span id="js-font-weight" title="加粗"></span>
+            <span id="js-font-style" title="斜体"></span> -->
+            <span title="设置字体颜色"><label class="font-color-label"></label></span>
+        </div>
+    </div>
+    <!--组件-->
+    <div class="page-template-zujian" style="top: 70px;">
+        <h3>组件：<span class="shuoming">请移动组件放到授权书上合适的位置</span></h3>
+    </div>
+    <!--拖动区域-->
+    <div class="page-dragDiv-box">
+        <div class="dragDiv-img" style="position: relative">
+            <img src="{:thumb($info['auth_book_image'],'640','896')}" style="width: 100%" id="tmpimg">
+        </div>
+        <div class="dragDiv dragDiv1 name" title="授权名称" style="{$data['name']['style'] ? $data['name']['style'] : ''}">
+            <p class="drag-data">欧阳马云</p>
+            <p class="drag-title">姓名</p>
+            <input type="hidden" class="name" name="name[name]" value="{$position['name']['name'] ? $position['name']['name'] : '授权名称'}">
+            <input type="hidden" class="position" name="name[position]" value="{$position['name']['position']}">
+            <input type="hidden" class="size" name="name[size]" value="{$position['name']['size'] ? $position['name']['size'] : '18'}">
+            <input type="hidden" class="isbold" name="name[bold]" value="{$position['name']['bold'] ? $position['name']['bold'] : '100'}">
+            <input type="hidden" class="italic" name="name[italic]" value="{$position['name']['italic'] ? $position['name']['italic'] : 'normal'}">
+            <input type="hidden" class="iscolor" name="name[color]" value="{$position['name']['color'] ? $position['name']['color'] : '#555555'}">
+        </div>
+        <div class="dragDiv dragDiv4 per-id" title="身份证" style="{$data['card']['style'] ? $data['card']['style'] : ''}">
+            <p class="drag-data">440258199001018888</p>
+            <p class="drag-title">微信号</p>
+            <input type="hidden" class="name" name="card[name]" value="{$position['card']['name'] ? $position['card']['name'] : '身份证'}">
+            <input type="hidden" class="position" name="card[position]" value="{$position['card']['position'] ? $position['card']['position'] : ''}">
+            <input type="hidden" class="size" name="card[size]" value="{$position['card']['size'] ? $position['card']['size'] : '18'}">
+            <input type="hidden" class="isbold" name="card[bold]" value="{$position['card']['bold'] ? $position['card']['bold'] : '100'}">
+            <input type="hidden" class="italic" name="card[italic]" value="{$position['card']['italic'] ? $position['card']['italic'] : 'normal'}">
+            <input type="hidden" class="iscolor" name="card[color]" value="{$position['card']['color'] ? $position['card']['color'] : '#555555'}">
+        </div>
+        <div class="dragDiv dragDiv7 date-start" title="授权期限开始日期" style="{$data['start']['style'] ? $data['start']['style'] : ''}">
+            <p class="drag-data">2016-10-1</p>
+            <p class="drag-title">时间</p>
+            <input type="hidden" class="name" name="start[name]" value="{$position['start']['name'] ? $position['start']['name'] : '授权期限开始日期'}">
+            <input type="hidden" class="position" name="start[position]" value="{$position['start']['position']}">
+            <input type="hidden" class="size" name="start[size]" value="{$position['start']['size'] ? $position['start']['size'] : '18'}">
+            <input type="hidden" class="isbold" name="start[bold]" value="{$position['start']['bold'] ? $position['start']['bold'] : '100'}">
+            <input type="hidden" class="italic" name="start[italic]" value="{$position['start']['italic'] ? $position['start']['italic'] : 'normal'}">
+            <input type="hidden" class="iscolor" name="start[color]" value="{$position['start']['color'] ? $position['start']['color'] : '#555555'}">
+        </div>
+        <div class="dragDiv dragDiv10 date-end" title="手机号" style="{$data['phone']['style'] ? $data['phone']['style'] : ''}">
+            <p class="drag-data">110</p>
+            <p class="drag-title">手机号</p>
+            <input type="hidden" class="name" name="phone[name]" value="{$position['phone']['name'] ? $position['phone']['name'] : '手机号'}">
+            <input type="hidden" class="position" name="phone[position]" value="{$position['phone']['position']}">
+            <input type="hidden" class="size" name="phone[size]" value="{$position['phone']['size'] ? $position['phone']['size'] : '18'}">
+            <input type="hidden" class="isbold" name="phone[bold]" value="{$position['phone']['bold'] ? $position['phone']['bold'] : '100'}">
+            <input type="hidden" class="italic" name="phone[italic]" value="{$position['phone']['italic'] ? $position['phone']['italic'] : 'normal'}">
+            <input type="hidden" class="iscolor" name="phone[color]" value="{$position['phone']['color'] ? $position['phone']['color'] : '#555555'}">
+        </div>
+        <div class="dragDiv dragDiv5 grape" title="代理级别" style="{$data['grape']['style'] ? $data['grape']['style'] : ''}">
+            <p class="drag-data">一级代理</p>
+            <p class="drag-title">代理级别</p>
+            <input type="hidden" class="name" name="grape[name]" value="{$position['grape']['name'] ? $position['grape']['name'] : '代理级别'}">
+            <input type="hidden" class="position" name="grape[position]" value="{$position['grape']['position']}">
+            <input type="hidden" class="size" name="grape[size]" value="{$position['grape']['size'] ? $position['grape']['size'] : '18'}">
+            <input type="hidden" class="isbold" name="grape[bold]" value="{$position['grape']['bold'] ? $position['grape']['bold'] : '100'}">
+            <input type="hidden" class="italic" name="grape[italic]" value="{$position['grape']['italic'] ? $position['grape']['italic'] : 'normal'}">
+            <input type="hidden" class="iscolor" name="grape[color]" value="{$position['grape']['color'] ? $position['grape']['color'] : '#555555'}">
+        </div>
+    </div>
+    <!--拖动区域end-->
+</div>
+<script type="text/javascript">
+if ('' != "") {
+    var html = decodeURIComponent('');
+    //正则检查以前的数据是否包含地址组件，要是没有则添加
+    if (!/<div[^>]*title=\"地址\"[^>]*>/.test(html)) {
+        $(".page-dragDiv-box").html(decodeURIComponent('') + $(".dragDiv11").prop("outerHTML"));
+    } else {
+        $(".page-dragDiv-box").html(decodeURIComponent(''));
+    }
+}
+
+$("#js-example-data").on("click", function () {
+    $(".dragDiv .drag-data").show();
+    $(".dragDiv .drag-title").hide();
+})
+$("#js-example-title").on("click", function () {
+    $(".dragDiv .drag-data").hide();
+    $(".dragDiv .drag-title").show();
+})
+
+//编辑状态
+$("#js-editall").on("click", function () {
+    $(".dragDiv").removeClass("ok");
+})
+$("#js-preview").on("click", function () {
+    $(".dragDiv").addClass("ok");
+    $("#js-select-all").html("全选");
+})
+
+//重置
+$("#js-reset-all").on("click", function () {
+    $(".dragDiv").removeClass("edtit").removeAttr("style");
+    $(".dragDiv").removeClass("ok");
+    $("#js-select-all").html("全选");
+})
+
+//全选
+$("#js-select-all").on("click", function () {
+    if ($(this).attr("data-select-all") == 0) {
+        $(this).html("取消全选");
+        $(".dragDiv").removeClass("ok").addClass("edtit");
+        $(this).attr("data-select-all", 1)
+    } else {
+        $(".dragDiv").removeClass("edtit");
+        $(this).attr("data-select-all", 0)
+        $(this).html("全选");
+    }
+})
+
+//读取当前选中的层的字号
+var fsize = function () {
+    var now_fsize = parseInt($(".dragDiv.edtit").css("font-size"));
+    $("#js-font-size").val(now_fsize);
+}
+
+//设置当前选中的层的字号
+$("#js-font-size").change(function () {
+    var new_fsize = parseInt($("#js-font-size").val());
+    $(".dragDiv.edtit").css("font-size", new_fsize);
+    var taht = $(".dragDiv.edtit").find('.size');
+    taht.val(new_fsize);
+});
+//设置当前选中的层的文字是否粗体
+$("#js-font-weight").on("click", function () {
+    if ($(this).is(".bold")) {
+        $(".dragDiv.edtit").css("font-weight", 100);
+        $(this).removeClass("bold");
+        $(".dragDiv.edtit").find('.isbold').val('100');
+    } else {
+        $(".dragDiv.edtit").css("font-weight", 700)
+        $(this).addClass("bold");
+        $(".dragDiv.edtit").find('.isbold').val('700');
+    }
+})
+//读取当前选中的层的文字是否粗体
+var fweight = function () {
+    var now_fweight = parseInt($(".dragDiv.edtit").css("font-weight"));
+    if (now_fweight == 700) {
+        $("#js-font-weight").addClass("bold");
+    } else if (now_fweight == 100) {
+        $("#js-font-weight").removeClass("bold");
+    }
+}
+//读取当前选中的层的正常或斜体
+var fstyle = function () {
+    if ($(".dragDiv.edtit").is(".font-italic")) {
+        $("#js-font-style").addClass("font-italic");
+    } else {
+        $("#js-font-style").removeClass("font-italic");
+    }
+}
+
+//设置当前选中的层的正常或斜体号
+$("#js-font-style").on("click", function () {
+    if ($(this).is(".font-italic")) {
+        $(".dragDiv.edtit").removeClass("font-italic");
+        $(this).removeClass("font-italic");
+        $(".dragDiv.edtit").find('.italic').val('italic');
+    } else {
+        $(".dragDiv.edtit").addClass("font-italic");
+        $(this).addClass("font-italic");
+        $(".dragDiv.edtit").find('.italic').val('normal');
+    }
+});
+
+//设置当前选中的层的颜色
+/*document.getElementById('js-font-color').onchange = function(){
+   // alert('您选择的颜色是：'+this.value)
+    $(".dragDiv.edtit").css(color,this.value);
+};
+*/
+/*$("#js-font-color").on("click",function(){
+    var new[color]=$("#js-font-color").val();
+    $(".dragDiv.edtit").css("color",new[color]);
+    });*/
+
+/*document.getElementById("js-font-color").addEventListener("input", function(){
+           var rgb=$(this).val();
+           console.log(11);
+            $(".dragDiv.edtit").css({color:"#" + rgb});
+});*/
+$('.dragDiv').each(function(index){
+	var that = $(this);
+	$(this).myDrag({
+		dragMove:function(x,y){
+			that.find('.position').val(x+','+y);
+		},
+		randomPosition:false,
+		direction:'all',
+		parent:'.page-sq-template',
+		handler:false
+	});
+	$(this).click(function (e) {
+        $(".dragDiv").removeClass("edtit");
+        $(this).addClass("edtit");
+        fsize(); fweight(); fstyle();
+    });
+});
+</script>
+<!--需要注意的是,这里一定要等待js库和网页加载完毕后再执行函数  -->
+<!-- html2canvas()中,第一个参数是要截图的Dom对象，第二个参数时渲染完成后回调的canvas对象。  -->
+<script type="text/javascript">
+$('.font-color-label').colpick({
+    colorScheme: 'dark',
+    layout: 'rgbhex',
+    color: 'ff8800',
+    onSubmit: function (hsb, hex, rgb, el) {
+        $(".dragDiv.edtit").css('color', '#' + hex);
+        $(".dragDiv.edtit").find('.iscolor').val('#' + hex);
+        $(el).colpickHide();
+    }
+})
+</script>

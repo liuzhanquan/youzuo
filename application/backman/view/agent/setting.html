@@ -1,0 +1,71 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+			<label class="layui-form-label">等级升级周期</label>
+			<div class="layui-input-block">
+				<div class="ivu-input-group ivu-input-group-with-append" style="margin-bottom: 10px">
+					<div class="ivu-input-group-prepend"><span>每月</span></div>
+					<input type="text" class="ivu-input ivu-input-default" name="up_day" datatype="*" value="{$info['up_day']}">
+					<div class="ivu-input-group-append"><span>日</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">返利结算周期</label>
+			<div class="layui-input-block">
+				<div class="ivu-input-group ivu-input-group-with-append" style="margin-bottom: 10px">
+					<div class="ivu-input-group-prepend"><span>每月</span></div>
+					<input type="text" class="ivu-input ivu-input-default" name="reward_day" datatype="*" value="{$info['reward_day']}">
+					<div class="ivu-input-group-append"><span>日</span></div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">补货最低金额</label>
+			<div class="layui-input-block">
+				<div class="clearfloat">
+					<div class="fl" style="width: 200px;">
+						<select name="level">
+							<option value="">请选择代理等级</option>
+							{foreach $list as $vo}
+							<option value="{$vo['id']}" {if $vo['id'] eq $info['level']}selected{/if}>{$vo['cname']|raw}</option>
+							{/foreach}
+						</select>
+					</div>
+					<div class="fl">
+						<div class="ivu-input-group ivu-input-group-with-append" style="margin-bottom: 10px">
+							<div class="ivu-input-group-prepend"><span>门槛金额的</span></div>
+							<input type="text" class="ivu-input ivu-input-default" name="level_rate" datatype="*" style="height: 38px;" value="{$info['level_rate']}">
+							<div class="ivu-input-group-append"><span>%</span></div>
+						</div>
+					</div>
+					<div class="fl">
+						<div class="ivu-input-group ivu-input-group-with-append" style="margin-bottom: 10px">
+							<div class="ivu-input-group-prepend"><span>返利为奖励单价的</span></div>
+							<input type="text" class="ivu-input ivu-input-default" name="money_rate" datatype="*" style="height: 38px;" value="{$info['money_rate']}">
+							<div class="ivu-input-group-append"><span>%</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+layui.use('form',function(){
+	var form = layui.form
+});
+</script>
+{/block}

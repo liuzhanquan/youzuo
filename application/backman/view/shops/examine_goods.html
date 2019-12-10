@@ -1,0 +1,56 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('examine')}">{$pathCurrent['name']}</a></li>
+	    <li><a href="{:url('examine_op')}">新增问卷题目</a></li>
+	    <li><a href="{:url('examine_list')}">会员作答列表</a></li>
+	    <li class="layui-this">答案产品套餐</li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<div>
+		<a href="{:url('goods_team')}" class="layui-btn layui-btn-xs layui-btn-normal">新增套餐</a>
+	</div>
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+<script type="text/html" id="barTar">
+	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
+  	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+	var table = layui.table;
+	table.render({
+		elem: '#data_table',
+		url:SlefUrl,
+		limit:20,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
+	      	,{field:'name', title: '套餐名称'}
+	      	,{field:'num', title: '商品数量',width:200,align:'center'}
+	      	,{field:'sort', title: '排序',sort: true,width:200,align:'center'}
+	      	,{field:'op', title: '操作',toolbar: '#barTar', width:150,align:'center'}
+	    ]],
+	    page: true
+	});
+	table.on('tool(data_table)', function(obj){
+		var data = obj.data;
+		data.table = "examine_goods";
+		if(obj.event === 'del'){
+			layer.confirm('确定删除吗？', function(index){
+	        	layer.close(index);
+	       		form.formDel(data,obj);
+	      	});
+		}
+	});
+});
+</script>
+{/block}

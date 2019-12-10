@@ -1,0 +1,60 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+	    	<label class="layui-form-label">分销功能</label>
+	    	<div class="layui-input-block">
+	    		{php}$state = isset($info['status']) ? $info['status'] : '1';{/php}
+	      		<input type="radio" name="status" value="1" title="开启" {if $state eq 1} checked="" {/if}>
+	      		<input type="radio" name="status" value="2" title="关闭" {if $state eq 2} checked="" {/if}>
+	    	</div>
+	  	</div>
+		<div class="layui-form-item">
+	    	<label class="layui-form-label">分销层级</label>
+	    	<div class="layui-input-block">
+	    		{php}$level = isset($info['level']) ? $info['level'] : '1';{/php}
+	      		<input type="radio" name="level" value="1" title="一级分销" {if $level eq 1} checked="" {/if}>
+	      		<input type="radio" name="level" value="2" title="二级分销" {if $level eq 2} checked="" {/if}>
+	      		<input type="radio" name="level" value="3" title="三级分销" {if $level eq 3} checked="" {/if}>
+	    	</div>
+	  	</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">一级佣金比例</label>
+			<div class="layui-input-block">
+	           	<input type="text" class="layui-input" name="one" datatype="*" value="{$info['one']}">
+	           	<div class="layui-form-mid layui-word-aux">佣金比例范围 0 - 1，如10%，请填写0.1</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">二级佣金比例</label>
+			<div class="layui-input-block">
+	           	<input type="text" class="layui-input" name="two" datatype="*" value="{$info['two']}">
+	           	<div class="layui-form-mid layui-word-aux">佣金比例范围 0 - 1，如10%，请填写0.1</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">三级佣金比例</label>
+			<div class="layui-input-block">
+	           	<input type="text" class="layui-input" name="three" datatype="*" value="{$info['three']}">
+	           	<div class="layui-form-mid layui-word-aux">佣金比例范围 0 - 1，如10%，请填写0.1</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+layui.use('form',function(){
+	var form = layui.form
+});
+</script>
+{/block}

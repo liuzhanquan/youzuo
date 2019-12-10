@@ -1,0 +1,188 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+    <ul class="layui-tab-title">
+        <li><a href="{:url('index')}">{$pathCurrent['name']}</a></li>
+        <li class="layui-this">编辑</li>
+    </ul>
+</div>
+<div class="layui-card-body">
+    <form class="layui-form" data-model="form-submit">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>基本信息</legend>
+        </fieldset>
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="name" value="{$info['name']}" datatype="*">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">代理手机</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="phone" value="{$info['phone']}" datatype="*">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">身份证</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="card_id" value="{$info['card_id']}" datatype="*">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">微信号</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="weixin" value="{$info['weixin']}" datatype="*">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">代理金额</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="money" value="{$info['money']}" datatype="*">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">选择地区</label>
+            <div class="layui-input-inline">
+                <select name="provid" id="provid" lay-filter="provid">
+                    <option value="">请选择省</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="cityid" id="cityid" lay-filter="cityid">
+                    <option value="">请选择市</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="areaid" id="areaid" lay-filter="areaid">
+                    <option value="">请选择县/区</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">登陆密码</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" name="pwd" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">代理级别</label>
+            <div class="layui-input-block">
+                <select name="level_id">
+                    {foreach $level as $vo}
+                    <option value="{$vo['id']}" {if $vo['id'] eq $info['level_id']}selected=""{/if}>{$vo['name']|raw}</option>
+                    {foreach $vo.list as $v}
+                        <option value="{$v['id']}" {if $v['id'] eq $info['level_id']}selected=""{/if}>|__{$v['name']|raw}</option>
+                    {/foreach}
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">凭证信息</label>
+            <div class="layui-input-block">
+                <a target="_blank" href="{$info.small_ticket}"><img width="100" src="{$info.small_ticket}"></a>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">状态</label>
+            <div class="layui-input-block">
+                {php}$state = isset($info['status']) ? $info['status'] : 0;{/php}
+                <input type="radio" name="status" value="0" title="待审核" {if $state eq 0} checked="" {/if}>
+                <input type="radio" name="status" value="1" title="已通过" {if $state eq 1} checked="" {/if}>
+                <input type="radio" name="status" value="2" title="已拒绝" {if $state eq 2} checked="" {/if}>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input type="hidden" name="id" value="{$info['id']}">
+                <button class="layui-btn layui-btn-normal">保存</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript" src="/static/lib/assets/data.js"></script>
+<script type="text/javascript">
+    var mixin = {};
+    layui.use('form',function(){
+        var form = layui.form
+        var defaults = {
+            s1: 'provid',
+            s2: 'cityid',
+            s3: 'areaid',
+            v1: {$info.province},
+            v2: {$info.city},
+            v3: {$info.area}
+        };
+        var $form;
+        var $;
+        layui.define(['jquery', 'form'], function () {
+            $ = layui.jquery;
+            form = layui.form;
+            $form = $('form');
+            treeSelect(defaults);
+        });
+        function treeSelect(config) {
+            config.v1 = config.v1 ? config.v1 : 110000;
+            config.v2 = config.v2 ? config.v2 : 110100;
+            config.v3 = config.v3 ? config.v3 : 110101;
+            $.each(threeSelectData, function (k, v) {
+                appendOptionTo($form.find('select[name=' + config.s1 + ']'), k, v.val, config.v1);
+            });
+            form.render();
+            cityEvent(config);
+            areaEvent(config);
+            form.on('select(' + config.s1 + ')', function (data) {
+                cityEvent(data);
+                form.on('select(' + config.s2 + ')', function (data) {
+                    areaEvent(data);
+                });
+            });
+
+            function cityEvent(data) {
+                $form.find('select[name=' + config.s2 + ']').html("");
+                config.v1 = data.value ? data.value : config.v1;
+                $.each(threeSelectData, function (k, v) {
+                    if (v.val == config.v1) {
+                        if (v.items) {
+                            $.each(v.items, function (kt, vt) {
+                                appendOptionTo($form.find('select[name=' + config.s2 + ']'), kt, vt.val, config.v2);
+                            });
+                        }
+                    }
+                });
+                form.render();
+                config.v2 = $('select[name=' + config.s2 + ']').val();
+                areaEvent(config);
+            }
+            function areaEvent(data) {
+                $form.find('select[name=' + config.s3 + ']').html("");
+                config.v2 = data.value ? data.value : config.v2;
+                $.each(threeSelectData, function (k, v) {
+                    if (v.val == config.v1) {
+                        if (v.items) {
+                            $.each(v.items, function (kt, vt) {
+                                if (vt.val == config.v2) {
+                                    $.each(vt.items, function (ka, va) {
+                                        appendOptionTo($form.find('select[name=' + config.s3 + ']'), ka, va, config.v3);
+                                    });
+                                }
+                            });
+                        }
+                    }
+                });
+                form.render();
+                form.on('select(' + config.s3 + ')', function (data) { });
+            }
+            function appendOptionTo($o, k, v, d) {
+                var $opt = $("<option>").text(k).val(v);
+                if (v == d) { $opt.attr("selected", "selected") }
+                $opt.appendTo($o);
+            }
+        }
+    });
+</script>
+{/block}

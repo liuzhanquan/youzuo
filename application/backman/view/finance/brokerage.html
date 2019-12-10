@@ -1,0 +1,88 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+
+<div class="layui-card-body">
+	<div class="demoTable">
+		类型：
+		<div class="layui-inline" style="width: 100px;">
+			<select class="layui-input" name="type" id="type" autocomplete="off">
+				<option value="">请选择类型</option>
+				<option value="1">普通</option>
+				<option value="2">代理</option>
+			</select>
+		</div>
+		<button class="layui-btn" data-type="reload">搜索</button>
+	</div>
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+<script type="text/html" id="barTar">
+  	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
+</script>
+<script type="text/html" id="sysTar">
+	{{#  if(d.status == 1){ }}
+  	<button type="button" class="layui-btn layui-btn-normal">正常</button>
+  	{{#  } else { }}
+  	<button type="button" class="layui-btn layui-btn-danger">关闭</button>
+  	{{#  } }}
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+	var table = layui.table;
+	table.render({
+		elem: '#data_table',
+		url:SlefUrl,
+		limit:20,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
+	      	,{field:'user_name', title: '获得会员/代理',width:200}
+	      	,{field:'tuser_name', title: '来源会员',width:200}
+	      	,{field:'money', width:120, title: '金额', sort: true,align:'center'}
+	      	,{field:'order_sn', width:200, title: '来源订单号'}
+	      	,{field:'type_name', width:200, title: '类型'}
+	      	,{field:'created_at', title: '发放时间',width:150}
+	      	//,{field:'op', title: '操作',toolbar: '#barTar', width:150,align:'center'}
+	    ]],
+	    page: true,
+        id: 'testReload'
+	});
+	table.on('tool(data_table)', function(obj){
+		var data = obj.data;
+		data.table = "goods";
+		if(obj.event === 'del'){
+			layer.confirm('确定删除吗？', function(index){
+	        	layer.close(index);
+	       		form.formDel(data,obj);
+	      	});
+		}
+	});
+    var $ = layui.$, active = {
+        reload: function(){
+            var type = $('#type');
+
+            //执行重载
+            table.reload('testReload', {
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+                ,where: {
+                    type: type.val()
+                }
+            }, 'data');
+        }
+    };
+
+    $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
+});
+</script>
+{/block}

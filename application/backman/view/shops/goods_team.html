@@ -1,0 +1,82 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('examine')}">{$pathCurrent['name']}</a></li>
+	    <li><a href="{:url('examine_op')}">新增问卷题目</a></li>
+	    <li><a href="{:url('examine_list')}">会员作答列表</a></li>
+	    <li class="layui-this"><a href="{:url('examine_goods')}">答案产品套餐</a></li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+			<label class="layui-form-label">套餐名称</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="name" value="{$info['name']}" datatype="*">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">关联商品</label>
+			<div  class="layui-input-block goods_team_box" style="min-height: 100px;overflow: hidden;">
+				<div class="layui-row layui-col-space10">
+					{foreach $goods as $vo}
+					<div class="layui-col-md1">
+						<div class="goods_team">
+							<div class="checkbox-l">
+								{if isset($info['goods']['data'])}
+								<input type="checkbox" name="goods[]" lay-skin="primary" value="{$vo['id']}" datatype="*" {if in_array($vo['id'],$info['goods']['data'])}checked=""{/if} nullmsg="请选择关联产品">
+								{else /}
+								<input type="checkbox" name="goods[]" lay-skin="primary" value="{$vo['id']}" datatype="*" nullmsg="请选择关联产品">
+								{/if}
+							</div>
+							<div class="imginfo">
+								<img src="{$vo['image']}">
+								<h3>{$vo['title']}</h3>
+							</div>
+						</div>
+					</div>
+					{/foreach}
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">题库答案</label>
+			<div class="layui-input-block" style="min-height: 100px;overflow: hidden;">
+				<div class="layui-form layui-form-pane">
+					{foreach $question as $vo}
+					<div class="layui-form-item" pane="" title="{$vo['title']}">
+						<label class="layui-form-label">{$vo['title']}</label>
+						<div class="layui-input-block">
+							{foreach $vo['answer']['data'] as $k=>$sv}
+							{php}$vaule = $vo['id'].'_'.$sv['text'];{/php}
+							{if isset($info['answer']['data'])}
+							<input type="radio" name="answer[{$vo['id']}]" lay-skin="primary" value="{$vo['id']}_{$sv['text']}" title="{$sv['text']}" datatype="*" nullmsg="请选择【{$vo['title']}】选项" {if in_array($vaule,$info['answer']['data'])}checked=""{/if}>
+							{else /}
+							<input type="radio" name="answer[{$vo['id']}]" lay-skin="primary" value="{$vo['id']}_{$sv['text']}" title="{$sv['text']}" datatype="*" nullmsg="请选择【{$vo['title']}】选项">
+							{/if}
+							{/foreach}
+						</div>
+					</div>
+					{/foreach}
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	    		<input type="hidden" name="id" value="{$info['id']}">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+layui.use('form',function(){
+	var form = layui.form;
+});
+</script>
+{/block}

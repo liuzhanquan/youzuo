@@ -1,0 +1,52 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li class="layui-this">{$pathCurrent['name']}</li>
+	    <li><a href="{:url('express_op')}">新增运费模板</a></li>
+	    <li><a href="{:url('ex_company')}">物流公司</a></li>
+	    <li><a href="{:url('ex_company_op')}">新增物流公司</a></li>
+  	</ul>
+</div>
+<div class="layui-card-body">
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+<script type="text/html" id="barTar">
+	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
+  	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+	var table = layui.table;
+	table.render({
+		elem: '#data_table',
+		url:SlefUrl,
+		limit:20,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'id',width:80, title: '模板ID', sort: true,align:'center'}
+	      	,{field:'name', title: '模板名称'}
+	      	,{field:'methods', title: '计费方式'}
+	      	,{field:'op', title: '操作',toolbar: '#barTar', width:150,align:'center'}
+	    ]],
+	    page: true
+	});
+	table.on('tool(data_table)', function(obj){
+		var data = obj.data;
+		data.table = "express";
+		if(obj.event === 'del'){
+			layer.confirm('确定删除吗？', function(index){
+	        	layer.close(index);
+	       		form.formDel(data,obj);
+	      	});
+		}
+	});
+});
+</script>
+{/block}

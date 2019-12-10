@@ -1,0 +1,68 @@
+{extend name="layout_con" /}
+{block name="content"}
+<script type="text/javascript">
+var is_remember = false; // 关闭记忆模式
+</script>
+<div class="container">
+	<div class="logo"><a href="javascript:;">管理中心</a></div>
+	<div class="left_open"><a><i title="展开左侧栏" class="iconfont">&#xe7f6;</i></a></div>
+	<ul class="layui-nav right" lay-filter="" style="padding: 0 0 0 20px;">
+		<li class="layui-nav-item">
+			<a href="javascript:;">{$admin->username}</a>
+			<dl class="layui-nav-child">
+				<!-- 二级菜单 -->
+				<dd><a onclick="xadmin.add_tab('管理员列表','{:url('setting/option',['id'=>$admin['id']])}')">个人信息</a></dd>
+				<dd><a href="javascript:;" @click="logout">退出</a></dd>
+			</dl>
+		</li>
+	</ul>
+</div>
+<div class="left-nav">
+	<div id="side-nav">
+		<ul id="nav">
+			{foreach $topNav as $k=>$vo}
+				{notempty name="$vo['children']"}
+				<li>
+					<a href="javascript:;" class="h3"><i class="iconfont left-nav-li" lay-tips="{$vo['name']}">{$vo['icon']|raw}</i><cite>{$vo['name']}</cite>
+						<i class="iconfont nav_right">&#xe8f2;</i></a>
+					<ul class="sub-menu">
+						{foreach $vo['children'] as $k2=>$vv}
+						<li><a onclick="xadmin.add_tab('{$vv['name']}','{$vv['url']}',true)"><i class="iconfont">&#xe7eb;</i><cite>{$vv['name']}</cite></a></li>
+						{/foreach}
+					</ul>
+				</li>
+				{else /}
+				<li>
+					<a href="javascript:;" class="h3" onclick="xadmin.add_tab('{$vo['name']}','{$vo['url']}')"><i class="iconfont left-nav-li" lay-tips="{$vo['name']}">{$vo['icon']|raw}</i><cite>{$vo['name']}</cite><i class="iconfont nav_right">&#xe8f2;</i></a>
+				</li>
+				{/notempty}
+			{/foreach}
+		</ul>
+	</div>
+</div>
+<div class="page-content">
+	<div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
+		<ul class="layui-tab-title" style="display: none;">
+			<li class="home"><i class="iconfont">&#xe7c6;</i>我的桌面</li>
+		</ul>
+		<div class="layui-unselect layui-form-select layui-form-selected" id="tab_right">
+			<dl>
+				<dd data-type="this">关闭当前</dd>
+				<dd data-type="other">关闭其它</dd>
+				<dd data-type="all">关闭全部</dd>
+			</dl>
+		</div>
+		<div class="layui-tab-content">
+			<div class="layui-tab-item layui-show"><iframe src="{:url('home')}" frameborder="0" scrolling="yes" class="x-iframe"></iframe></div>
+		</div>
+		<div id="tab_show"></div>
+	</div>
+</div>
+<div class="page-content-bg"></div>
+<style id="theme_style"></style>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+</script>
+{/block}

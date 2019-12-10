@@ -1,0 +1,41 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li class="layui-this">{$pathCurrent['name']}</li>
+	    <li><a href="{:url('category_op')}">新增分类</a></li>
+  	</ul>
+</div>
+<div class="layui-card-body" data-model="table-bind">
+	<blockquote class="layui-elem-quote layui-quote-nm">注：产品分类最多添加2级</blockquote>
+	<table class="layui-table" data-table>
+		<thead>
+	      	<tr>
+	        	<th width="80"><center>ID</center></th>
+	        	<th>分类名称</th>
+	        	<th width="150"><center>分类排序</center></th>
+	        	<th width="150"><center>操作</center></th>
+	      	</tr> 
+	    </thead>
+	    <tbody>
+	    	{foreach $list as $vo}
+	    	<tr>
+	    		<td><center>{$vo['id']}</center></td>
+	    		<td>{$vo['cname']|raw}</td>
+	    		<td><center>{$vo['sort']}</td>
+	    		<td><center>
+	    			<a class="layui-btn layui-btn-xs" href="{:url('category_op',['id'=>$vo['id']])}">编辑</a>
+					{neq name="$vo.id" value="51"}
+	    			<a class="layui-btn layui-btn-danger layui-btn-xs" data-del data-id="{$vo['id']}" data-table="category">删除</a>{/neq}</center>
+	    		</td>
+	    	</tr>
+	    	{/foreach}
+	    </tbody>
+	</table>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+</script>
+{/block}

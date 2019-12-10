@@ -1,0 +1,43 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<div class="card-right-btn">
+		<a href="{:url('sms_tpl')}" class="layui-btn layui-btn-normal layui-btn-xs">短信模板</a>
+		<a href="{:url('sms_log')}" class="layui-btn layui-btn-warm layui-btn-xs">发送记录</a>
+	</div>
+	<form class="layui-form" data-model="form-submit">
+		<div class="layui-form-item">
+			<label class="layui-form-label">App Key</label>
+			<div class="layui-input-block">
+				<input type="text" name="appkey" autocomplete="off" placeholder="请输入阿里云App Key" class="layui-input" datatype="*" value="{$info['appkey']}">
+				<div class="layui-form-mid layui-word-aux">在【阿里云】后台获取</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">App Secret</label>
+			<div class="layui-input-block">
+				<input type="text" name="appsec" autocomplete="off" placeholder="请输入阿里云App Secret" class="layui-input" datatype="*" value="{$info['appsec']}">
+				<div class="layui-form-mid layui-word-aux">在【阿里云】后台获取</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label"></label>
+			<div class="layui-input-block">
+				<div class="layui-form-mid layui-word-aux">目前仅支持阿里云短信通道，开通地址 <a href="https://www.aliyun.com/product/sms?spm=5176.8006371.search.1.5d907e63uGzHn6" target="_blank">https://www.aliyun.com/product/sms?spm=5176.8006371.search.1.5d907e63uGzHn6</a></div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+</script>
+{/block}

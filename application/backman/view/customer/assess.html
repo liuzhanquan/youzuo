@@ -1,0 +1,162 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-card-body">
+	<div data-model="table-bind">
+		
+	</div>
+</div>
+<div class="layui-card-body">
+	<div class="demoTable">
+		内容：
+		<div class="layui-inline">
+			<input class="layui-input" name="content" id="content" autocomplete="off">
+		</div>
+		商品名称：
+		<div class="layui-inline">
+			<input class="layui-input" name="title" id="title" autocomplete="off">
+		</div>
+		<button class="layui-btn" data-type="reload">搜索</button>
+	</div>
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+	<script type="text/html" id="barTar">
+		<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="assess_del" data-del data-id="{{d.id}}" data-table="comment">删除</a>
+	</script>
+
+	<script type="text/html" id="toolbarDemo">
+		<div class="layui-btn-container">
+			<button class="layui-btn layui-btn-sm" lay-event="getCheckData">批量显示</button>
+			<button class="layui-btn layui-btn-sm" lay-event="getCheckLength">批量隐藏</button>
+		</div>
+	</script>
+<script type="text/html" id="sysTar">
+	{{#  if(d.status == 1){ }}
+  	<button type="button" class="layui-btn layui-btn-normal">正常</button>
+  	{{#  } else { }}
+  	<button type="button" class="layui-btn layui-btn-danger">关闭</button>
+  	{{#  } }}
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+    var table = layui.table;
+    table.render({
+        elem: '#data_table',
+        url:SlefUrl,
+        limit:20,
+        toolbar: '#toolbarDemo',
+        cols: [[
+            {type:'checkbox',fixed: 'left'},
+            {field:'id', title:'ID', fixed: 'left', unresize: true, sort: true},
+            //{field:'id',width:80, title: 'ID', sort: true,align:'center'}
+            //{field:'images', title: '评论图片',toolbar: '#image', width:150,align:'center'}
+            {field:'goods_title', title: '商品名称'}
+            ,{field:'nickname', title: '会员'}
+            ,{field:'content', title: '内容',align:'center'}
+            ,{field:'status_name', title: '状态',align:'center'}
+            ,{field:'created_at', title: '添加时间'},
+            {fixed: 'right', align:'center', toolbar: '#barTar'}
+        ]],
+        page: true,
+        id: 'testReload'
+    });
+    table.on('tool(data_table)', function(obj){
+        var data = obj.data;
+        data.table = "comment";
+        if(obj.event === 'assess_del'){
+            layer.confirm('确定删除吗？', function(index){
+                layer.close(index);
+                form.formDel(data,obj);
+            });
+        }
+    });
+
+    //头工具栏事件
+    table.on('toolbar(data_table)', function(obj){
+        var checkStatus = table.checkStatus(obj.config.id);
+        switch(obj.event){
+            case 'getCheckData':
+                //批量修改，
+                var data = checkStatus.data;
+                if(data.length == 0){
+                    layer.alert('至少选择一条数据');
+                    return;
+				}
+//                table.render({
+//                    elem: '#demp'
+//                    ,url: 'update_status'
+//                    ,parseData: function(res){ //res 即为原始返回的数据
+//                        console.log(res);
+//                    }
+//                    //,…… //其他参数
+//                });
+                $.ajax({
+                    type: "POST",
+                    url: "update_status",
+                    data: {data:JSON.stringify(data),table:'comment',filed:'status',filed_value:1},
+                    dataType: "json",
+                    success: function(data){
+                        layer.msg(data.msg);
+                        if(data.code == 1){
+                            window.location.href = SlefUrl;
+                        }
+                    }
+                });
+                return;
+                //layer.alert(JSON.stringify(data));
+                break;
+            case 'getCheckLength':
+                var data = checkStatus.data;
+                if(data.length == 0){
+                    layer.alert('至少选择一条数据');
+                    return;
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "update_status",
+                    data: {data:JSON.stringify(data),table:'comment',filed:'status',filed_value:2},
+                    dataType: "json",
+                    success: function(data){
+                        layer.msg(data.msg);
+                        if(data.code == 1){
+                            window.location.href = SlefUrl;
+						}
+                    }
+                });
+                return;
+                layer.msg('选中了：'+ data.length + ' 个');
+                break;
+            case 'isAll':
+                layer.msg(checkStatus.isAll ? '全选': '未全选');
+                break;
+        };
+    });
+    var $ = layui.$, active = {
+        reload: function(){
+            var content = $('#content');
+            var title = $('#title');
+
+            //执行重载
+            table.reload('testReload', {
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+                ,where: {
+                    content: content.val()
+                }
+            }, 'data');
+        }
+    };
+
+    $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
+});
+</script>
+{/block}
