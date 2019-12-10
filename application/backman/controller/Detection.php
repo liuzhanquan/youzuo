@@ -70,6 +70,54 @@ class Detection extends AuthBack{
     }
 
 
+    public function index(){
+        $model = new DetectionItem;
+        $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
+        $name = isset($_GET['name']) ? $_GET['name'] : '';
+        $phone = isset($_GET['phone']) ? $_GET['phone'] : '';
+        $where = [];
+        if($name){
+            $where[] = ['name','like',"%{$name}%"];
+        }
+        if($phone){
+            $where[] = ['phone','like',"%{$phone}%"];
+        }
+        $totalNum = DetectionItem::where($where)->count();
+        if(request()->isAjax()){
+            $page = isset($_GET['page']) ? $_GET['page'] : '1';
+            $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
+            $startNum = ($page - 1) * $limit;
+            $totalPage = ceil($totalNum/$limit);
+            $list = DetectionItem::where($where)->limit($startNum.','.$limit)->order('id desc')->select();
+            if(empty($list)){
+                return json(['code'=>0,'data'=>[],'total'=>$totalPage,'count'=>$totalNum]);
+            }elseif($page > $totalPage){
+                return json(['code'=>0,'data'=>[],'total'=>$totalPage+1,'count'=>$totalNum]);
+            }else{
+                $nList = array();
+                if(!empty($list)){
+                    foreach($list as $k=>$vo){
+                        $nList[$k] = $vo;
+                        $nList[$k]['text'] = $vo['cid']['text'];
+                        $nList[$k]['op'] = url('option',['id'=>$vo['id']]);
+                        $nList[$k]['content'] = html_entity_decode($vo['content']);
+                    }
+                }
+                $return = [
+                    'code'=>0,
+                    'msg'=>'',
+                    'count'=>$totalNum,
+                    'data'=>$nList
+                ];
+                return json($return);
+            }
+        }else{
+            $this->assign('totalNum',$totalNum);
+            return view();
+        }
+    }
+    
+
     /**
      * 编辑检测流程信息
      * @param int $id
