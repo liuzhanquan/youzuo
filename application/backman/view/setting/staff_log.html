@@ -1,0 +1,38 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+    <ul class="layui-tab-title">
+        <li><a href="{:url('log')}">管理员操作记录</a></li>
+        <li class="layui-this">员工操作记录</li class="layui-this">
+    </ul>
+</div>
+
+<div class="layui-card-body">
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+	var table = layui.table;
+	table.render({
+		elem: '#data_table',
+		url:SlefUrl,
+		limit:20,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
+	      	,{field:'username',width:150, title: '操作管理员'}
+	      	,{field:'desc', title: '操作说明'}
+	      	,{field:'action', title: '操作方法'}
+	      	,{field:'timestamp', title: '操作时间',width:150}
+	    ]],
+	    page: true
+	});
+});
+</script>
+{/block}

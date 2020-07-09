@@ -10,6 +10,7 @@ class Index extends Api
 {
     public function index()
     {
+        exit();
         $data = Db::name('agent')->where(['status'=>1])->field('agent_parent_id,id,status,level_id')->select();
         //执行计算
         if(!empty($data)){

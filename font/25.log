@@ -1,0 +1,145 @@
+---------------------------------------------------------------
+
+[2019-12-25T17:27:34+08:00] 117.136.31.220 OPTIONS youzuoapi.osd-asia.com/api/Index/getPower
+[运行时间：0.028705s] [吞吐率：34.84req/s] [内存消耗：2,886.82kb] [文件加载：95]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://youzuo.osd-asia.com/',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/4G Language/zh_CN',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'access-control-request-headers' => 'userinfo',
+  'content-length' => '0',
+  'access-control-request-method' => 'POST',
+  'origin' => 'http://youzuo.osd-asia.com',
+  'host' => 'youzuoapi.osd-asia.com',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-25T17:27:34+08:00] 117.136.31.220 POST youzuoapi.osd-asia.com/api/Index/getPower
+[运行时间：0.040169s] [吞吐率：24.89req/s] [内存消耗：3,774.50kb] [文件加载：100]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://youzuo.osd-asia.com/',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/4G Language/zh_CN',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'userinfo' => '0d36XeNTAmqiw+H8IJbOtfW+D20P2tNh61pg+9XQ767irPClzFFWI9T+Ex3wbW328HgERh7tdlsCZPGolOISUWUGQjx1oRtK/OA',
+  'content-length' => '0',
+  'origin' => 'http://youzuo.osd-asia.com',
+  'host' => 'youzuoapi.osd-asia.com',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff_power` [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff_power` WHERE  `is_show` = 1 [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.000560s ]
+[ sql ] [ SQL ] SELECT `power` FROM `bear_staff` WHERE  `id` = 1 [ RunTime:0.000302s ]
+---------------------------------------------------------------
+
+[2019-12-25T17:27:34+08:00] 113.65.211.77 POST youzuoapi.osd-asia.com/admin/index.php/Order/erweimaImg
+[运行时间：0.330390s] [吞吐率：3.03req/s] [内存消耗：5,121.91kb] [文件加载：139]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=q03d766vuhc1frhtt3781qqjcd; userId=2; login_time=1577256869',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://youzuoapi.osd-asia.com/admin/index.php/order/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://youzuoapi.osd-asia.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '22',
+  'connection' => 'keep-alive',
+  'host' => 'youzuoapi.osd-asia.com',
+)
+[ info ] [ PARAM ] array (
+  'order_sn' => 'lll4646546454',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000437s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000748s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `action` = 'erweimaimg' LIMIT 1 [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `action` = 'erweimaimg' LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `extend` LIKE '%erweimaimg%' LIMIT 1 [ RunTime:0.000304s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT `order_sn`,`created_time` FROM `bear_order` WHERE  `order_sn` = 'lll4646546454' LIMIT 1 [ RunTime:0.000262s ]
+---------------------------------------------------------------
+
+[2019-12-25T17:27:40+08:00] 117.136.31.220 OPTIONS youzuoapi.osd-asia.com/api/index/getwxSdk
+[运行时间：0.029381s] [吞吐率：34.04req/s] [内存消耗：2,887.09kb] [文件加载：95]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'referer' => 'http://youzuo.osd-asia.com/youzuo/query',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/4G Language/zh_CN',
+  'accept' => '*/*',
+  'connection' => 'keep-alive',
+  'access-control-request-headers' => 'content-type,userinfo',
+  'content-length' => '0',
+  'access-control-request-method' => 'POST',
+  'origin' => 'http://youzuo.osd-asia.com',
+  'host' => 'youzuoapi.osd-asia.com',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2019-12-25T17:27:41+08:00] 117.136.31.220 POST youzuoapi.osd-asia.com/api/index/getwxSdk
+[运行时间：0.455981s] [吞吐率：2.19req/s] [内存消耗：3,780.44kb] [文件加载：101]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-cn',
+  'content-length' => '49',
+  'referer' => 'http://youzuo.osd-asia.com/youzuo/query',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/4G Language/zh_CN',
+  'accept' => 'application/json, text/plain, */*',
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'userinfo' => '0d36XeNTAmqiw+H8IJbOtfW+D20P2tNh61pg+9XQ767irPClzFFWI9T+Ex3wbW328HgERh7tdlsCZPGolOISUWUGQjx1oRtK/OA',
+  'origin' => 'http://youzuo.osd-asia.com',
+  'content-type' => 'application/json;charset=utf-8',
+  'host' => 'youzuoapi.osd-asia.com',
+)
+[ info ] [ PARAM ] array (
+  'url' => 'http://youzuo.osd-asia.com/youzuo/query',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000378s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff_power` [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff_power` WHERE  `is_show` = 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.000534s ]
+[ sql ] [ SQL ] SELECT `power` FROM `bear_staff` WHERE  `id` = 1 [ RunTime:0.000277s ]

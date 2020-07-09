@@ -3,6 +3,7 @@ namespace app\backman\controller;
 use \app\common\controller\AuthBack;
 use \app\common\model\Admin;
 use \app\common\model\AdminLog;
+use \app\common\model\StaffLog;
 use \app\common\model\Group;
 use \app\common\model\Config;
 use \app\backman\model\SmsTpl;
@@ -18,6 +19,13 @@ class Setting extends AuthBack{
     public function index(){
         if(!request()->isPost()){
             $list = Config::where('is_sys','1')->select();
+            $cdnurl = Config::where('name','QNcdn')->value('value');
+            config('PHOTOPATH',$cdnurl);
+            foreach( $list as $key=>$item ){
+                if( $item['is_radio'] == 2 ){
+                    $list[$key]['value'] = \photo_addpath($item['value']);
+                }
+            }
             $this->assign('list',$list);
             return view();
         }else{
@@ -317,6 +325,7 @@ class Setting extends AuthBack{
             }elseif($page > $totalPage){
                 return json(['code'=>0,'data'=>[],'total'=>$totalPage+1,'count'=>$totalNum]);
             }else{
+                
                 $return = [
                     'code'=>0,
                     'msg'=>'',
@@ -330,13 +339,47 @@ class Setting extends AuthBack{
             return view();
         }
 
-        $totalNum = AdminLog::where('user_id',$this->admin['id'])->count();
+       
+    }
+
+    public function staff_log(){
+        if($this->adminGroup['is_sys'] == 1){
+            $totalNum = StaffLog::alias('a')->join('staff s','a.user_id = s.id')->field('a.*,s.name')->count();
+        }
+        
         if(request()->isAjax()){
             $page = isset($_GET['page']) ? $_GET['page'] : '1';
             $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
             $startNum = ($page - 1) * $limit;
             $totalPage = ceil($totalNum/$limit);
-            $list = AdminLog::where('user_id',$this->admin['id'])->limit($startNum.','.$limit)->order('id desc')->select();
+            if($this->adminGroup['is_sys'] == 1){
+                $list = StaffLog::alias('a')->join('staff s','a.user_id = s.id')->field('a.*,s.name as username')->limit($startNum.','.$limit)->order('a.timestamp desc')->select();
+            }
+            if(empty($list)){
+                return json(['code'=>0,'data'=>[],'total'=>$totalPage,'count'=>$totalNum]);
+            }elseif($page > $totalPage){
+                return json(['code'=>0,'data'=>[],'total'=>$totalPage+1,'count'=>$totalNum]);
+            }else{
+                $return = [
+                    'code'=>0,
+                    'msg'=>'',
+                    'count'=>$totalNum,
+                    'data'=>$list
+                ];
+                return json($return);
+            }
+        }else{
+            $this->assign('totalNum',$totalNum);
+            return view();
+        }
+
+        $totalNum = StaffLog::where('user_id',$this->admin['id'])->count();
+        if(request()->isAjax()){
+            $page = isset($_GET['page']) ? $_GET['page'] : '1';
+            $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
+            $startNum = ($page - 1) * $limit;
+            $totalPage = ceil($totalNum/$limit);
+            $list = StaffLog::where('user_id',$this->admin['id'])->limit($startNum.','.$limit)->order('id desc')->select();
             if(empty($list)){
                 return json(['code'=>0,'data'=>[],'total'=>$totalPage,'count'=>$totalNum]);
             }elseif($page > $totalPage){
@@ -355,6 +398,7 @@ class Setting extends AuthBack{
             return view();
         }
     }
+
 
     /**
      * 删除操作

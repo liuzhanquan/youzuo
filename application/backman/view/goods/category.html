@@ -7,14 +7,14 @@
   	</ul>
 </div>
 <div class="layui-card-body" data-model="table-bind">
-	<blockquote class="layui-elem-quote layui-quote-nm">注：产品分类最多添加2级</blockquote>
+	<blockquote class="layui-elem-quote layui-quote-nm">注：员工分类最多添加2级</blockquote>
 	<table class="layui-table" data-table>
 		<thead>
 	      	<tr>
 	        	<th width="80"><center>ID</center></th>
 	        	<th>分类名称</th>
 	        	<th width="150"><center>分类排序</center></th>
-	        	<th width="150"><center>操作</center></th>
+	        	<th width="350"><center>操作</center></th>
 	      	</tr> 
 	    </thead>
 	    <tbody>
@@ -24,9 +24,12 @@
 	    		<td>{$vo['cname']|raw}</td>
 	    		<td><center>{$vo['sort']}</td>
 	    		<td><center>
-	    			<a class="layui-btn layui-btn-xs" href="{:url('category_op',['id'=>$vo['id']])}">编辑</a>
+					<a class="layui-btn layui-btn-xs" href="{:url('category_op',['id'=>$vo['id']])}">编辑</a>
+					{if condition="$vo['parent_id'] eq 0" }
+					<a class="layui-btn layui-btn-xs" href="{:url('category_op',['id'=>0,'parent_id'=>$vo['id']])}">添加子类</a>
+					{/if}
 					{neq name="$vo.id" value="51"}
-	    			<a class="layui-btn layui-btn-danger layui-btn-xs" data-del data-id="{$vo['id']}" data-table="category">删除</a>{/neq}</center>
+	    			<a class="layui-btn layui-btn-danger layui-btn-xs" data-del data-id="{$vo['id']}" data-table="sta_category">删除</a>{/neq}</center>
 	    		</td>
 	    	</tr>
 	    	{/foreach}

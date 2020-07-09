@@ -3,13 +3,28 @@
 <div class="layui-tab layui-tab-brief">
 	<ul class="layui-tab-title">
 	    <li class="layui-this">{$pathCurrent['name']}</li>
-	    <li><a href="{:url('option')}">添加商品</a></li>
+	    <li><a href="{:url('option')}">添加产品</a></li>
   	</ul>
 </div>
-<div class="demoTable" style="margin-top: 25px;">
-	商品名称：
+<div class="fileBox" style="margin-top: 25px;margin-left:20px;">
+
+	<!--<button class="layui-btn" id="uploadExcel" data-type="">批量导入</button>-->
+	<!--<button class="layui-btn" id="excelDemo" data-type="excelDemo" style="margin-left:10px;" >表格模板下载</button>-->
+</div>
+<div class="demoTable" style="margin-top: 25px;margin-left:20px;">
+
+	添加时间：
 	<div class="layui-inline">
-		<input class="layui-input" name="title" id="title" autocomplete="off">
+		<input type="text" class="layui-input" id="start_time" name="start_time" placeholder="yyyy-MM-dd HH:mm:ss">
+	</div>
+	-
+	<div class="layui-inline">
+		<input type="text" class="layui-input" id="end_time" name="end_time" placeholder="yyyy-MM-dd HH:mm:ss">
+	</div>
+	&nbsp;
+	 关键词：
+	<div class="layui-inline">
+		<input class="layui-input" name="title" id="title" placeholder="产品编号、名称" autocomplete="off">
 	</div>
 	<button class="layui-btn" data-type="reload">搜索</button>
 </div>
@@ -27,9 +42,9 @@
 </script>
 <script type="text/html" id="sysTar">
 	{{#  if(d.status == 1){ }}
-  	<button type="button" class="layui-btn layui-btn-normal">正常</button>
+  	<button type="button" class="layui-btn layui-btn-normal">显示</button>
   	{{#  } else { }}
-  	<button type="button" class="layui-btn layui-btn-danger">关闭</button>
+  	<button type="button" class="layui-btn layui-btn-danger">隐藏</button>
   	{{#  } }}
 </script>
 {/block}
@@ -37,8 +52,10 @@
 <script type="text/javascript">
 var mixin = {};
 var SlefUrl = this.location.href;
-layui.use('table', function(){
-	var table = layui.table;
+layui.use(['table','upload','laydate'], function(){
+	var table = layui.table
+		,laydate = layui.laydate
+		,upload = layui.upload;
 	table.render({
 		elem: '#data_table',
 		url:SlefUrl,
@@ -46,12 +63,11 @@ layui.use('table', function(){
 		cellMinWidth: 80,
 		cols: [[
 	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
-	      	,{field:'image', title: '产品图片',toolbar: '#image', width:80,align:'center'}
+	      	,{field:'good_sn', title: '产品编号', width:180,align:'center'}
 	      	,{field:'title', title: '产品名称'}
 	      	// ,{field:'price', title: '产品价格'}
-	      	,{field:'text', title: '产品分类'}
 	      	,{field:'status', width:100, title: '商品状态',toolbar: '#sysTar'}
-	      	,{field:'sort', title: '排序',width:60,sort: true,align:'center'}
+	      	,{field:'sort', title: '排序',width:80,sort: true,align:'center'}
 	      	,{field:'timestamp', title: '添加时间',width:150}
 	      	,{field:'op', title: '操作',toolbar: '#barTar', width:150,align:'center'}
 	    ]],
@@ -68,9 +84,23 @@ layui.use('table', function(){
 	      	});
 		}
 	});
-    var $ = layui.$, active = {
+
+    //日期时间选择器
+    laydate.render({
+        elem: '#start_time'
+        ,type: 'datetime'
+    });
+    laydate.render({
+        elem: '#end_time'
+        ,type: 'datetime'
+    });
+
+
+	var $ = layui.$, active = 
+	{
         reload: function(){
             var title = $('#title');
+            var cid = $('#cid');
 
             //执行重载
             table.reload('testReload', {
@@ -79,12 +109,39 @@ layui.use('table', function(){
                 }
                 ,where: {
                     title: title.val()
+                    ,cid: cid.val()
                 }
             }, 'data');
+        },
+		excelDemo: function(){
+            window.location.href = '/excel/product_demo.xls'
         }
+
+
     };
 
+	upload.render({
+		elem: '#uploadExcel'
+		,url: '{:url("savestudentImport")}'
+		,accept: 'file' //普通文件
+		,auto:'xlsx|xls|csv'
+		,done: function(res){
+			layer.alert(res.msg);
+			// setInterval(function(){
+			// 	window.location.reload();
+			// },3000)
+			
+		}
+	});
+
+		// 
+		
+
     $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
+	$('#excelDemo').on('click', function(){
         var type = $(this).data('type');
         active[type] ? active[type].call(this) : '';
     });

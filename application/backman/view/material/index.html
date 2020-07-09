@@ -13,23 +13,33 @@
 		分类：
 		<div class="layui-inline" style="width: 200px;">
 			<select class="layui-input" name="cate" id="cate" autocomplete="off">
+				<option value="">请选择分类</option>
+				<option value="-1" {eq name="-1" value="$cate"} selected{/eq}>未分类</option>
+
 				{foreach $group as $vo}
-				{eq name="$vo.parent_id" value="0"}
-				<optgroup label="{$vo['cname']|raw}"></optgroup>
-				{else/}
-				<option {eq name="$vo.id" value="$cate"} selected{/eq} value="{$vo['id']}">{$vo['cname']|raw}</option>
-				{/eq}
+				
+					<!-- <optgroup label="{$vo['cname']|raw}"></optgroup> -->
+					<option {eq name="$vo.id" value="$cate"} selected{/eq} value="{$vo['id']}">{$vo['cname']|raw}</option>
+
 				{/foreach}
 			</select>
 		</div>
 		<button class="layui-btn" type="submit">搜索</button>
 		</form>
 	</div>
-	<div class="layui-row layui-col-space15 listforphoto" data-table>
+	<div class="demoTable" id="photoBoxAll" style="margin-top: 25px;margin-bottom: 20px;background:#eee;line-height: 40px;height:40px;font-size:16px;">
+		<label style="margin-left:20px;"><input type="checkbox" id="allcheckbox" stat="0" /> 全选</label>
+		<button type="button" data-method="transAll" class="layui-btn modify" style="margin-left:40px;" >批量分组</button>
+		<button type="button" data-method="delAll" class="layui-btn layui-btn-danger modify">删除</button>
+	</div>
+	<div class="layui-row layui-col-space15 listforphoto" id="photoBox" data-table>
 		{foreach $list as $vo}
-		<div class="layui-col-md1 photoList">
-			<img src="{$vo['image']}">
+		<div class="layui-col-md1 photoList" >
+			<img style="width:120px;" src="{$vo['image']}">
+			<div class="" style="margin-top:5px; text-align: center;"><label><input type="checkbox" value="{$vo.id}" class="photo_checkbox" /> {$vo.name}</label></div>
 			<div class="del_link">
+				<a href="javascript:;" data-method="confirmTrans" data-id="{$vo['id']}" type="name" text="{$vo.name}" class="modify" >改名</a>
+				<a href="javascript:;" data-method="confirmTrans" data-id="{$vo['id']}" type="cid" text="{$vo.cid}" class="modify">分组</a>
 				<a href="javascript:;" data-del data-id="{$vo['id']}" data-table="photo">删除</a>
 			</div>
 		</div>
@@ -39,7 +49,166 @@
 </div>
 {/block}
 {block name="js"}
+
 <script type="text/javascript">
 var mixin = {};
+
+layui.use('layer', function(){ //独立版的layer无需执行这一句
+  var layer = layui.layer;
+  //触发事件
+  var active = {
+    confirmTrans: function(){
+		var that = this;
+		var id = $(that).attr('data-id');
+		var type = $(that).attr('type');
+		var value = $(that).attr('text');
+		
+		if( type == 'name' ){
+			var content = '<div style="font-size:18px;margin:5px;">修改名称</div><hr style="height:1px;"><div class="" style="margin: 30px auto;width:300px;height:30px;"><input style="width:100%;light-height:23px;font-size:14px;padding:3px;" class="modifyValue" value="'+value+'" placeholder="请输入名称" /></div>';
+		}
+		if( type == 'cid' ){
+			var str = '';
+			var checked = '';
+			for( var i = 1; i < $('#cate option').length; i++){
+				checked = '';
+				if( value == $('#cate option').eq(i).attr('value') ){
+					checked = 'checked';
+				}
+				str = str + '<label style="margin-right:20px; font-size:14px;"> <input type="radio" class="modifyValue" name="modifycid" value="'+ $('#cate option').eq(i).attr('value') +'" '+ checked +' /> ' + $('#cate option').eq(i).html() + '</label>' ;
+			};
+			var content = '<div style="font-size:18px;margin:5px;">修改分组</div><hr style="height:1px;"><div class="" style="margin: 10px auto;width:80%;height:60%;">'+str+'</div>';
+		}
+		layer.open({
+			type: 1
+			,title: false //不显示标题栏
+			,closeBtn: false
+			,area: ['400px','200px;']
+			,shade: 0.8
+			,id: 'modifyBox' //设定一个id，防止重复弹出
+			,btn: ['修改', '取消']
+			,btnAlign: 'c'
+			,moveType: 1 //拖拽模式，0或者1
+			,content: content
+			,success: function(layero){
+				
+				$('.layui-layer-btn0').click(function(){
+					var result = {};
+					result['id'] = id;
+					result['type'] = type;
+					if( type == 'name' ){
+						result['value'] = $('.modifyValue').val();
+					}
+					
+					if( type == 'cid' ){
+						$.each($('.modifyValue'),function(){
+							if( $(this).prop('checked') == true ) result['value'] = $(this).val();
+						})
+					}
+					
+					$.post(webRoot+ webControl+'/modifyPhoto',result,function(res){
+						if(res.code){
+							window.location.reload() ;
+						}
+					},'json')
+				});
+			}
+		});
+    },transAll: function(){
+		
+		var str = '';
+		for( var i = 1; i < $('#cate option').length; i++){
+			str = str + '<label style="margin-right:20px; font-size:14px;"> <input type="radio" class="modifyAllValue" name="modifycid" value="'+ $('#cate option').eq(i).attr('value') +'"  /> ' + $('#cate option').eq(i).html() + '</label>' ;
+		};
+		var content = '<div style="font-size:18px;margin:5px;">修改分组</div><hr style="height:1px;"><div class="" style="margin: 10px auto;width:80%;height:60%;">'+str+'</div>';
+		layer.open({
+			type: 1
+			,title: false //不显示标题栏
+			,closeBtn: false
+			,area: ['400px','200px;']
+			,shade: 0.8
+			,id: 'modifyBox' //设定一个id，防止重复弹出
+			,btn: ['修改', '取消']
+			,btnAlign: 'c'
+			,moveType: 1 //拖拽模式，0或者1
+			,content: content
+			,success: function(layero){
+				
+				$('.layui-layer-btn0').click(function(){
+					var result = {};
+					var id = [];
+					$.each($('.photo_checkbox'),function(){
+						if( $(this).prop('checked') == true ){
+							id.push($(this).val());
+						}
+					})
+
+					result['id'] = id;
+					
+					$.each($('.modifyAllValue'),function(){
+						if( $(this).prop('checked') == true ) result['value'] = $(this).val();
+					})
+					
+					$.post(webRoot+ webControl+'/modifyPhotoAll',result,function(res){
+						if(res.code){
+							window.location.reload() ;
+						}
+					},'json')
+				});
+			}
+		});
+    },delAll: function(){
+		
+		layer.confirm('确定删除吗？', function(index){
+			var result = {};
+			var id = [];
+			$.each($('.photo_checkbox'),function(){
+				if( $(this).prop('checked') == true ){
+					id.push($(this).val());
+				}
+			})
+			result['id'] = id;
+			if( id.length == 0 ){
+				layer.alert('请先选择图片');
+				return false;
+			}
+			$.post(webRoot+ webControl+'/delAll',result,function(res){
+				layer.alert(res.msg);
+				if(res.code){
+					setInterval(function(){
+						window.location.reload();
+					},800);
+					
+				}
+			},'json')
+		});
+	},
+
+  };
+  
+  $('#allcheckbox').on('click',function(){
+	  if( $(this).attr('stat') == 1 ){
+		$('.photo_checkbox').prop('checked',false);
+		$(this).attr('stat','0');
+	  }else{
+		$('.photo_checkbox').prop('checked',true);
+		$(this).attr('stat','1');
+	  }
+	  
+	  
+  });
+
+
+  $('#photoBox .modify').on('click', function(){
+    var othis = $(this), method = othis.data('method');
+    active[method] ? active[method].call(this, othis) : '';
+  });
+  $('#photoBoxAll .modify').on('click', function(){
+    var othis = $(this), method = othis.data('method');
+    active[method] ? active[method].call(this, othis) : '';
+  });
+  
+});
+
+
 </script>
 {/block}

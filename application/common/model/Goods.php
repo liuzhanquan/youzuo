@@ -29,6 +29,21 @@ class Goods extends Model{
      * 数据完成
     **/
     public function saveData($data = [],$type = 'add'){
+        if( empty($data['good_sn']) ){
+            $data['good_sn'] = 'CP'.get_order_sn();
+        }else{
+            $where[] = ['good_sn','eq',$data['good_sn']];
+            if( $data['id'] ){
+                $where[] = ['id','neq',$data['id']];
+            }
+
+            $count = $this->where($where)->count();
+            if( $count ){
+                $this->error = '产品编号已存在';
+                return false;
+            }
+        }
+
         if($type == 'add'){
             $data['timestamp'] = date('Y-m-d H:i:s');
             $id = $state = $this->allowField(true)->save($data);

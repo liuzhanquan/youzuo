@@ -3,13 +3,13 @@
 <div class="layui-tab layui-tab-brief">
 	<ul class="layui-tab-title">
 	    <li class="layui-this">{$pathCurrent['name']}</li>
-	    <li><a href="{:url('option')}">添加流程</a></li>
+	    <li><a href="{:url('option')}">添加分配记录</a></li>
   	</ul>
 </div>
-<div class="demoTable" style="margin-top: 25px;">
-	客户名称：
-	<div class="layui-inline">
-		<input class="layui-input" name="title" id="title" autocomplete="off">
+<div class="demoTable" style="margin-top: 25px;margin-left:20px;">
+	关键词：
+	<div class="layui-inline" style="width:200px;">
+		<input class="layui-input" name="title" id="title" placeholder="流程编号、流程名称、流程备注" autocomplete="off">
 	</div>
 	<button class="layui-btn" data-type="reload">搜索</button>
 </div>
@@ -20,7 +20,6 @@
 </div>
 <script type="text/html" id="barTar">
 	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
-	<a class="layui-btn layui-btn-xs" lay-event="content" >流程说明</a>
   	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
 </script>
 <script type="text/html" id="image">
@@ -28,7 +27,7 @@
 </script>
 <script type="text/html" id="sysTar">
 	{{#  if(d.status == 1){ }}
-  	<button type="button" class="layui-btn layui-btn-normal">正常</button>
+  	<button type="button" class="layui-btn layui-btn-normal">启用</button>
   	{{#  } else { }}
   	<button type="button" class="layui-btn layui-btn-danger">冻结</button>
   	{{#  } }}
@@ -38,8 +37,9 @@
 <script type="text/javascript">
 var mixin = {};
 var SlefUrl = this.location.href;
-layui.use('table', function(){
+layui.use(['table','upload'], function(){
 	var table = layui.table;
+	var upload = layui.upload;
 	table.render({
 		elem: '#data_table',
 		url:SlefUrl,
@@ -47,13 +47,14 @@ layui.use('table', function(){
 		cellMinWidth: 80,
 		cols: [[
 	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
-	      	,{field:'detection_sn', title: '流程编号', width:80,align:'center'}
-	      	,{field:'name', title: '流程名称'}
-	      	,{field:'num', title: '环节数量',width:100}
+	      	,{field:'goods_text', title: '分配产品', width:80,align:'center'}
+	      	,{field:'customer_name', title: '业务员名称'}
+            ,{field:'count_num', title: '分配数量',width:100}
+            ,{field:'number_line', title: '流水号范围',width:100}
+            ,{field:'remark', title: '备注',width:100}
 	      	,{field:'status', width:100, title: '状态',toolbar: '#sysTar'}
-	      	,{field:'timestamp', title: '创建时间',width:150}
-	      	//,{field:'content', title: '流程说明',align:'center',event: 'setSign'}
-	      	,{field:'op', title: '操作',toolbar: '#barTar', width:400,align:'center'}
+	      	,{field:'timestamp', title: '分配时间',width:150}
+	      	,{field:'op', title: '操作',toolbar: '#barTar', width:200,align:'center'}
 	    ]],
 	    page: true,
         id: 'testReload'
@@ -68,22 +69,62 @@ layui.use('table', function(){
 	      	});
 		}
 
-		 if(obj.event === 'content'){
-		      //示范一个公告层
-		      layer.open({
-		        type: 1
-		        ,offset: 'auto' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
-		        ,id: 'layerDemoauto' //防止重复弹出
-		        ,content: '<div style="padding: 20px 100px;">'+ data.content +'</div>'
-		        ,btn: '关 闭'
-		        ,btnAlign: 'c' //按钮居中
-		        ,shade: 0 //不显示遮罩
-		        ,yes: function(){
-		          layer.closeAll();
-		        }
-		      });
+		 if(obj.event === 'son'){
+			var result = {};
+			result['id'] = data.id
+			$.post(webRoot+ webControl+'/getson',result,function(res){
+				
+				var str = '';
+				for( var i in res.data ){
+					str = str + '<div style="margin: 10px 30px 10px 30px;line-height:35px;background:rgba(92, 189, 244, 1);font-size:16px;color:#fff;"><span style="width:200px;display:inline-block;text-align:center;">环节名称 : '+ res.data[i]['name'] +'</span> <span style="width:200px;display:inline-block;text-align:center;">录入类型'+ res.data[i]['type'] +'</span> '+res.data[i]['link']+'</div>'
+				}
+				//一个公告层
+				layer.open({
+					type: 1
+					,area:['600px','500px']
+					,offset: 'auto' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+					,id: 'layerDemoauto' //防止重复弹出
+					,content: '<div style="padding: 10px 0 0 50px;">流程编号 : '+ data.detection_sn +'</div><div style="padding: 10px 0 0 50px;">流程名称 : '+ data.name +'</div>' + str
+					,btn: '关 闭'
+					,btnAlign: 'c' //按钮居中
+					,shade: 0 //不显示遮罩
+					,yes: function(){
+					layer.closeAll();
+					}
+				});
+			})
+		      
 	    }
 
+		if(obj.event === 'copy'){
+                layer.confirm('确定复制检测流程吗？', function(index){
+                    var result = {};
+                    result['id'] = data.id;
+                    $.post(webRoot+ webControl+'/copy',result,function(res){
+                        layer.close(index);
+                        layer.alert(res.msg);
+                        if( res.code ){
+                            var customer = $('#customer');
+                            var goods = $('#goods');
+                            var detection = $('#detection');
+                            var like = $('#like');
+                            var status = $('#status');
+                            var start_time = $('#start_time');
+                            var end_time = $('#end_time');
+
+                            //执行重载
+                            table.reload('testReload', {
+                                page: {
+                                    curr: 1 //重新从第 1 页开始
+                                }
+                                ,where: {
+                                    customer: customer.val(), goods: goods.val(),detection:detection.val(),like:like.val(),status:status.val(),start_time:start_time.val(),end_time:end_time.val()
+                                }
+                            }, 'data');
+                        }
+                    },'json')
+                });
+            }
 
 
 	});
@@ -100,15 +141,35 @@ layui.use('table', function(){
                     title: title.val()
                 }
             }, 'data');
+        },
+		excelDemo: function(){
+            window.location.href = '/excel/product_demo.xls'
         }
     };
+
+	upload.render({
+		elem: '#uploadExcel'
+		,url: '{:url("savestudentImport")}'
+		,accept: 'file' //普通文件
+		,auto:'xlsx|xls|csv'
+		,done: function(res){
+			layer.alert(res.msg);
+			// setInterval(function(){
+			// 	window.location.reload();
+			// },3000)
+			
+		}
+	});
 
     $('.demoTable .layui-btn').on('click', function(){
         var type = $(this).data('type');
         active[type] ? active[type].call(this) : '';
     });
 
-     
+	$('#excelDemo').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
 
 
 

@@ -1,0 +1,298 @@
+{extend name="layout" /}
+{block name="content"}
+
+<style>
+	.layui-form-checkbox i{
+		height:30px;
+	}
+	.layui-anim-upbit{
+		z-index: 99999!important;
+	}
+</style>
+<div class="layui-tab layui-tab-brief">
+		<ul class="layui-tab-title">
+			<li><a href="{:url('index')}">{$pathCurrent['name']}</a></li>
+			<li><a href="{:url('lcindex',['id'=>$order.id,'sid'=>$order.did.value])}">检测单信息管理</a></li>
+			<li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}表单信息</li>
+		</ul>
+</div>
+<div class="demoTable" style="margin-top: 25px;margin-left:30px;font-size:18px;font-weight: bold;">
+		检测单id：
+	   <div class="layui-inline" style="margin-right:30px;">
+		   <!-- <input class="layui-input" name="title" id="title" autocomplete="off"> -->
+		   {$order.id}
+	   </div>
+	   <!-- <button class="layui-btn" data-type="reload">搜索</button> -->
+	   检测单号：
+	   <div class="layui-inline" style="margin-right:30px;">
+		   <!-- <input class="layui-input" name="title" id="title" autocomplete="off"> -->
+		   {$order.order_sn}
+	   </div>
+	   环节名称：
+	   <div class="layui-inline" style="margin-right:30px;">
+		   <!-- <input class="layui-input" name="title" id="title" autocomplete="off"> -->
+		   {$son.name}
+	   </div>
+	</div>
+<div class="layui-card-body">
+	<form class="layui-form" enctype="multipart/form-data" data-model="form-submit">
+		<div class="layui-form-item">
+			<label class="layui-form-label">表单创建时间</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="os_created_time" id="os_created_time" value="{$created_time}" placeholder="yyyy-MM-dd HH:ii:ss">
+			</div>
+		</div>
+		{foreach name="list" item="item"}
+		
+			{if condition="$item['type'] eq 'text'"}
+				<div class="layui-form-item">
+					<label class="layui-form-label">{notempty name="$item.must"}<span style="color:red;">*</span>{/notempty}{$item.title}</label>
+					<div class="layui-input-block">
+						<input type="text" class="layui-input" name="{$item.name}" placeholder="{$item.placeholder[0]}" value="{$item.value}">
+					</div>
+				</div>
+			{/if}
+			
+			{if condition="$item['type'] eq 'www'"}
+				<div class="layui-form-item">
+					<label class="layui-form-label">{notempty name="$item.must"}<span style="color:red;">*</span>{/notempty}{$item.title}</label>
+					<div class="layui-input-block">
+						<input type="text" class="layui-input" name="{$item.name}" placeholder="{$item.placeholder[0]}" value='{:html_entity_decode( $item.value ) }'>
+					</div>
+				</div>
+			{/if}
+
+			{if condition="$item['type'] eq 'select'"}
+				<div class="layui-form-item"style="z-index:9999;" >
+					<label class="layui-form-label">{notempty name="$item.must"}<span style="color:red;">*</span>{/notempty} {$item.title}</label>
+					<div class="layui-input-block">
+						<div class="layui-input-inline">
+							<select name="{$item.name}" lay-verify="required" lay-search="">
+								<option value="">直接选择或搜索选择</option>
+								{foreach name="item.placeholder" item="i"}
+									<option value="{$i}" {if condition=" $item.value eq $i"} selected {/if} >{$i}</option>
+								{/foreach}
+							</select>
+						</div>
+					</div>
+				</div>
+			{/if}
+
+			{if condition="$item['type'] eq 'picker'"}
+				<div class="layui-form-item" >
+					<label class="layui-form-label">{notempty name="$item.must"}<span style="color:red;">*</span>{/notempty} {$item.title}</label>
+					<div class="layui-input-block">
+						<input type="hidden" name="{$item.name}" id="input{$item.name}">
+						<div class="layui-form-item" id="picker{$item.name}" style="clear: inherit;">
+							<div class="layui-input-inline" style="width: 200px;">
+							  <select name="province" class="province-selector" data-value="" lay-filter="province-1">
+								<option value="">请选择省</option>
+							  </select>
+							</div>
+							<div class="layui-input-inline" style="width: 200px;">
+							  <select name="city" class="city-selector" data-value="" lay-filter="city-1">
+								<option value="">请选择市</option>
+							  </select>
+							</div>
+							<div class="layui-input-inline" style="width: 200px;">
+							  <select name="county" class="county-selector" data-value="" lay-filter="county-1">
+								<option value="">请选择区</option>
+							  </select>
+							</div>
+						  </div>
+
+					</div>
+				</div>
+			{/if}
+
+			{if condition="$item['type'] eq 'datetime'"}
+				<div class="layui-form-item">
+					<label class="layui-form-label">{notempty name="$item.must"}<span style="color:red;">*</span>{/notempty}{$item.title}</label>
+					<div class="layui-input-block">
+						<input type="text" class="layui-input" name="{$item.name}" id="{$item.name}" value="{$item.value}" placeholder="yyyy-MM-dd HH:ii:ss">
+					</div>
+				</div>
+			{/if}
+
+			{if condition="$item['type'] eq 'radio'"}
+				<div class="layui-form-item">
+					<label class="layui-form-label">{notempty name="$item.must"}<span style="color:red;">*</span>{/notempty}{$item.title}</label>
+					<div class="layui-input-block">
+						{foreach name="item.placeholder" item="i"}
+							<input type="radio" name="{$item.name}" value="{$i}" {if condition=" $item.value eq $i"} checked {/if} title="{$i}">
+						{/foreach}
+					</div>
+				</div>
+			{/if}
+
+			{if condition="$item['type'] eq 'checkbox'"}
+			<div class="layui-form-item">
+					<label class="layui-form-label">{notempty name="$item.must"}<span style="color:red;">*</span>{/notempty}{$item.title}</label>
+					<div class="layui-input-block">
+						{foreach name="item.placeholder" item="i"}
+							<input type="checkbox" name="{$item.name}[]" value="{$i}" {if condition="powerStatus($i,$item.value)"} checked {/if} title="{$i}">
+						{/foreach}
+					</div>
+				  </div>
+			{/if}
+
+			{if condition="$item['type'] eq 'textarea22'"}
+				<div class="layui-form-item">
+					<label class="layui-form-label">{notempty name="$item.must"}<span style="color:red;">*</span>{/notempty}{$item.title}</label>
+					<div class="layui-input-block">
+						<!-- <input type="textarea" class="layui-input" name="{$item.name}"  placeholder="{$item.placeholder[0]}" value="{$item.value}"> -->
+						<textarea name="{$item.name}"  placeholder="{$item.placeholder[0]}" class="layui-textarea">{$item.value}</textarea>
+					</div>
+				</div>
+			{/if}
+
+			{if condition="$item['type'] eq 'textarea'"}
+				<div class="layui-form-item">
+					<label class="layui-form-label">产品详情</label>
+					<div class="layui-input-block">
+						<textarea id="{$item.name}" name="{$item.name}" data-model="form-ueditor" placeholder="">{$item['value']|raw}</textarea>
+					</div>
+				</div>
+			{/if}
+
+			{if condition="$item['type'] eq 'file'"}
+				<div class="layui-form-item">
+					<label class="layui-form-label">{notempty name="$item.must"}<span style="color:red;">*</span>{/notempty}{$item.title}</label>
+					<input type="hidden" name="{$item.name}" id="input{$item.name}" value={:html_entity_decode($item.value)}>
+					<div class="layui-input-block">
+							<button type="button" class="layui-btn" id="{$item.name}">多图片上传</button> <button style="margin-left:10px;" type="button" class="layui-btn layui-btn-warm" id="{$item.name}Del">重新上传</button> 
+							<blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+							  预览图：
+							  <div class="layui-upload-list" id="n{$item.name}">
+								  {notempty name="$item.photo"}
+								  {foreach name="$item.photo" item="p"}
+								  <img src="{$p}" alt="hzp.png" style="width:20%;" class="layui-upload-img">
+								  {/foreach}
+								  {/notempty}
+							  </div>
+						   </blockquote>
+					</div>
+				</div>
+			{/if}
+
+		{/foreach}
+
+
+
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<input type="hidden" name="oid" value="{$order['id']}">
+				<input type="hidden" name="did" value="{$son['parent_id']}">
+				<input type="hidden" name="dsid" value="{$son['id']}">
+				<input type="hidden" name="d_son_sn" value="{$son['d_son_sn']}">
+				<input type="hidden" name="sort" value="{$sort}">
+					<button class="layui-btn layui-btn-normal">保存</button>
+					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</div>
+	</form>
+</div>
+{/block}
+{block name="js"}
+<script type="text/javascript" src="/static/lib/assets/data.js"></script>
+<script type="text/javascript" >
+    var mixin = {};
+	//配置插件目录
+	layui.config({
+		base: '/static/lib/mods/'
+		, version: '1.0'
+	});
+    layui.use(['form','laydate','upload','layarea'],function(){
+        var form = layui.form
+		var laydate = layui.laydate;
+		var upload = layui.upload
+		var layarea = layui.layarea
+		
+		
+		laydate.render({
+			elem: '#os_created_time'
+			// ,value: '1989-10-14'
+			,isInitValue: true
+			,type:'datetime'
+		});
+
+		//初始赋值
+		{foreach name="list" item="item"}
+			{if condition="$item['type'] eq 'datetime'"}
+				laydate.render({
+					elem: '#{$item.name}'
+					// ,value: '1989-10-14'
+					,isInitValue: true
+					,type:'datetime'
+				});
+			{/if}
+
+			{if condition="$item['type'] eq 'picker'"}
+				var addrData = {province:'',city:'',county:''}; 
+				{notempty name="$item['value']['province']" }
+					$('#input{$item.name}').val(JSON.stringify({province:"{$item['value']['province']}",city:"{$item['value']['city']}",county:"{$item['value']['county']}"}));
+					addrData = {
+							province: '{$item["value"]["province"]}',
+							city: '{$item["value"]["city"]}',
+							county: '{$item["value"]["county"]}',
+						}
+				{/notempty}
+				layarea.render({
+					elem: '#picker{$item.name}',
+					data: addrData,
+					change: function (res) {
+						//选择结果
+						var str = JSON.stringify(res);
+						if( res.province != '请选择省' && res.city != '请选择市' && res.county != '请选择区' ){
+							var str = JSON.stringify(res);
+						}else{
+							// alert('地区选择错误');
+							str = '';
+						}
+						$('#input{$item.name}').val(str);
+					}
+				});
+			{/if}
+
+			{if condition="$item['type'] eq 'file'"}
+				upload.render({
+					elem: '#{$item.name}'
+					,url: '/admin/upload/index2.html?action=uploadimage&encode=utf-8'
+					,multiple: true
+					,field: 'upfile'
+					,before: function(obj){
+					//预读本地文件示例，不支持ie8
+					obj.preview(function(index, file, result){
+						$('#n{$item.name}').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
+						
+					});
+					}
+					,done: function(res){
+						var newStr = [];
+						if( $('#input{$item.name}').val() ){
+							newStr = JSON.parse( $('#input{$item.name}').val() );
+						}
+						
+						newStr.push(res.url);
+						$('#input{$item.name}').val( JSON.stringify( newStr ) );
+					}
+				});
+
+				$('#{$item.name}Del').on('click',function(){
+					$('#input{$item.name}').val( '' );
+					$('#n{$item.name}').html('');
+				})
+
+			{/if}
+			
+
+
+		{/foreach}
+	});
+	
+
+
+
+</script>
+{/block}

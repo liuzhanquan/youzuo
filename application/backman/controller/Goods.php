@@ -9,6 +9,8 @@ use \app\backman\model\Delivery;
 use \app\backman\model\AgentLevel;
 use app\common\model\User;
 use think\Db;
+use think\facade\App;
+require_once App::getRootPath().'/extend/PHPExcel/PHPExcel.php';
 
 class Goods extends AuthBack{
 
@@ -19,26 +21,49 @@ class Goods extends AuthBack{
 
     public function index(){
         $title = isset($_GET['title']) ? $_GET['title'] : '';
-        $where[] = ['cid','neq',51];
-        if($title){
-            $where[] = ['title','like',"%{$title}%"];
+        $where[] = ['id','neq',0];
+        if( !empty(input('title')) ){
+            $where[] = ['good_sn|title', 'like', "%".input('title')."%"];
         }
+	    if( !empty(input('start_time')) && !empty(input('end_time')) ){
+
+		    $where[] = ['timestamp','between',input('start_time').','.input('end_time')];
+
+	    }else{
+
+		    if( !empty(input('start_time')) ){
+			    $where[] = ['timestamp','>=',input('start_time')];
+		    }
+
+		    if( !empty(input('end_time')) ){
+
+			    $where[] = ['timestamp','<=',input('end_time')];
+
+		    }
+
+	    }
+
         $totalNum = GoodsItem::where($where)->count();
         if(request()->isAjax()){
             $page = isset($_GET['page']) ? $_GET['page'] : '1';
-            $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
+	        $limit = isset($_GET['limit']) ? $_GET['limit'] : '1';
             $startNum = ($page - 1) * $limit;
             $totalPage = ceil($totalNum/$limit);
+            
+            
             $list = GoodsItem::where($where)->limit($startNum.','.$limit)->order('id desc')->select();
+            
             if(empty($list)){
                 return json(['code'=>0,'data'=>[],'total'=>$totalPage,'count'=>$totalNum]);
             }elseif($page > $totalPage){
                 return json(['code'=>0,'data'=>[],'total'=>$totalPage+1,'count'=>$totalNum]);
             }else{
                 $nList = array();
+                
                 if(!empty($list)){
                     foreach($list as $k=>$vo){
                         $nList[$k] = $vo;
+                        $nList[$k]['image'] = photo_addpath($vo['image']);
                         $nList[$k]['text'] = $vo['cid']['text'];
                         $nList[$k]['op'] = url('option',['id'=>$vo['id']]);
                     }
@@ -57,197 +82,119 @@ class Goods extends AuthBack{
         }
     }
 
-    public function meal_index(){
-        $title = isset($_GET['title']) ? $_GET['title'] : '';
-        $where[] = ['cid','eq',51];
-        if($title){
-            $where[] = ['title','like',"%{$title}%"];
-        }
-        $totalNum = GoodsItem::where($where)->count();
-        if(request()->isAjax()){
-            $page = isset($_GET['page']) ? $_GET['page'] : '1';
-            $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
-            $startNum = ($page - 1) * $limit;
-            $totalPage = ceil($totalNum/$limit);
-            $list = GoodsItem::where($where)->limit($startNum.','.$limit)->order('id desc')->select();
-            if(empty($list)){
-                return json(['code'=>0,'data'=>[],'total'=>$totalPage,'count'=>$totalNum]);
-            }elseif($page > $totalPage){
-                return json(['code'=>0,'data'=>[],'total'=>$totalPage+1,'count'=>$totalNum]);
-            }else{
-                $nList = array();
-                if(!empty($list)){
-                    foreach($list as $k=>$vo){
-                        $nList[$k] = $vo;
-                        $nList[$k]['text'] = $vo['cid']['text'];
-                        $nList[$k]['op'] = url('meal',['id'=>$vo['id']]);
-                    }
-                }
-                $return = [
-                    'code'=>0,
-                    'msg'=>'',
-                    'count'=>$totalNum,
-                    'data'=>$nList
-                ];
-                return json($return);
-            }
-        }else{
-            $this->assign('totalNum',$totalNum);
-            return view();
-        }
-    }
+    /*
+    * author: Jason
+    * 产品批量导入
+    */
+    public function savestudentImport(){  
+        $config = load_config('application/upload');
+        $size = $config['upload_size']*1024*1024;
 
-    /**
-     * 套餐列表
-     * @return \think\response\Json|\think\response\View
-     */
-    public function meal_list(){
-        $where = [];
-        $totalNum = Meal::where($where)->count();
-        if(request()->isAjax()){
-            $page = isset($_GET['page']) ? $_GET['page'] : '1';
-            $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
-            $startNum = ($page - 1) * $limit;
-            $totalPage = ceil($totalNum/$limit);
-            $list = Meal::where($where)->limit($startNum.','.$limit)->order('id desc')->select();
-            if(empty($list)){
-                return json(['code'=>0,'data'=>[],'total'=>$totalPage,'count'=>$totalNum]);
-            }elseif($page > $totalPage){
-                return json(['code'=>0,'data'=>[],'total'=>$totalPage+1,'count'=>$totalNum]);
-            }else{
-                $nList = array();
-                if(!empty($list)){
-                    foreach($list as $k=>$vo){
-                        $nList[$k] = $vo;
-                        $data = unserialize($vo['data']);
-                        $str = '';
-                        if(!empty($data)){
-                            foreach ($data as $kk=>$v){
-                                $str .= Db::name('agent_level')->where('id',$kk)->value('name').":{$v}元，";
-                            }
+        $objPHPExcel  = new \PHPExcel();
+        $root_path = \think\facade\Env::get('root_path').'public';
+        //获取表单上传文件  
+        $file = request()->file('file');  
+        $info = $file->validate(['size'=>$size,'ext'=>'xlsx,xls,csv'])->move( $root_path . '/excel');  
+        if($info){  
+            $exclePath = $info->getSaveName();  //获取文件名  
+            
+            $file_name = $root_path . '/excel/'. $exclePath;   //上传文件的地址  
+            
+            $objReader = \PHPExcel_IOFactory::createReader('Excel2007');  
+            
+            if(!$objReader->canRead($file_name)){
+                $objReader = \PHPExcel_IOFactory::createReader('Excel5');
+            }
+            
+            $obj_PHPExcel =$objReader->load($file_name, $encode = 'utf-8');  //加载文件内容,编码utf-8  
+            $excel_array=$obj_PHPExcel->getsheet(0)->toArray();   //转换为数组格式  
+            array_shift($excel_array);  //删除第一个数组(标题);  
+            $data = [];  
+            $i=0;  
+            $resn = [];
+            $category = DB::name('category')->where('type',1)->field('id,name')->order('id asc')->select();
+            foreach($excel_array as $k=>$v) {  
+                if( empty($v[2])){
+                    continue;
+                }
+                
+                // 查看是否设置员工号码 有就查询数据库， 重复记录返回
+                if( empty( $v[0] ) ){
+                    $data[$k]['good_sn'] = 'CP'.get_order_sn_rand();
+                }else{
+                    $where[] = ['good_sn','eq',$v[0]];
+                    $count = DB::name('goods')->where($where)->count();
+                    if(!$count){
+                        $data[$k]['good_sn'] = $v[0]; 
+                    }else{
+                        $resn[] = $v[0];
+                    }
+                    
+                }
+
+                if( empty($v[1]) ){
+                    $data[$k]['cid'] = $category[0]['id'];
+                }else{
+                    foreach( $category as $item ){
+                        if( $item['name'] == $v[1] ){
+                            $data[$k]['cid'] = $item['id'];
                         }
-                        $nList[$k]['data'] = $str;
-                        $nList[$k]['op'] = url('meal_list_op',['id'=>$vo['id']]);
+                    }
+                    if( empty($data[$k]['cid']) ){
+                        $data[$k]['cid'] = $category[0]['id'];
                     }
                 }
-                $return = [
-                    'code'=>0,
-                    'msg'=>'',
-                    'count'=>$totalNum,
-                    'data'=>$nList
-                ];
-                return json($return);
-            }
-        }else{
-            $this->assign('totalNum',$totalNum);
-            return view();
-        }
+                $data[$k]['title'] = $v[2]; 
+                
+                $data[$k]['timestamp'] = date('Y-m-d H:i:s');
+                $data[$k]['sort'] = 100;
+                $data[$k]['status'] = 0;
+                $i++;  
+            }  
+            
+           $success=Db::name('goods')->insertAll($data); //批量插入数据  这里的数据表改为你需要的。
+           // 统计录入失败数量
+           $error=$i-$success;
+            // 删除文件
+           unset($info);
+           unset($obj_PHPExcel);
+           unlink($file_name);
+
+            $return = [
+                'code'=>0,
+                'msg'=>"导入成功{$success}条记录，失败{$error}条记录,单号重复".json_encode($resn),
+            ];
+
+            return json($return);
+           
+        }else{  
+            // 上传失败获取错误信息  
+              
+            return json($file->getError());
+        }  
+  
     }
 
-    /**
-     * 套餐
-     */
-    public function meal_list_op($id = 0){
-        if(!request()->isPost()){
-            $info = Meal::get($id);
-            $this->assign('info',$info);
-            $levels = unserialize($info['data']);
-            $level = AgentLevel::select();
-            $this->assign('level',$level);
-            $this->assign('levels',$levels);
-
-            $list = Category::where('type','1')->where([['id','neq',51]])->select();
-            $cateObj = new \lib\Category(['id','parent_id','name','cname']);
-            $relist = $cateObj->getTree($list);
-            $express = Delivery::order('id desc')->select();
-            $fen = unserialize($info['fen_data']);
-            $level = AgentLevel::select();
-            $this->assign('level',$level);
-            $this->assign('fen',$fen);
-            $this->assign('express',$express);
-            $this->assign('list',$relist);
-            return view();
-        }else{
-            $obj = new Meal();
-            $this->data['fen_data'] = serialize($this->data['fen']);
-            $this->data['level_data'] = serialize($this->data['level']);
-            $this->data['data'] = serialize($this->data['level']);
-            if($this->data['id']){
-                // 编辑
-                AdminLog($this->admin['id'],'修改套餐【'.$this->data['name'].'】信息');
-                $state = $obj->allowField(true)->save($this->data,['id'=>$id]);
-            }else{
-                // 新增
-                AdminLog($this->admin['id'],'新增套餐【'.$this->data['name'].'】');
-                $state = $obj->allowField(true)->save($this->data);
-            }
-            if($state){
-                return $this->success('操作成功',url('meal_list'));
-            }else{
-                return $this->error($obj->getError());
-            }
-        }
-    }
-
-    /**
-     * 套餐
-     */
-    public function meal($id = 0){
-        if(!request()->isPost()){
-            $info = GoodsItem::get($id);
-            $this->assign('info',$info);
-            $list = Category::where('type','1')->where([['id','neq',51]])->select();
-            $cateObj = new \lib\Category(['id','parent_id','name','cname']);
-            $relist = $cateObj->getTree($list);
-            $express = Delivery::order('id desc')->select();
-            $info = GoodsItem::get($id);
-            $photo = unserialize($info['photo']);
-            $fen = unserialize($info['fen_data']);
-            $levels = unserialize($info['level_data']);
-            $level = AgentLevel::select();
-            $this->assign('photo',$photo);
-            $this->assign('level',$level);
-            $this->assign('levels',$levels);
-            $this->assign('info',$info);
-            $this->assign('fen',$fen);
-            $this->assign('express',$express);
-            $this->assign('list',$relist);
-            return view();
-        }else{
-            $obj = new GoodsItem();
-            $this->data['cid'] = 51;
-            $this->data['image'] = $this->data['photo'][0];
-            if($this->data['id']){
-                // 编辑
-                AdminLog($this->admin['id'],'修改商品【'.$this->data['title'].'】信息');
-                $state = $obj->saveData($this->data,'edit');
-            }else{
-                // 新增
-                AdminLog($this->admin['id'],'新增商品【'.$this->data['title'].'】');
-                $state = $obj->saveData($this->data);
-            }
-            if($state){
-                return $this->success('操作成功',url('meal_index'));
-            }else{
-                return $this->error($obj->getError());
-            }
-        }
-    }
+   
     public function option($id = 0){
         if(!request()->isPost()){
             $list = Category::where('type','1')->where([['id','neq',51]])->select();
             $cateObj = new \lib\Category(['id','parent_id','name','cname']);
             $relist = $cateObj->getTree($list);
             $info = GoodsItem::get($id);
-            $photo = unserialize($info['photo']);
-            $this->assign('photo',$photo);
+            if( !empty($info) ){
+                $photo = photo_arr_path(unserialize($info['photo']));
+                $info['content'] = contentphotopathadmin($info['content']);
+                $this->assign('photo',$photo);
+            }
+            
+            
             $this->assign('info',$info);
             $this->assign('list',$relist);
             return view();
         }else{
             $obj = new GoodsItem();
-            $this->data['image'] = $this->data['photo'][0];
-            $this->data['photo'] = serialize($this->data['photo']);
+
             if($this->data['id']){
                 // 编辑
                 AdminLog($this->admin['id'],'修改商品【'.$this->data['title'].'】信息');
@@ -265,39 +212,6 @@ class Goods extends AuthBack{
         }
     }
 
-    public function category(){
-        $list = Category::where('type','1')->select();
-        $cateObj = new \lib\Category(['id','parent_id','name','cname']);
-        $relist = $cateObj->getTree($list);
-        $this->assign('list',$relist);
-        return view();
-    }
-
-    public function category_op($id = 0){
-        if(!request()->isPost()){
-            $info = Category::get($id);
-            $group = Category::where('parent_id','0')->where('type','1')->select();
-            $this->assign('group',$group);
-            $this->assign('info',$info);
-            return view();
-        }else{
-            $obj = new Category();
-            if($this->data['id']){
-                // 编辑
-                AdminLog($this->admin['id'],'修改产品分类【'.$this->data['name'].'】信息');
-                $state = $obj->saveData($this->data,'edit');
-            }else{
-                // 新增
-                AdminLog($this->admin['id'],'新增产品分类【'.$this->data['name'].'】');
-                $state = $obj->saveData($this->data);
-            }
-            if($state){
-                return $this->success('操作成功',url('category'));
-            }else{
-                return $this->error($obj->getError());
-            }
-        }
-    }
 
 
     public function update_status(){
@@ -330,6 +244,25 @@ class Goods extends AuthBack{
             return json(['code'=>0,'msg'=>'请求失败']);
         }
         return json(['code'=>1,'msg'=>'请求成功']);
+    }
+
+    /**
+     * 产品删除
+     */
+    public function del(){
+        $count = DB::name('order')->where('gid',$this->data['id'])->count();
+        if( $count ){
+            return $this->error('该产品有绑定的订单，无法删除');
+        }else{
+            AdminLog($this->admin['id'],'删除产品【'.$this->data['id'].'】信息');
+            $res = DB::name('goods')->where('id',$this->data['id'])->delete();
+            if( $res ){
+                return $this->success('操作成功',url('index'));
+            }else{
+                return $this->error('删除失败');
+            }
+        }
+
     }
 
     public function assess(){

@@ -1,193 +1,192 @@
 {extend name="layout" /}
 {block name="content"}
+<style>
+	.layui-form-checkbox i{
+		height:30px;
+	}
+	.layui-input-block-w{
+		width:60%;
+	}
+	.layui-input-block-w2{
+		width:90%;
+	}
+	.input-w{
+		width:66.5%;
+		display:inline-flex;
+	}
+	.layui-input-block-w2 .{
+		width:80%;
+	}
+</style>
 <div class="layui-tab layui-tab-brief">
 	<ul class="layui-tab-title">
-	    <li class="layui-this">订单信息</li>
+	    <li><a href="{:url('index')}">{$pathCurrent['name']}</a></li>
+	    <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}检测单</li>
   	</ul>
 </div>
 <div class="layui-card-body">
-	<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
-		<legend>基本信息</legend>
-	</fieldset>
-
-	<table class="layui-table">
-		<colgroup>
-			<col width="100">
-			<col width="100">
-			<col width="100">
-			<col width="100">
-		</colgroup>
-		<thead>
-		<tr>
-			<th>订单号</th>
-			<th>下单用户</th>
-			<th>运费（元）</th>
-			<th>订单金额（元）</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<td>{$order.order_sn}</td>
-			<td>{$order.user_name}</td>
-			<td>{$order.freight_money}</td>
-			<td>{$order.money}</td>
-		</tr>
-
-		</tbody>
-
-		<thead>
-		<tr>
-			<th>订单状态</th>
-			<th>支付状态</th>
-			<th>支付时间</th>
-			<th>下单时间</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<td>{$order.status_name}</td>
-			<td>{$order.pay_status_name}</td>
-			<td>{$order.pay_time}</td>
-			<td>{$order.created_at}</td>
-		</tr>
-
-		</tbody>
-	</table>
-	
-	<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
-		<legend>代理信息</legend>
-	</fieldset>
-
-	<table class="layui-table">
-		<colgroup>
-			<col width="300">
-		</colgroup>
-		<thead>
-		<tr>
-			<th>代理商</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<td>{$order.agent}</td>
-		</tr>
-		</tbody>
-	</table>
-
-
-	<div class="layui-row">
-		<div class="layui-col-xs3">
-			<div class="grid-demo grid-demo-bg1">代理商：{$order.agent}</div>
-		</div>
-	</div>
-
-	<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
-		<legend>收货人信息</legend>
-	</fieldset>
-
-	<table class="layui-table">
-		<colgroup>
-			<col width="100">
-			<col width="100">
-			<col width="100">
-			<col width="100">
-		</colgroup>
-		<thead>
-		<tr>
-			<th>姓名</th>
-			<th>手机</th>
-			<th>详细地址</th>
-			<th>运费（元）</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<td>{$order.name}</td>
-			<td>{$order.phone}</td>
-			<td>{$order.province}{$order.city}{$order.area}{$order.address}</td>
-			<td>{$order.freight_money}</td>
-		</tr>
-		</tbody>
-	</table>
-	<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
-		<legend>商品信息</legend>
-	</fieldset>
-	<table class="layui-table">
-		<colgroup>
-			<col width="300">
-			<col width="100">
-			<col width="100">
-			<col width="100">
-		</colgroup>
-		<thead>
-		<tr>
-			<th>商品名称</th>
-			<th>数量(件)</th>
-			<th>单价（元）</th>
-			<th>总金额（元）</th>
-		</tr>
-		</thead>
-		<tbody>
-		{foreach $order.goods_list as $vo}
-		<tr>
-			<td>{$vo.info.title}</td>
-			<td>{$vo.number}{if ( $vo['number'] > $vo['info']['stock'])}
-			<span style="color: red;">({$vo.info.stock})</span>
-			{else /} <span style="color: green;">({$vo.info.stock})</span>
-			{/if}</td>
-			<td>{$vo.price}</td>
-			<td>{:sprintf("%.2f",$vo['price'] * $vo['number'])}</td>
-		</tr>
-		{/foreach}
-		</tbody>
-	</table>
-
-
-	{if condition="$order.status eq 4"}
 	<form class="layui-form" data-model="form-submit">
 		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-			<legend>物流信息</legend>
+		  	<legend>基本设置</legend>
 		</fieldset>
 		<div class="layui-form-item">
-			<label class="layui-form-label">物流公司</label>
+			<label class="layui-form-label">检测单号</label>
 			<div class="layui-input-block">
-				<select name="express_id">
-					{foreach $ex_company as $vo}
-					<option value="{$vo.id}" {if $vo.id eq $order.express_id}selected=""{/if}>{$vo['name']|raw}</option>
-					{/foreach}
+				<input type="text" class="layui-input" name="order_sn" placeholder="请输入唯一检测单号，为空默认生成" value="{$info['order_sn']}" {if condition="$info['status'] > 0 "}readonly="readonly"{/if}>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">客户名称</label>
+			<div class="layui-input-block">
+				<div class="layui-input-inline">
+					<select name="cid" lay-verify="required" lay-search="">
+						<option value="">直接选择或搜索选择</option>
+						{foreach name="customer" item="item"}
+							<option value="{$item.id}" {if condition="$item['id'] eq $info['cid']['value']"} selected {/if}>{$item.customer_name}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">产品名称</label>
+			<div class="layui-input-block">
+				<div class="layui-input-inline">
+					<select name="gid" lay-verify="required" lay-search="">
+						<option value="">直接选择或搜索选择</option>
+						{foreach name="goods" item="item"}
+							<option value="{$item.id}" {if condition="$item['id'] eq $info['gid']['value']"} selected {/if}>{$item.title}</option>
+						{/foreach}
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item" >
+			<label class="layui-form-label">检测流程</label>
+			<div class="layui-input-block">
+				{if condition="$info['status'] > 0 "}
 
-				</select>
+						{foreach name="detection" item="item"}
+							{if condition="$item['id'] eq $info['did']['value']"} 
+								<input type="hidden" name="did" value="{$item.id}" >
+								<input type="text" class="layui-input" name="oooo" placeholder="请输入唯一检测单号，为空默认生成" value="{$item.name}" {if condition="$info['status'] > 0 "}readonly="readonly"{/if}>
+							{/if}
+						{/foreach}
+					
+				{else/}
+					<div class="layui-input-inline" id="didBox" val="{$info['did']['value']}">
+						<select name="did" lay-verify="required" id="did" lay-search="" >
+							<option value="">直接选择或搜索选择</option>
+							{foreach name="detection" item="item"}
+								<option value="{$item.id}" {if condition="$item['id'] eq $info['did']['value']"} selected {/if}>{$item.name}</option>
+							{/foreach}
+						</select>
+					</div>
+				{/if}
 			</div>
 		</div>
 		<div class="layui-form-item">
-			<label class="layui-form-label">物流单号</label>
-			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="sn" value="{$order['express']}">
+				<label class="layui-form-label">检测流程环节</label>
+				{if condition="$info['status'] > 0 "}
+				<input type="hidden" id="gsid" name="gsid" value={:html_entity_decode($info["gsid"])} >
+				<div class="layui-input-block">
+					<input type="text" class="layui-input" name=""  value="{:sel_detection_son($info["gsid"])}" {if condition="$info['status'] > 0 "}readonly="readonly"{/if}>
+				</div>
+				{else/}
+				<input type="hidden" id="gsid" name="gsid" value={:html_entity_decode($info["gsid"])} >
+				<div class="layui-input-block" id="gsonBox">
+				</div>
+				{/if}
+			</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">产品型号</label>
+			<div class="layui-input-block layui-input-block-w">
+				<input type="text" class="layui-input" name="spec" value="{$info['spec']}">
 			</div>
 		</div>
 		<div class="layui-form-item">
-			<div class="layui-input-block">
-				<input type="hidden" name="id" value="{$order['id']}">
-				<button class="layui-btn layui-btn-normal">保存</button>
-				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			<label class="layui-form-label">材料成分</label>
+			<div class="layui-input-block  layui-input-block-w2">
+				<input type="text" class="layui-input input-w" name="composition" value="{$info['composition']}">
+				<input type="checkbox" name="is_show[]"  value="composition" class="requiredBox" {if condition="in_array_status('composition',$info['is_show'])"} checked="" {/if} title="是否显示">
+				<input type="checkbox" name="required_status[]" value="composition"  {if condition="in_array_status('composition',$info['required_status'])"} checked="" {/if} class="showBox" title="是否必填">
 			</div>
 		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">供应商</label>
+			<div class="layui-input-block layui-input-block-w2">
+				<input type="text" class="layui-input input-w" name="supplier" value="{$info['supplier']}">
+				<input type="checkbox" name="is_show[]"  value="supplier" class="requiredBox"  {if condition="in_array_status('supplier',$info['is_show'])"} checked="" {/if} title="是否显示">
+				<input type="checkbox" name="required_status[]" value="supplier" class="showBox"  {if condition="in_array_status('supplier',$info['required_status'])"} checked="" {/if} title="是否必填">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">注塑机台</label>
+			<div class="layui-input-block layui-input-block-w2">
+				<input type="text" class="layui-input input-w" name="machine" value="{$info['machine']}">
+				<input type="checkbox" name="is_show[]"  value="machine" class="requiredBox"  {if condition="in_array_status('machine',$info['is_show'])"} checked="" {/if} title="是否显示">
+				<input type="checkbox" name="required_status[]" value="machine" class="showBox"  {if condition="in_array_status('machine',$info['required_status'])"} checked="" {/if} title="是否必填">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">合同编号（物流编号）</label>
+			<div class="layui-input-block layui-input-block-w2">
+				<input type="text" class="layui-input input-w" name="contract_sn" value="{$info['contract_sn']}">
+				<input type="checkbox" name="is_show[]"  value="contract_sn" class="requiredBox"  {if condition="in_array_status('contract_sn',$info['is_show'])"} checked="" {/if} title="是否显示">
+				<input type="checkbox" name="required_status[]" value="contract_sn" class="showBox"  {if condition="in_array_status('contract_sn',$info['required_status'])"} checked="" {/if} title="是否必填">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">备注</label>
+			<div class="layui-input-block layui-input-block-w2">
+				<input type="textarea" class="layui-input input-w" name="remark" value="{$info['remark']}">
+				<input type="checkbox" name="is_show[]"  value="remark" class="requiredBox"  {if condition="in_array_status('remark',$info['is_show'])"} checked="" {/if} title="是否显示">
+				<input type="checkbox" name="required_status[]" value="remark" class="showBox" {if condition="in_array_status('remark',$info['required_status'])"} checked="" {/if} title="是否必填">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">检测类型</label>
+			<div class="layui-input-block layui-input-block-w2">
+				<div class="layui-input-inline"  style="margin-right:53.5%;" >
+					<select name="test_type" lay-verify="required" lay-search="">
+						<option value="">直接选择或搜索选择</option>
+						{foreach name="test_type" item="item"}
+							<option value="{$item.id}" {if condition="$item['id'] eq $info['test_type']['value']"} selected {/if}>{$item.name}</option>
+						{/foreach}
+					</select>
+				</div>
+
+				<input type="checkbox" name="is_show[]"  value="test_type" class="requiredBox" {if condition="in_array_status('test_type',$info['is_show'])"} checked="" {/if} title="是否显示">
+				<input type="checkbox" name="required_status[]" value="test_type" class="showBox" {if condition="in_array_status('test_type',$info['required_status'])"} checked="" {/if} title="是否必填">
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<label class="layui-form-label">状态</label>
+	    	<div class="layui-input-block layui-input-block-w">
+					<input type="radio" name="status" value="0" title="未审核" {if $info['status'] eq 0} checked="" {/if}>
+	      		<input type="radio" name="status" value="1" title="已审核" {if $info['status'] eq 1} checked="" {/if}>
+	      		<input type="radio" name="status" value="2" title="已完成" {if $info['status'] eq 2} checked="" {/if}>
+	      		<input type="radio" name="status" value="3" title="审核不通过" {if $info['status'] eq 3} checked="" {/if}>
+	      		
+	    	</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">检测结果</label>
+			<div class="layui-input-block layui-input-block-w">
+				<input type="radio" name="engding" value="0" title="待定" {if $info['engding'] eq 0} checked="" {/if}>
+				<input type="radio" name="engding" value="1" title="合格" {if $info['engding'] eq 1} checked="" {/if}>
+				<input type="radio" name="engding" value="2" title="风险警告" {if $info['engding'] eq 2} checked="" {/if}>
+				<input type="radio" name="engding" value="3" title="不合格" {if $info['engding'] eq 3 } checked="" {/if}>
+			</div>
+		</div>
+		<div class="layui-form-item">
+	    	<div class="layui-input-block">
+	    		<input type="hidden" name="id" value="{$info['id']}">
+	      		<button class="layui-btn layui-btn-normal">保存</button>
+	      		<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    	</div>
+	  	</div>
 	</form>
-	{/if}
-	{if condition="$order.status eq 2 or $order.status eq 3"}
-	<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-		<legend>物流信息</legend>
-	</fieldset>
-	<div class="layui-row">
-		<div class="layui-col-xs6">
-			<div class="grid-demo grid-demo-bg1">物流公司：{$order.express_name}</div>
-		</div>
-		<div class="layui-col-xs6">
-			<div class="grid-demo">物流单号：{$order.express}</div>
-		</div>
-	</div>
-	{/if}
-
 </div>
 {/block}
 {block name="js"}
@@ -195,6 +194,73 @@
 var mixin = {};
 layui.use('form',function(){
 	var form = layui.form
+
+	
+	
+	
+	$('#didBox dd').on('click',function(){
+		var val = $(this).attr('lay-value');
+		$('#gsid').val('');
+		checkSel(val);
+		
+	});
+
+	function checkSel(val = ''){
+		var old = $('#didBox').attr('val');
+		var result = {};
+		var str = '';
+		if( val != old ){
+			if( val == '' ){
+				val = old
+			}
+			result['id'] = val;
+			$('#didBox').attr('val',val);
+			$.post(webRoot+ webControl+'/getdetectionSon',result,function(res){
+				
+				if( res.data.length ){
+					for( var i in res.data ){
+						str = str + '<label style="margin-right:20px;font-size:14px;"><input style="display:inline-block;height:15px;width:15px;" type="checkbox" value="'+res.data[i]['id']+'" name="gsidb[]" title="'+res.data[i]['name']+'"> '+ res.data[i]['name']+'</label>';
+					}
+					
+				}
+				
+				$('#gsonBox').html(str);
+				
+				selCheckBox();
+			},'json')
+		}
+	}
+	
+	$('#gsonBox').on('click',function(){
+		var arr = [];
+		$.each($('#gsonBox input'),function( index ){
+			if( $(this).prop('checked') == true ){
+				arr.push($(this).val())
+			}
+		})
+		$('#gsid').val(JSON.stringify(arr));
+	});
+
+	function selCheckBox(){
+		var arr = [];
+		if( $('#gsid').val() ){
+			arr = JSON.parse($('#gsid').val());
+			$.each($('#gsonBox input'),function( index ){
+				if( arr.indexOf($(this).val() ) !== (-1) ){
+					$(this).prop('checked',true);
+				}
+			})
+
+		}
+	}
+
+	$(document).ready(function() {
+		{if condition="$info['status'] == 0"}
+		checkSel();
+		{/if}
+
+	})
+
 });
 </script>
 {/block}

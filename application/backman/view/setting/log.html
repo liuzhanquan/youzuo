@@ -1,6 +1,13 @@
 {extend name="layout" /}
 {block name="content"}
-<div class="layui-card-header">{$pathCurrent['name']}</div>
+<div class="layui-tab layui-tab-brief">
+    <ul class="layui-tab-title">
+        <!-- <li class="layui-this">{$pathCurrent['name']}</li> -->
+        <li class="layui-this">管理员操作记录</li>
+        <li><a href="{:url('staff_log')}">员工操作记录</a></li>
+    </ul>
+</div>
+
 <div class="layui-card-body">
 	<div data-model="table-bind">
 		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>

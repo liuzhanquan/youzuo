@@ -1,118 +1,537 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fe57270-c87a-4853-bfb7-f1c8a184a2e3" name="默认的" comment="" />
+    <list default="true" id="7fe57270-c87a-4853-bfb7-f1c8a184a2e3" name="默认的" comment="">
+      <change afterPath="$PROJECT_DIR$/application/common/services/QemCodeCheck.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/beiyan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/beiyan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/Api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/Oauth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/Send.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/Uploads.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/route.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Ad.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Address.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Agent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Bank.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Cart.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Cheshi.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Comment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Config.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Goods.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Material.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Notify.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Notifys.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Notifyss.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Pay.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Question.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Token.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/Uploads.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/v1/ZOrderAgent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/controller/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/controller/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/controller/Detection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Detection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/controller/Goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Goods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/controller/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Setting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/controller/Staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Staff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/controller/Upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/charge.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/charge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/goods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/goodss.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/goodss.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/index3.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/index3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/level.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/level.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/level_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/level_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/meal.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/meal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/meal_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/meal_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/meal_stock.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/meal_stock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/purchase.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/purchase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/setting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/settpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/settpl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/stock.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/stock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/store.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/tpl_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/tpl_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/z_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/z_order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/agent/z_order_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/agent/z_order_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/auth/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/bank/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/bank/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/bank/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/bank/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/channel/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/channel/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/channel/pays.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/channel/pays.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/customer/assess.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/customer/assess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/customer/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/customer/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/customer/category_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/customer/category_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/customer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/customer/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/customer/meal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/customer/meal_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/customer/meal_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/customer/meal_list_op.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/customer/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/customer/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/detection/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/detection/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/detection/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/detection/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/detection/setlink.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/detection/setlink.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/finance/brokerage.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/finance/brokerage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/finance/cash.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/finance/cash.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/finance/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/finance/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/goods/assess.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/goods/assess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/goods/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/goods/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/goods/category_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/goods/category_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/goods/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/goods/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/goods/meal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/goods/meal_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/goods/meal_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/goods/meal_list_op.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/goods/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/goods/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/index/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/index/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/index/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/layout_con.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/layout_con.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/material/category_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/material/category_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/material/category_video.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/material/category_video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/material/friend.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/material/friend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/material/friend_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/material/friend_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/material/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/material/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/material/index_cate.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/material/index_cate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/material/index_cate_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/material/index_cate_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/material/index_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/material/index_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/material/video.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/material/video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/material/video_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/material/video_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/order/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/order/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/order/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/order/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/order/wait.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/order/wait.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/recharge_money/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/recharge_money/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/recharge_money/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/recharge_money/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/recharge_money/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/recharge_money/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/recharge_money/order_option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/recharge_money/order_option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/group.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/group.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/group_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/group_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/sms.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/sms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/sms_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/sms_log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/sms_tpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/sms_tpl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/sms_tpl_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/sms_tpl_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/uploads.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/uploads.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/setting/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/setting/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/adver.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/adver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/adver_group.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/adver_group.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/adver_group_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/adver_group_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/adver_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/adver_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/assess.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/assess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/c_code.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/c_code.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/dealer.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/dealer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/ex_company.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/ex_company.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/ex_company_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/ex_company_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/examine.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/examine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/examine_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/examine_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/examine_goods.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/examine_goods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/examine_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/examine_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/examine_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/examine_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/express.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/express.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/express_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/express_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/goods_team.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/goods_team.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/shops/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/shops/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/assess.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/staff/assess.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/staff/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/category_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/staff/category_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/staff/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/meal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/meal_index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/meal_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/meal_list_op.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/staff/option.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/power_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/staff/power_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/staff/powerlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/staff/powerlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/user/group.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/user/group.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/user/group_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/user/group_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/controller/AuthBack.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/controller/AuthBack.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Detection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Detection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Goods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Photo.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Photo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Staff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Uploads.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Uploads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/iview/iview.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/iview/iview.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/iview/iview.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/iview/iview.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/js/lib/ueditor/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/js/lib/ueditor/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/css/layui.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/css/layui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/css/layui.mobile.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/css/layui.mobile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/css/modules/code.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/css/modules/code.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/css/modules/laydate/default/laydate.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/css/modules/layer/default/layer.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/css/modules/layer/default/layer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/font/iconfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/font/iconfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/font/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/font/iconfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/font/iconfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/font/iconfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/font/iconfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/font/iconfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/colorpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/colorpicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/flow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/laydate.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/laydate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/layedit.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/layedit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/layer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/laypage.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/laypage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/laytpl.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/laytpl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/mobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/mobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/rate.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/rate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/tree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/lay/modules/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/layui.all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/static/lib/layui/layui.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/lib/layui/layui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190719/0e6f150555487167f8cc0eb5d7e7dbf0.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190719/2b80b433584126ae24b80b0e32ebea81.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190719/3609304b1eb05ed495ea19d5d86afde6.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190719/53478b9955468d43d3e0edbdab1d9267.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190719/5e039baa9f42f1a3746ea69c72531e79.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190719/ca32bac987d48b72ded50f190551d0e5.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190719/dc828351bb32da90d5f354697e8e4df8.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190720/56d7b2d13e4113bef38e997c6b8ec4e8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190720/a1314de20fd7ffb5bae0dd3e28f6da7b.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190720/bd09afbe74d1975d8f80e6fe02e5d1c0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190720/c294d721b471710db98a27fd8bf6eba6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190720/ea700c89f1b1d58aec63521b30130d6f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/022fd992d54fa004bb76e9f25a9e7c1c.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/0538f2592b41db6b3335ef3d74f66109.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/06469ae36c1d7b47d13ac85a26b474fb.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/06a207592845eda6f4cd132eadad4e21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/113216c5f31c6fda804d074503cc8d30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/174a9451181eb06ba224060304734962.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/17fc3b647d90910091c96e49bef11c90.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/1fa9904597e9b4b8b1c3843457799946.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/2c3f6928b7954e5af22f02419f846ce3.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/2f0dc5e86bf6dece2df9606f8a0080b4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/3520d01a09eaad7bc5f26d54484e23ba.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/37c9274a54b72129665786cdcfc9d35c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/3b98b9c520a2e8afd72784987fa458af.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/3c3ad9050e76e00fffab18f4b69911ba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/43ca82c3e0ff5121ab654e30b688f726.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/448a3a55c31f934b63ce48cdbe33f1d6.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/4ee6883d9e0404aa809a385bc053acd9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/4ffc3f1e60ad525008fb8c15411766f2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/502a5bbafd2d431c8d81be2f417667bc.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/53f1e5885019c3b8869c2b0b15258999.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/66da88900724743fafdc59d3ce087cca.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/6a998127c8b7e212023e65c1da3c695f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/6c526150a4914408f602712f0d23612b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/7734873955ea4657182a46589f7ae070.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/790557e8215235b6d4652a9f48b3d071.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/7fc0e44707ac5325d4ee862f4f18db1c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/843648308d67c61a9e0cd7ae8d7de0ed.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/8bf9e8582159b1bd6e4e11f0feb10b46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/8f74aaba42e4574541c5b3b04d329061.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/98529e39e5f574d93bcd01e2ac41a227.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/ab9b425c6e4adc051480c4e8785129ff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/ac1cc042940cc61df74807f86f77a8e2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/b11bfbb83c04d3d9d92bedd26335bb46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/b21bc878746f09c5098989c944f6d1ce.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/b6472a304ced1120fb1798b3168fe2d7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/b91bf40b66c4b3510d1a08cdc855b6cf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/be2a451adbf625785d81433ec982ab9d.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/c32f928d6d073f6cc13115cddd4b3541.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/c5847be96d1d0121bbeff42596e0333e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/dc3565b16f954d1851c65e36e678d8c6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/e8080c7fc8053d76002f7a635dd62f90.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190722/f2404ca3bf778c053fa9becdc25e2f15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/1011aa8001a6435cb6b6f1687f161307.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/10996643ce8602af3c6db9e941d7028d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/15128f1c9373c8c0b27c455f3e48d99b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/1dbe125733187cbd8db24c164e32ce0a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/2b3857d3af8b645e0746742040956712.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/31799a2cd1c92e0e22e622aa85f6e303.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/3bc75b5c7ee792113330771c0ec37cfc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/3caa972633b6addb98aefbf96633211c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/4004a059780f21fffb627d54e1a46a73.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/41a5d834968e21c8ea6a2589419f5842.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/488a8dddf80b08536269953e113b64ba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/4dff2792fd4e7296500a995cee607169.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/4f36c9bcc7b35061d338a8f1daf4ca66.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/5098c8756878e1b3bfe5c1b0dc06e6c5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/55d2dac2b83097f9941d1a9cccf64d7f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/56861b84ff05fa17fcdb81741729afb7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/61f1e22ad2c7ca0919c0a3c4f900c811.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/710b62b9c1efbf62e2051e4c02a2a8de.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/72655fb4516473bcd0cca3b9c79cd0e0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/73460f70228ae23027c418a9d71c3043.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/73f8ea09fa3713b6d008227ea06c4151.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/768bb678946016b6ef67eea8bb661675.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/77e9eecea00b99ce8afe965c4230e7c8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/7c6ceac3364234fc675a658da01c6d40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/86f335e50bdc1fd8f24638c3c14a482a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/8752332f1a6e9223da62a62920e9a647.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/8b1adad1fbf868b7b6a11d8228ab3d3e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/8fd5db78eaa59272af6c95b5204149cd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/917347886bfd98f2ae8f4bcb8388a579.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/92746220f1fde2f84be89f9e080ab01d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/9b0e9df08dd54adcf2150ccb709f35e3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/a78161c7a94447bd708d8e8bd00fd126.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/a7876e36e0e4db58d6851708644463cb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/a7f2fe1307a9b514236ae62a46babf57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/ada928eb2361c504d6444af57e61f8f6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/b0c5ed2be94a0171411d05bbfc67cd25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/c9f7dd3359966189035423615b49a3cd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/cf2c26c9fa3a9cf60e9531d77a8603de.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/d6c8d516b1a0b81ec4cacfba0387e444.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/da4129253b7bf8877f4d7fdfd44b3cc3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/dcec96f20f4cba2b4991d8181e50b799.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/df91c3c5d7b708c8ad0ba9f43a7b03fa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/e93fd391121e6de7d847d144db121ce2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/eb1beea60e513de1545825ef1702a94f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/ee09ebd3cdbe2c020e95ccfdcc615bd0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/f1944f4126e3e388dc37e972963cfc84.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/f2785d1f4c6f62e1d2a48ecef1bb1653.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/f494719f04e61d5bd0d0885c6aeb0f5b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190723/fb6236a29e401e343d610facc961fb70.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190727/1e1480849bbed87d2649ee938e4f3115.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190727/234c94d1ddb0741652fd8f7cb7ffc966.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190727/345ac2ea67db1830b05bdb1aad6b00d5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190727/36d634677e3f2ec1d3ba47972864c885.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190727/9bcd303634f35fccd09d191691c5f268.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190727/d11db2fec0b0f20efa4cfd6666a45959.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190727/d7f89a30ee0613c868e25242812d8f39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190727/f186dcd92eebc5c69b9c41fed5472554.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190727/f236113f184205ac949019eaa92dfc15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190729/3f17909d6660824eb18110880233d24a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190729/46c7410c21fb28516c1e54e6b97e73f3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190729/7294319532383c3d840f402bac7aaf3c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190729/7dd9016ec7d67634e1c70d7e5dc64e6f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190729/8dc2142ed0a058fab8868e96b40f7bf0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190729/9ecababbb2469356e76d7bf04dbf2141.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190729/ced3b86d3875ca377ee0ff53aeb959c9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190729/fc96f784bee71661a2dfd3257f2582c1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20190903/8401d1eefd7f7ad811ae3aab49beb802.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/0678f3bbf16a5c5631abeac081df6f98.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/0840b0df960721d9ecb6fa4ba15c5c2f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/092eb40198b633f9ed4578c7b06531b9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/17ee831efc081d0c6778d1574b85ce88.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/3151c08d085263c2b74d39d7d4326484.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/3468a6d96bb3440161b47d0887d18220.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/367407ebcb3fa907d1c8314c3cd49aff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/374b7066b50bd9a5e003686531969230.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/5910ea470c1553d9b1b2bcb9b7e842ba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/92147d5db3e4a778581f14c48c73b939.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/9287549acdbd3fb899c07299c4994cfc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/979066478fc78567a120e011761f6fe8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/98628579a2305c8444207b81a940343d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/a39478cee121b65deff302ec46a6406f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/b19f71dabe2f92397290546f9cdcb13d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/b645d0e199cc5ce39807d17b746d3428.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/b8c6c84dd21e624f31174b33605802a9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/c3e924f894b798fb389e57525945875f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/d7c70291ec063526b0f7ec14ad2a55f0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/e8c28f95ba11e44f3b6bf30ec7a02719.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191209/fa5c9aa1e2677aa8d49ab1ecd46228ab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/17264461a4e792eef68317dbe15c49cf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/2534bc0cdb406de0ea5982c76f4f3525.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/341fe69ed039fa7fdedaf981f3b872a6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/3d984d267962254ed6402ab070f2a3e8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/487fdbdbead0926966254be1fcc3c9b2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/706381f5374227d757d85c5e550ec013.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/774fee77c22a5cf7fd3cb258c7d363af.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/7aefdd55c12a4868edd097c78fedbd1f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/7df835047a234ce6983356e6bf68ae2a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/883ee328c665b8871c7db21a6486fb6a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/8f50b3de0e87c7f3500a1b5ea57332ba.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/90fa348935c57c5b79c379d9e27db0e2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/a18a3e0b1f2531799d4b85ecf7346cbd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/a622c3967a205a64fda0eedc479812d2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/d1759373fceca46b3af6aad51796f629.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/20191210/e58694429f65817e1e9ce1f2503417de.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/user/5d5bd0fd718b3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/user/qrcode_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/user/user_100000.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/user/user_100000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/user/user_27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/user/weixin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201912/09.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201912/10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/201912/1575968545-10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/0023aea6831f59a060cc09576c26464c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/01473f36117c764ad8e85ba665772526.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/0b732578a87aa1ac3f0f3ba787c80964.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/12fafcc7b3d99df8608e2b1a87ffdc30.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/14520410df5c5783f4fbda4951ee7605.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/159d64e0dd11f262ad7da7293508ddb4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2780c14de88aa949974d02ae2c609ecc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2822250e74a7f8c10d48c43f2ea2e723.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/395c72c7d471f105518a1c324bbce164.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/43ffdf20496cb4d670137508f60354e3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/4575422498bf02f36d200108deef299f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/4e679e2695970a40cc07faba016702db.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/51e6943fab735b8b3b188156dfaa74d2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/65f212792ce08476944550dd96c009df.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/8315b4c543c5ea7bb2d7432535ebcca8.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/997bd29a81fd9fa28ece36e75d2fab1c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/9b48c6d7baa555194c705a1400424f7a.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/9e028f90cca276a0685a2e160c16cbbb.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/ab3a27eb8b56088a6bb117bf77867b18.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/c296b1ed5761648582e7547f3744c4d7.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/ca0ce09ea527b89d67579645180ed7ad.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/cab6f27611a45b27991dca6c7bf9eefd.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/e291822c6cd12edf71776e739fc219f9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/e7e9d055310a2c714141658b18e19044.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f78f9baccd7c1cae5e46aaf1482171ff.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thinkphp/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/thinkphp/base.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="-973585579">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="1970822666">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="21" />
+          <entry key="php" value="37" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="21" />
+          <entry key="PHP" value="37" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="html" value="1144" />
+          <entry key="php" value="2851" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="1144" />
+          <entry key="PHP" value="2851" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Agent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Agent.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/backman/controller/Staff.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14760">
-              <caret line="520" column="17" lean-forward="false" selection-start-line="520" selection-start-column="17" selection-end-line="520" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="goods.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/backman/view/agent/goods.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/backman/view/agent/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="76" column="77" lean-forward="false" selection-start-line="76" selection-start-column="77" selection-end-line="76" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZOrderAgent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/api/controller/v1/ZOrderAgent.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5280">
-              <caret line="188" column="57" lean-forward="false" selection-start-line="188" selection-start-column="50" selection-end-line="188" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Agent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/backman/controller/Agent.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15540">
-              <caret line="537" column="21" lean-forward="false" selection-start-line="537" selection-start-column="20" selection-end-line="537" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="z_order_details.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/backman/view/agent/z_order_details.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3090">
-              <caret line="103" column="13" lean-forward="false" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
+            <state relative-caret-position="432">
+              <caret line="241" column="35" selection-start-line="241" selection-start-column="35" selection-end-line="241" selection-end-column="35" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#40#67#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="meal_details.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/backman/view/agent/meal_details.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/api/controller/Login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="34" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="351">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+              <folding>
+                <element signature="e#37#64#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/backman/view/agent/details.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/api/controller/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="405">
+              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+              <folding>
+                <element signature="e#37#64#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bank.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/backman/controller/Bank.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/common/services/QemCodeCheck.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="621">
+              <caret line="38" column="72" lean-forward="true" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="72" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Order.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/backman/controller/Order.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4290">
-              <caret line="150" column="58" lean-forward="false" selection-start-line="150" selection-start-column="58" selection-end-line="150" selection-end-column="58" />
-              <folding />
+            <state relative-caret-position="10">
+              <caret line="179" column="13" selection-start-line="179" selection-start-column="9" selection-end-line="179" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/common/controller/ApiController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/backman/view/detection/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -129,12 +548,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>function meal_</find>
-      <find>getAgentTeamListMoney</find>
-      <find>进货申请</find>
-      <find>meal</find>
-      <find>pay</find>
-      <find>物流</find>
       <find>freightCalculations</find>
       <find>status</find>
       <find>notify2</find>
@@ -159,31 +572,20 @@
       <find>details</find>
       <find>代理进货申请</find>
       <find>z</find>
+      <find>treedata</find>
+      <find>layui-form-label</find>
+      <find>getPower</find>
+      <find>checkOrder</find>
+      <find>name</find>
+      <find>post</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/backman/view/goods/meal_list.html" />
-        <option value="$PROJECT_DIR$/application/backman/view/agent/stock.html" />
-        <option value="$PROJECT_DIR$/application/backman/view/agent/meal_stock.html" />
-        <option value="$PROJECT_DIR$/application/backman/controller/Shops.php" />
-        <option value="$PROJECT_DIR$/application/backman/view/agent/meal.html" />
-        <option value="$PROJECT_DIR$/application/api/controller/v1/Goods.php" />
-        <option value="$PROJECT_DIR$/application/backman/view/agent/index.html" />
-        <option value="$PROJECT_DIR$/application/backman/controller/Goods.php" />
-        <option value="$PROJECT_DIR$/application/backman/view/goods/meal.html" />
-        <option value="$PROJECT_DIR$/application/backman/view/goods/meal_list_op.html" />
-        <option value="$PROJECT_DIR$/application/backman/view/agent/goods.html" />
-        <option value="$PROJECT_DIR$/application/backman/view/agent/goodss.html" />
-        <option value="$PROJECT_DIR$/application/api/controller/v1/Question.php" />
-        <option value="$PROJECT_DIR$/public/static/admin/css/tpleditor.css" />
-        <option value="$PROJECT_DIR$/application/api/controller/v1/User.php" />
-        <option value="$PROJECT_DIR$/application/common.php" />
-        <option value="$PROJECT_DIR$/application/common/behavior/Config.php" />
-        <option value="$PROJECT_DIR$/application/index/controller/Index.php" />
-        <option value="$PROJECT_DIR$/config/wechat.php" />
-        <option value="$PROJECT_DIR$/application/api/controller/v1/Ad.php" />
         <option value="$PROJECT_DIR$/application/backman/view/finance/index.html" />
         <option value="$PROJECT_DIR$/extend/lib/CashStatus.php" />
         <option value="$PROJECT_DIR$/application/backman/view/finance/cash.html" />
@@ -191,7 +593,6 @@
         <option value="$PROJECT_DIR$/application/backman/controller/Finance.php" />
         <option value="$PROJECT_DIR$/application/api/job/Agent.php" />
         <option value="$PROJECT_DIR$/application/api/job/AgentGrade.php" />
-        <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/application/common/model/ZOrderLog.php" />
         <option value="$PROJECT_DIR$/application/common/model/ZOrder.php" />
         <option value="$PROJECT_DIR$/application/common/model/Logistics.php" />
@@ -215,6 +616,27 @@
         <option value="$PROJECT_DIR$/application/api/controller/v1/ZOrderAgent.php" />
         <option value="$PROJECT_DIR$/application/backman/view/agent/z_order_details.html" />
         <option value="$PROJECT_DIR$/application/api/controller/v1/Agent.php" />
+        <option value="$PROJECT_DIR$/config/database.php" />
+        <option value="$PROJECT_DIR$/application/common/model/Goods.php" />
+        <option value="$PROJECT_DIR$/application/backman/view/goods/index.html" />
+        <option value="$PROJECT_DIR$/application/common/model/Customer.php" />
+        <option value="$PROJECT_DIR$/application/backman/controller/Customer.php" />
+        <option value="$PROJECT_DIR$/application/backman/view/customer/option.html" />
+        <option value="$PROJECT_DIR$/application/backman/view/customer/index.html" />
+        <option value="$PROJECT_DIR$/application/backman/view/staff/option.html" />
+        <option value="$PROJECT_DIR$/application/backman/view/staff/index.html" />
+        <option value="$PROJECT_DIR$/application/common/model/Staff.php" />
+        <option value="$PROJECT_DIR$/application/backman/controller/Goods.php" />
+        <option value="$PROJECT_DIR$/application/backman/view/goods/option.html" />
+        <option value="$PROJECT_DIR$/application/backman/controller/Detection.php" />
+        <option value="$PROJECT_DIR$/application/backman/view/detection/option.html" />
+        <option value="$PROJECT_DIR$/application/common/model/Detection.php" />
+        <option value="$PROJECT_DIR$/application/backman/view/detection/index.html" />
+        <option value="$PROJECT_DIR$/application/common/controller/ApiController.php" />
+        <option value="$PROJECT_DIR$/application/backman/controller/Staff.php" />
+        <option value="$PROJECT_DIR$/application/api/controller/Login.php" />
+        <option value="$PROJECT_DIR$/application/common/services/QemCodeCheck.php" />
+        <option value="$PROJECT_DIR$/application/api/controller/Index.php" />
       </list>
     </option>
   </component>
@@ -224,175 +646,181 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-queue" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-image" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-helper" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-worker" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-installer" />
+      <path value="$PROJECT_DIR$/vendor/qiniu/php-sdk" />
+      <path value="$PROJECT_DIR$/vendor/phpqrcode/cache" />
+      <path value="$PROJECT_DIR$/vendor/phpqrcode/bindings" />
+      <path value="$PROJECT_DIR$/vendor/phpqrcode/tools" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/dh2y/think-query-express" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/symfony/inflector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/easywechat-composer/easywechat-composer" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/workerman/workerman" />
+      <path value="$PROJECT_DIR$/vendor/workerman/gateway-worker" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/xu42/kuaidi100" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/naixiaoxin/think-wechat" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/overtrue/wechat" />
+      <path value="$PROJECT_DIR$/vendor/overtrue/socialite" />
+      <path value="$PROJECT_DIR$/vendor/endroid/qrcode" />
+      <path value="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder" />
+      <path value="$PROJECT_DIR$/vendor/endroid/qr-code" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beiyan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beiyan" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beiyan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beiyan" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beiyan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beiyan" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beiyan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beiyan" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beiyan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beiyan" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="v1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pay_all" />
-    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="js.eslint.eslintPackage" value="" />
-    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pay_all" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\web\codecheck\application\backman\view\goods" />
+      <recent name="G:\www\beiyan\application\backman\view\agent" />
+      <recent name="G:\www\beiyan\application\api\controller\v1" />
+      <recent name="G:\www\beiyan\application\backman\view\order" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\www\beiyan\extend\lib" />
       <recent name="G:\www\beiyan\application\api\controller" />
       <recent name="G:\www\beiyan\application\api\controller\v1" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\www\beiyan\application\backman\view\agent" />
-      <recent name="G:\www\beiyan\application\api\controller\v1" />
-      <recent name="G:\www\beiyan\application\backman\view\order" />
-    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -400,31 +828,8 @@
       <tasks />
       <arguments />
       <envs />
-      <method />
+      <method v="2" />
     </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -482,431 +887,397 @@
       <workItem from="1574057465666" duration="822000" />
       <workItem from="1574764065825" duration="735000" />
       <workItem from="1574783341701" duration="1851000" />
+      <workItem from="1576478343359" duration="5000" />
+      <workItem from="1594175429285" duration="974000" />
+      <workItem from="1594180985929" duration="32577000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="703791000" />
+    <option name="totallyTimeSpent" value="737347000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="1" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23048128" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23827292" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3299435" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/common/model/VideoLike.php">
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Finance.php" />
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Shops.php" />
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Material.php" />
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Bank.php" />
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Agent.php" />
+    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Agent.php" />
+    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/ZOrderAgent.php" />
+    <entry file="file://$PROJECT_DIR$/application/common/model/Order.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1440">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/purchase.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1867">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/setting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1530">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/common/model/ZOrderLog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/common/model/ZOrder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/common/model/Logistics.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/meal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="50" column="41" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="92" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="47" column="24" lean-forward="true" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/settpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/stock.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1620">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/option.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extend/wechat/Jspay.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-619">
-          <caret line="80" column="18" lean-forward="false" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Address.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/xu42/kuaidi100/src/KuaiDi100.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Notifys.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/z_order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="51" column="35" lean-forward="false" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Pay.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="97" column="75" lean-forward="false" selection-start-line="97" selection-start-column="75" selection-end-line="97" selection-end-column="75" />
-          <folding>
-            <element signature="e#119#146#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Notifyss.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Ad.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="50" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Question.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8707">
-          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/command.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Cheshi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-487">
-          <caret line="526" column="21" lean-forward="false" selection-start-line="526" selection-start-column="21" selection-end-line="526" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/command/Agent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1285">
-          <caret line="208" column="43" lean-forward="false" selection-start-line="208" selection-start-column="43" selection-end-line="208" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/command/AgentGrade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2197">
-          <caret line="56" column="94" lean-forward="false" selection-start-line="56" selection-start-column="94" selection-end-line="56" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/tags.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/route.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="17" column="57" lean-forward="false" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/common/behavior/Config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/command/ConfirmAcceptance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Token.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4110">
-          <caret line="157" column="41" lean-forward="false" selection-start-line="157" selection-start-column="31" selection-end-line="157" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="50" column="61" lean-forward="false" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
-          <folding>
-            <element signature="e#118#146#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/route/route.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="61" column="73" lean-forward="false" selection-start-line="61" selection-start-column="65" selection-end-line="61" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/Api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2970">
-          <caret line="106" column="77" lean-forward="false" selection-start-line="106" selection-start-column="77" selection-end-line="106" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10080">
-          <caret line="356" column="25" lean-forward="false" selection-start-line="356" selection-start-column="25" selection-end-line="356" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Notify.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3720">
-          <caret line="200" column="41" lean-forward="true" selection-start-line="200" selection-start-column="41" selection-end-line="200" selection-end-column="41" />
-          <folding>
-            <element signature="e#4490#9011#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Finance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Goods.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Shops.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Material.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Bank.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4290">
-          <caret line="150" column="58" lean-forward="false" selection-start-line="150" selection-start-column="58" selection-end-line="150" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/meal_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="34" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/ZOrderAgent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5280">
-          <caret line="188" column="57" lean-forward="false" selection-start-line="188" selection-start-column="50" selection-end-line="188" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Agent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15540">
-          <caret line="537" column="21" lean-forward="false" selection-start-line="537" selection-start-column="20" selection-end-line="537" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="189">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/backman/view/agent/z_order_details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3090">
-          <caret line="103" column="13" lean-forward="false" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
+        <state relative-caret-position="2781">
+          <caret line="103" column="13" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#5;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Agent.php">
+    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/meal_details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14760">
-          <caret line="520" column="17" lean-forward="false" selection-start-line="520" selection-start-column="17" selection-end-line="520" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="864">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="34" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/admin/css/diycss/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="76" column="77" selection-start-line="76" selection-start-column="77" selection-end-line="76" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/backman/view/agent/goods.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/lib/Category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="295">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/agent/index.html">
+    <entry file="file://$PROJECT_DIR$/application/backman/view/goods/option_bak.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/order/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="76" column="77" lean-forward="false" selection-start-line="76" selection-start-column="77" selection-end-line="76" selection-end-column="77" />
-          <folding />
+        <state relative-caret-position="351">
+          <caret line="189" column="11" selection-start-line="188" selection-start-column="8" selection-end-line="196" selection-end-column="11" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#2;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/font/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="868" column="17" selection-start-line="868" selection-start-column="17" selection-end-line="868" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/model/Customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/customer/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="91" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/staff/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+          <folding>
+            <element signature="e#464#470#0" expanded="true" />
+            <element signature="e#630#636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/model/Staff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/goods/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="45" column="20" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+          <folding>
+            <element signature="e#872#878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/model/Goods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Goods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="200" column="36" lean-forward="true" selection-start-line="200" selection-start-column="36" selection-end-line="200" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/goods/option.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="37" column="86" selection-start-line="37" selection-start-column="85" selection-end-line="37" selection-end-column="86" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/customer/option.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#div#1;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/staff/option.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/layout.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Customer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/order/option.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/base.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/App.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/detection/option.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="69" column="94" selection-start-line="69" selection-start-column="94" selection-end-line="69" selection-end-column="94" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#4;n#form#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Detection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="61" column="47" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="47" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/model/Detection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+          <folding>
+            <element signature="e#179#196#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/library/think/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#42#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Staff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="241" column="35" selection-start-line="241" selection-start-column="35" selection-end-line="241" selection-end-column="35" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/api/controller/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <element signature="e#37#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/library/sms/engine/Aliyun.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/qiniu/php-sdk/src/Qiniu/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/library/storage/engine/Qiniu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="21" />
+          <folding>
+            <element signature="e#53#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/library/storage/engine/Aliyun.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/detection/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/controller/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/services/QrcodeServer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="179" column="13" selection-start-line="179" selection-start-column="9" selection-end-line="179" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/services/QemCodeCheck.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="38" column="72" lean-forward="true" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/api/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+          <folding>
+            <element signature="e#37#64#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

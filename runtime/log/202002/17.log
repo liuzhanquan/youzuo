@@ -1,0 +1,21 @@
+---------------------------------------------------------------
+
+[2020-02-17T09:49:49+08:00] 192.168.31.181 GET nginx.youzuo.com/
+[运行时间：0.739355s] [吞吐率：1.35req/s] [内存消耗：2,683.19kb] [文件加载：95]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)

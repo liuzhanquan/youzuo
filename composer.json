@@ -28,7 +28,9 @@
         "xu42/kuaidi100": "^1.0",
         "dh2y/think-query-express": "^1.4",
         "qiniu/php-sdk": "^7.2",
-        "naixiaoxin/think-wechat": "^1.6"
+        "naixiaoxin/think-wechat": "^1.6",
+        "endroid/qrcode": "^3.7",
+        "endroid/qr-code": "^3.7"
     },
     "autoload": {
         "psr-4": {

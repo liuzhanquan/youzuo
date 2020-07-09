@@ -1,15 +1,19 @@
 {extend name="layout" /}
 {block name="content"}
 <style>
-    #check_box .layui-icon{
-        height:30px;
+    .layui-tree-icon {
+        height: 14px;
+        line-height: 12px;
+        width: 17px;
+        text-align: center;
+        border: 1px solid #c0c4cc;
     }
 </style>
 
 <div class="layui-tab layui-tab-brief">
 	<ul class="layui-tab-title">
 	    <li><a href="{:url('index')}">{$pathCurrent['name']}</a></li>
-	    <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}员工</li>
+	    <li class="layui-this">{empty name="info"}添加{else /}编辑{/empty}核销账号</li>
   	</ul>
 </div>
 <div class="layui-card-body">
@@ -17,47 +21,26 @@
 		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
 		  	<legend>基本设置</legend>
 		</fieldset>
+
 		<div class="layui-form-item">
-			<label class="layui-form-label">员工编码</label>
-			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="staff_sn" value="{$info['staff_sn']}">
-			</div>
-		</div>
-		
-		<div class="layui-form-item">
-			<label class="layui-form-label">员工分类</label>
-			<div class="layui-input-block">
-				<select name="cid">
-					{foreach $list as $vo}
-					<option value="{$vo['id']}" {if $vo['id'] eq $info['cid']}selected=""{/if}>{$vo['cname']|raw}</option>
-					{/foreach}
-				</select>
-			</div>
-		</div>
-		<div class="layui-form-item">
-            <label class="layui-form-label">员工名称</label>
+            <label class="layui-form-label">姓名</label>
             <div class="layui-input-block">
                 <input type="text" class="layui-input" name="name" value="{$info['name']}" datatype="*">
             </div>
         </div>
 		<div class="layui-form-item">
-			<label class="layui-form-label">手机号(登录用)</label>
+			<label class="layui-form-label">账号</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="phone" value="{$info['phone']}">
+				<input type="text" class="layui-input" name="phone" value="{$info['phone']}" datatype="*">
 			</div>
 		</div>
 		<div class="layui-form-item">
             <label class="layui-form-label">密码</label>
             <div class="layui-input-block">
-                <input type="password" class="layui-input" name="password" value="">
+                <input type="text" class="layui-input" name="password" value="{$info['password_show']}">
             </div>
         </div>
-		<div class="layui-form-item">
-			<label class="layui-form-label">邮箱</label>
-			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="email" value="{$info['email']}">
-			</div>
-		</div>
+
 		<div class="layui-form-item">
 	    	<label class="layui-form-label">状态</label>
 	    	<div class="layui-input-block">
@@ -67,22 +50,8 @@
 	    	</div>
 	  	</div>
         
-        <div class="layui-form-item" id="check_box">
-            <label class="layui-form-label">权限</label>
-            <div class="layui-input-block">
-                {foreach name="power" item="item"}
-                    <input class="powerCheckbox" type="checkbox" pid="{$item.parent_id}" name="power[]" {if condition="powerStatus($item.id,$info['power'])"}checked{/if} value="{$item.id}" title="{$item.name}">
-                        {if condition="$item['son']"}
-                            <br/>
-                            <span style="margin-left:20px;">┗　</span>
-                            {foreach name="item.son" item="i"}
-                                <input class="powerCheckbox powerCheckbox{$i.parent_id}" type="checkbox" pid="{$i.parent_id}" name="power[]" value="{$i.id}" {if condition="powerStatus($i.id,$info['power'])"}checked{/if} title="{$i.name}">
-                            {/foreach}
-                        {/if}
-                    <br/>
-                {/foreach}
-            </div>
-        </div>
+
+
 		<div class="layui-form-item">
 	    	<div class="layui-input-block">
 	    		<input type="hidden" name="id" value="{$info['id']}">
@@ -98,9 +67,9 @@
 <script type="text/javascript">
     var mixin = {};
     var cs = 0;
-    layui.use('form',function(){
-        var form = layui.form
-        
+    layui.use(['form'],function(){
+        var form = layui.form;
+
        $.each($('#check_box .layui-unselect'),function(index){
             $(this).click(function(){
                 if ( $('.powerCheckbox').eq(index).attr('pid') == 0 && cs == 0 ) {
@@ -114,7 +83,6 @@
         })
 
     });
-
 
     function checkboxStatus( val, status, ind ){
         cs = 1
@@ -150,7 +118,7 @@
                 $('#check_box .layui-unselect').eq(ind).trigger("click");
             }
         }
-        cs = 0
+        // cs = 0
     }
 
 

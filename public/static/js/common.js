@@ -220,6 +220,26 @@ var vueObj = new Vue({
             }
         },'JSON');
     };
+    /**
+     * 删除数据2
+    **/
+    owner.formDel2 = function(data,obj,url=''){
+        vueInfo('loading','执行中');
+        $.post(webRoot+ webControl + '/'+url,{id: data.id,table:data.table},function(res){
+            vueInfo('cancel','')
+            if(res.code == '1'){
+                if (res.url) {
+                    vueInfo('success',res.msg);
+                    obj.del();
+                } else {
+                    vueInfo('success',res.msg);
+                }
+            }else{
+                vueInfo('error',res.msg);
+            }
+        },'JSON');
+    };
+    
     owner.dropdown = function ($el, config) {
         var $dropdown = $($el).find('[data-dropdown]'),$showClass = $dropdown.find('.dropdown-content'),$parent = config.parent;
         var defaultConfig = {};
@@ -479,7 +499,7 @@ var vueObj = new Vue({
         Do.ready('ueditor', function () {
             UEDITOR_CONFIG.UEDITOR_HOME_URL = '/static/js/lib/ueditor/';
             var editorConfig = {
-                serverUrl:webRoot + 'upload/index.html', //图片上传接口
+                serverUrl:webRoot + 'upload/index2.html', //图片上传接口
             };
             editorConfig = $.extend(editorConfig, config.option);
             var editor = UE.getEditor(idName, editorConfig);
@@ -523,7 +543,7 @@ var vueObj = new Vue({
             });
             UEDITOR_CONFIG.UEDITOR_HOME_URL = '/static/js/lib/ueditor/';
             var editorConfig = {
-                serverUrl:webRoot + 'upload/index.html', //图片上传接口
+                serverUrl:webRoot + 'upload/index2.html', //图片上传接口
             };
             editorConfig = $.extend(editorConfig, config.option);
             var editor = UE.getEditor(idName, editorConfig);
@@ -587,7 +607,6 @@ var vueObj = new Vue({
         //更改状态
         $table.on('click', '[data-status]', function () {
             var data = $(this).data(), $obj = this;
-            console.log(data)
             if (data.status == 1) {
                 var status = 0;
                 var css = 'text-danger';

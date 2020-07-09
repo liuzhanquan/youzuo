@@ -13,9 +13,23 @@
 	    	</div>
 	    	<div class="layui-form-mid layui-word-aux">{$vo['remark']}</div>
 	  	</div>
+		{elseif $vo['is_radio'] eq 2 /}
+		<label class="layui-form-label">{$vo['title']}</label>
+		<div class="layui-input-block">
+			<div class="layui-upload">
+				<button type="button" class="layui-btn" name="a222" id="test1">上传图片</button>
+				<input type="hidden" name="{$vo['name']}" id="ewmlogo" value="{$vo['value']}">
+				<div class="layui-upload-list">
+				<img class="layui-upload-img" id="demo1" src="{$vo['value']}">
+				<p id="demoText"></p>
+				</div>
+			</div> 
+		</div>
+
 		{else /}
 		<div class="layui-form-item">
 			<label class="layui-form-label">{$vo['title']}</label>
+			
 			<div class="layui-input-block">
 				<input type="text" name="{$vo['name']}" lay-verify="title" autocomplete="off" placeholder="请输入{$vo['title']}" class="layui-input" {if $vo['is_must'] eq 1} datatype="*" {/if} value="{$vo['value']}">
 				<div class="layui-form-mid layui-word-aux">{$vo['remark']}</div>
@@ -34,8 +48,44 @@
 {/block}
 {block name="js"}
 <script type="text/javascript">
-layui.use('form',function(){
+layui.use(['form','upload'],function(){
 	var form = layui.form
+	var upload = layui.upload
+
+
+
+	 //普通图片上传
+	 var uploadInst = upload.render({
+		elem: '#test1'
+		,url: '/admin/Upload/alone'
+		,before: function(obj){
+		//预读本地文件示例，不支持ie8
+		obj.preview(function(index, file, result){
+			$('#demo1').attr('src', result); //图片链接（base64）
+		});
+		}
+		,done: function(res){
+		//如果上传失败
+		if(res.status == 0){
+			return layer.msg('上传失败');
+		}else{
+			$('#ewmlogo').val(res.data.url);
+		}
+		//上传成功
+
+		}
+		,error: function(){
+		//演示失败状态，并实现重传
+		var demoText = $('#demoText');
+		demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+		demoText.find('.demo-reload').on('click', function(){
+			uploadInst.upload();
+		});
+		}
+	});
+
+
+
 });
 var mixin = {};
 </script>

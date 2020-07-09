@@ -2,7 +2,13 @@
 // 应用公共文件
 
 use \app\common\model\AdminLog;
+use \app\common\model\StaffLog;
 use \app\backman\model\Agent;
+use \think\DB;
+use think\facade\App;
+use think\Request;
+use app\common\services\QrcodeServer;
+
 
 function AdminLog($uid,$action){
     $logInfo = [
@@ -12,6 +18,15 @@ function AdminLog($uid,$action){
         'timestamp'=>date('Y-m-d H:i:s'),
     ];
     return AdminLog::insertGetId($logInfo);
+}
+function StaffLog($uid,$action){
+    $logInfo = [
+        'user_id'=>$uid,
+        'desc'=>$action,
+        'action'=>request()->path(),
+        'timestamp'=>date('Y-m-d H:i:s'),
+    ];
+    return StaffLog::insertGetId($logInfo);
 }
 
 /**
@@ -144,7 +159,7 @@ function getfiles($path, $allowFiles, &$files = array())
                 getfiles($path2, $allowFiles, $files);
             } else {
                 if (preg_match("/\.(".$allowFiles.")$/i", $file)) {
-                    $Rootpath = env('root_path') . 'public' . DS.'uploads/';
+                    $Rootpath = env('root_path') . 'public' .str_replace("\\", '/','uploads/');
                     $files[] = array(
                         // 'url'=> substr($path2, strlen($_SERVER['DOCUMENT_ROOT'])),
                         'url'=> '/uploads/'.substr($path2, strlen($Rootpath)),
@@ -330,7 +345,27 @@ if (!function_exists('createPoster2')) {
 function get_order_sn()
 {
     //当前时间+4位随机数
-    return date('YmdHis').substr(implode(NULL, array_map('ord', str_split(substr(uniqid(), 7, 13), 1))), 0, 8);
+    return substr(date('YmdHis'),2).substr(implode(NULL, array_map('ord', str_split(substr(uniqid(), 7, 13), 1))), 0, 5);
+}
+
+/**
+ * 生成订单号
+ * @return string
+ */
+function order_sn_rand()
+{
+    //当前时间+4位随机数
+    return date('Ym').mt_rand(1000000,9999999);
+}
+
+/**
+ * 生成订单号随机方法
+ * @return string
+ */
+function get_order_sn_rand()
+{
+    //当前时间+4位随机数
+    return substr(date('YmdHis'),2).mt_rand(100000,999999);
 }
 
 /**
@@ -634,7 +669,7 @@ if(!function_exists('curl_get_contents')){
 
     if(!function_exists('powerStatus')){
         /**
-         * 判断POST
+         * 判断是否在数组里面
          */
         function powerStatus($id = 0,$arr = []) {
             if( $id && $arr ){
@@ -644,14 +679,823 @@ if(!function_exists('curl_get_contents')){
         }
     }
 
+    if(!function_exists('tablePreg')){
+        /**
+         * 表单正则
+         */
+        function tablePreg($table,$must) {
+            if( !empty($table) ){
+                $data = [];
+                $num = 0;
+                preg_match_all('/<label class="col\-sm\-2 control\-label" type\="(.*?)" name\="(.*?)">(.*?)<\/label>/',html_entity_decode($table),$title);
+                preg_match_all('/<div class="col-sm-7">(.*?)<\/div>/',html_entity_decode($table),$inputlist);
+                
+                foreach( $title[1] as $key=>$item ){
+                    $narr = [];
+                    $narr['type'] = $item;
+                    if( empty($title[2][$key]) ){
+                        $narr['name'] = $item.'_'.mt_rand(1,1000000);
+                    }else{
+                        $narr['name'] = $title[2][$key];
+                    }
+                    
+                    $narr['title'] = $title[3][$key];
+                    if( $item != 'datetime' && $item != 'file' ){
+                        $res = tabletype($item,$inputlist[1][$num]);
+                        $narr =  array_merge($narr, $res );
+
+                    }
+
+                    $narr['must'] =  in_array($key, $must);
+
+                    if ( $item != 'file' ) {
+                        $num++;
+                    }
+                    
+                    $data[] = $narr;
+
+                }
+            }
+            
+            return $data;
+        }
+    }
+
+    if(!function_exists('tabletype')){
+        /**
+         * 表格字段内容返回  文本框提示  多选框内容
+         */
+        function tabletype($type,$text) {
+            switch( $type ){
+                case 'text':
+                    preg_match_all('/placeholder="(.*?)"/',html_entity_decode($text),$list);
+                    $res['placeholder'][] = $list[1][0];
+                    break;
+                case 'www':
+                    preg_match_all('/placeholder="(.*?)"/',html_entity_decode($text),$list);
+                    $res['placeholder'][] = $list[1][0];
+                    break;
+                    
+                case 'select':
+                    preg_match_all('/<option>(.*?)<\/option>/',html_entity_decode($text),$list);
+                    foreach( $list[1] as $item ){
+                        $res['placeholder'][] = trim($item);
+                    }
+                    break;
+
+                case 'radio':
+                    preg_match_all('/value="(.*?)"/',html_entity_decode($text),$list);
+                    foreach( $list[1] as $item ){
+                        $res['placeholder'][] = trim($item);
+                    }
+                    break;
+                
+                case 'checkbox':
+                    preg_match_all('/name=".*?">(.*?)<\/label>/',html_entity_decode($text),$list);
+                    
+                    foreach( $list[1] as $item ){
+                        $res['placeholder'][] = trim($item);
+                    }
+                    break;
+
+                case 'textarea':
+                    preg_match_all('/placeholder="(.*?)"/',html_entity_decode($text),$list);
+                    $res['placeholder'][] = $list[1][0];
+                    break;
+
+                default:
+                    $res = [];
+                    break;
+            }
+            return $res;
+        }
+    }
+
+
+    if(!function_exists('return_ajax')){
+        /**
+         * json返回方法
+         * @param $message
+         * @param $status
+         * @param $data
+         * @return array
+         */
+        function return_ajax( $status = 1, $message, $data=[] ){
+            exit(json_encode(['status'=>$status,'message'=>$message,'data'=>$data]));
+        }
+    }
+
+    if(!function_exists('userencode')){
+        /**
+         * 登录用户信息加密
+         * @param $obj
+         * @return array
+         */
+        function userencode($obj){
+            $obj = json_encode($obj);
+            return authcode($obj);
+        }
+    }
+
+    if(!function_exists('authcode')){
+        /**
+         * discuz!金典的加密函数
+         * @param string $string 明文 或 密文
+         * @param string $operation DECODE表示解密,其它表示加密
+         * @param string $key 密匙
+         * @param int $expiry 密文有效期
+         */
+        function authcode($string, $operation = 'ENCODE', $key = '', $expiry = 0) {
+            // 动态密匙长度，相同的明文会生成不同密文就是依靠动态密匙
+            $ckey_length = 4;
+    
+            // 密匙
+            $key = md5($key ? $key : 'nLywa&123KlA+0*'); // AUTH_KEY 项目配置的密钥
+    
+            // 密匙a会参与加解密
+            $keya = md5(substr($key, 0, 16));
+            // 密匙b会用来做数据完整性验证
+            $keyb = md5(substr($key, 16, 16));
+            // 密匙c用于变化生成的密文
+            $keyc = $ckey_length ? ($operation == 'DECODE' ? substr($string, 0, $ckey_length): substr(md5(microtime()), -$ckey_length)) : '';
+            // 参与运算的密匙
+            $cryptkey = $keya.md5($keya.$keyc);
+            $key_length = strlen($cryptkey);
+            // 明文，前10位用来保存时间戳，解密时验证数据有效性，10到26位用来保存$keyb(密匙b)，解密时会通过这个密匙验证数据完整性
+            // 如果是解码的话，会从第$ckey_length位开始，因为密文前$ckey_length位保存 动态密匙，以保证解密正确
+            $string = $operation == 'DECODE' ? base64_decode(substr($string, $ckey_length)) : sprintf('%010d', $expiry ? $expiry + time() : 0).substr(md5($string.$keyb), 0, 16).$string;
+            $string_length = strlen($string);
+            $result = '';
+            $box = range(0, 255);
+            $rndkey = array();
+            // 产生密匙簿
+            for($i = 0; $i <= 255; $i++) {
+                $rndkey[$i] = ord($cryptkey[$i % $key_length]);
+            }
+            // 用固定的算法，打乱密匙簿，增加随机性，好像很复杂，实际上对并不会增加密文的强度
+            for($j = $i = 0; $i < 256; $i++) {
+                $j = ($j + $box[$i] + $rndkey[$i]) % 256;
+                $tmp = $box[$i];
+                $box[$i] = $box[$j];
+                $box[$j] = $tmp;
+            }
+            // 核心加解密部分
+            for($a = $j = $i = 0; $i < $string_length; $i++) {
+                $a = ($a + 1) % 256;
+                $j = ($j + $box[$a]) % 256;
+                $tmp = $box[$a];
+                $box[$a] = $box[$j];
+                $box[$j] = $tmp;
+                // 从密匙簿得出密匙进行异或，再转成字符
+                $result .= chr(ord($string[$i]) ^ ($box[($box[$a] + $box[$j]) % 256]));
+            }
+    
+            if($operation == 'DECODE') {
+                // substr($result, 0, 10) == 0 验证数据有效性
+                // substr($result, 0, 10) - time() > 0 验证数据有效性
+                // substr($result, 10, 16) == substr(md5(substr($result, 26).$keyb), 0, 16) 验证数据完整性
+                // 验证数据有效性，请看未加密明文的格式
+                if((substr($result, 0, 10) == 0 || substr($result, 0, 10) - time() > 0) && substr($result, 10, 16) == substr(md5(substr($result, 26).$keyb), 0, 16)) {
+                    return substr($result, 26);
+                } else {
+                    return '';
+                }
+            } else {
+                // 把动态密匙保存在密文里，这也是为什么同样的明文，生产不同密文后能解密的原因
+                // 因为加密后的密文可能是一些特殊字符，复制过程可能会丢失，所以用base64编码
+    
+                return $keyc.str_replace('=', '', base64_encode($result));
+            }
+        }
+    }
+
+
+    if(!function_exists('userdecode')){
+        /**
+         * 登录用户信息解密
+         * @param $obj
+         * @return array
+         */
+        function userdecode($obj){
+            $obj = str_replace(" ","+",$obj);
+            return json_decode(authcode($obj,'DECODE'),true);
+        }
+    }
+
+    if(!function_exists('phoneNum')){
+        /**
+        * 验证手机号是否正确
+        * @param int $mobile
+        */
+        function phoneNum($mobile) {
+            if (!is_numeric($mobile)) {
+                return false;
+            }
+            return preg_match('#^13[\d]{9}$|^14\d{9}$|^15\d{9}$|^17\d{9}$|^18[\d]{9}$#', $mobile) ? true : false;
+        }
+    }
+
+    if(!function_exists('json_html_decode')){
+        /**
+        * html转义字符串变数组
+        * @param int $mobile
+        */
+        function json_html_decode($str) {
+            return empty($str) ? '' : json_decode( html_entity_decode($str), true );
+        }
+    }
+
+    if(!function_exists('photo_addpath')){
+        /**
+         * 图片路径添加网址
+         * @param $photo
+         * @return array
+         */
+        function photo_addpath($photo){
+            if(!empty($photo)){
+                $headers = @get_headers(config('PHOTOPATH').$photo);
+                $urlstatus = strpos($headers[0],'200');
+                if($urlstatus){
+                    $result = config('PHOTOPATH').$photo;
+                }else{
+                    $result = 'http://'.$_SERVER['HTTP_HOST'].$photo;
+                }
+                
+            }else{
+                $result='';
+            }
+            return $result;
+        }
+    }
+    if(!function_exists('photo_addpath2')){
+        /**
+         * 图片路径添加网址
+         * @param $photo
+         * @return array
+         */
+        function photo_addpath2($photo){
+
+            if(!empty($photo)){
+                $headers = @get_headers(config('PHOTOPATH').$photo);
+                $urlstatus = strpos($headers[0],'200');
+                if($urlstatus){
+                    $result = config('PHOTOPATH').$photo;
+                }else{
+                    $result = 'http://'.$_SERVER['HTTP_HOST'].$photo;
+                }
+                
+            }else{
+                $result='';
+            }
+            return $result;
+        }
+    }
+
+    if(!function_exists('photo_arr_path')){
+        /**
+         * 图片数组添加网页路径
+         * @param $photo   图片数组
+         * @param $info    分隔符号 
+         * @return array
+         */
+        function photo_arr_path($photo){
+            if(!empty($photo)){
+                foreach( $photo as $key=>$item ){
+                    $result[$key] = photo_addpath($item);
+                }
+                return $result;
+            }
+        }
+    }
+
+    if(!function_exists('contentphotopath')){
+        /**
+         * 文章内容图片路径添加网址
+         * @param $content
+         * @return array
+         */
+        function contentphotopath($content){
+            $content = preg_replace("/(src=\")(.*?)(\"\/)/",'$1'.config('PHOTOPATH').'$2$3',$content);
+            //$content = preg_replace("/(src=\&quot\;)(.*?)(\&quot\;)/",'$1'.config('PHOTOPATH').'$2$3',$content);
+            $content = htmlspecialchars_decode($content);
+            return $content;
+        }
+    }
+    if(!function_exists('contentphotopathadmin')){
+        /**
+         * 文章内容图片路径添加网址
+         * @param $content
+         * @return array
+         */
+        function contentphotopathadmin($content){
+            $content = preg_replace("/(src=\&quot\;)(.*?)(\&quot\;)/",'$1'.config('PHOTOPATH').'$2$3',$content);
+            return $content;
+        }
+    }
+    if(!function_exists('contentphotopath2')){
+        /**
+         * 文章内容图片路径添加网址
+         * @param $content
+         * @return array
+         */
+        function contentphotopath2($content){
+            $content = preg_replace("/(src=\")(.*?)(\"\>)/",'$1'.config('PHOTOPATH').'$2$3',$content);
+            //$content = preg_replace("/(src=\&quot\;)(.*?)(\&quot\;)/",'$1'.config('PHOTOPATH').'$2$3',$content);
+            $content = htmlspecialchars_decode($content);
+            return $content;
+        }
+    }
+    if(!function_exists('contentremotepath')){
+        /**
+         * 文章内容图片路径添加网址
+         * @param $content
+         * @return array
+         */
+        function contentremotepath($content){
+            $content =str_replace(config('PHOTOPATH'),'',$content);
+            //$content = preg_replace("/(src=\&quot\;)(.*?)(\&quot\;)/",'$1'.config('PHOTOPATH').'$2$3',$content);
+            $content = htmlspecialchars_decode($content);
+            return $content;
+        }
+    }
+    if(!function_exists('contentremotepath2')){
+        /**
+         * 文章内容图片路径添加网址
+         * @param $content
+         * @return array
+         */
+        function contentremotepath2($content){
+            $content =str_replace(config('PHOTOPATH'),'',$content);
+
+            return $content;
+        }
+    }
+
+    function create_qrcode($url,$order_sn,$time = '')
+    {
+        
+        $config = [
+            'title'         => true,
+            // 'title_content' => $order_sn,
+            'logo'          => true,
+            'logo_url'      => App::getRootPath().'/public'.config('logopath'),
+            'logo_size'     => 80,
+        ];
+        
+        if( $time == '' ){
+            $time = date('Ymd');
+        }else{
+            $time = date('Ymd',strtotime($time));
+        }
+        // 直接输出
+        // $qr_url = 'http://www.baidu.com?id=' . rand(1000, 9999);
+
+        // $qr_code = new QrcodeServer($config);
+        // $qr_img = $qr_code->createServer($qr_url);
+        // echo $qr_img;
+        
+        // 写入文件
+        $path = config('qrcode_savepath');
+        $nPath = str_replace("\\", '/', $path.'/'.$time.'/'.$order_sn);
+        // $nPath = config('PHOTOPATH').str_replace("\\",'/', '/'.$order_sn);
+        $file_name = \think\facade\Env::get('root_path').'public'.$nPath;  // 定义保存目录
+        $result = [];
+        // $headers = @get_headers('http://q44kmcp7r.bkt.clouddn.com/2020/01/06a492020011580312.png');
+        // $statuscode = strpos($headers[0],'200');
+       
+        foreach( config('qrcode_status') as $key=>$item ){
+            // $serverUrl = $_SERVER['SERVER_NAME'];
+            if(!file_exists($file_name.'/'.$order_sn.$item.'.png')){
+                $config['file_name'] = $file_name;
+                $config['generate']  = 'writefile';
+                $config['title_content'] = $order_sn.config('qrcode_text')[$key];
+                $qr_code = new QrcodeServer($config);
+                
+                $rs = $qr_code->createServer($url.config('qrcode_value')[$key]);
+               
+                $img = explode('/',$rs['data']['url']);
+                if( !is_array($img) ){
+                    $img = explode('\\',$rs['data']['url']);
+                }
+                
+                
+                qrcode_thumb( $img[count($img)-1], $nPath,($order_sn.''.$item) );
+                
+
+                $res['url'] = 'http://'.$_SERVER['HTTP_HOST'].$nPath.'/'.$order_sn.$item.'.png';
+                $res['path'] = $file_name.'/'.$order_sn.'.png';
+            }else{
+                $res['url'] = 'http://'.$_SERVER['HTTP_HOST'].$nPath.'/'.$order_sn.$item.'.png';
+                
+                $res['path'] = $file_name.'/'.$order_sn.$item.'.png';
+            }
+            $res['type'] = config('qrcode_text')[$key];
+            $result[] = $res;
+        }
+        
+        return $result; 
+    }
+
+    if (!function_exists('qrcode_thumb')) {
+        //生成缩略图
+        function qrcode_thumb($img,$path,$name = '', $w = 300,$h = 300){
+            
+            // $imgFile = \think\facade\Env::get('root_path').'public'.str_replace("\\", '/', $img);
+            $imgFile = \think\facade\Env::get('root_path').'public'.str_replace("\\", '/', $path.'/'.$img);
+            
+            if(file_exists($imgFile)){
+                $isImg = $imgFile;
+                $image = \think\Image::open($isImg);
+                if($name){
+                    $newImgName = \think\facade\Env::get('root_path').'public'.str_replace("\\", '/', $path.'/'.$name.'.png');
+                }else{
+                    $newImgName = $imgFile; 
+                }
+                $res = $image->thumb($w, $h,\think\Image::THUMB_FIXED)->save($newImgName);
+                $file= $newImgName;
+                unlink($imgFile);
+            }else{
+                $file='uploadfile/nopic.gif';
+            }
+            return $file;
+        }
+    }
 
 
 
+    function rawPost(){
+        $res = @file_get_contents('php://input');
+        // $res = request()->param();
+        $res = json_decode($res,true);
+        return $res;
+    }
+
+
+    if(!function_exists('orderStatusCheck')){
+        /**
+         * 查询订单状态
+         * @param $oid   检测单id
+         * @return array
+         */
+        function orderStatusCheck($oid,$modifyOrder = false){
+            $info = DB::name('order')->where('id',$oid)->field('id,gsid,status')->find();
+            $gsid = json_html_decode($info['gsid']);
+            $status = 0;
+            $num = 0;
+            $text = '未开始';
+            foreach( $gsid as $item ){
+                $count = DB::name('order_s')->where(['oid'=>$oid,'dsid'=>$item])->count();
+                if( $count ){
+                    $num++;
+                    $status = 1;
+                    $text = '进行中';
+                }
+            }
+            if( count($gsid) == $num ){
+                $status = 2;
+                $text = '已完成';
+            }
+            $result['status'] = $status;
+            $result['text'] = $text;
+            if( $modifyOrder && $status > 0 ){
+                DB::name('order')->where('id',$oid)->update(['status'=>1]);
+            }
+            return $result;
+        }
+    }
+
+    if(!function_exists('categorySelSon')){
+        /**
+         * 获取分类里的所有子类
+         * @param $photo   图片数组
+         * @param $info    分隔符号 
+         * @return array
+         */
+        function categorySelSon($table,$id,$str = false){
+            $info = DB::name("$table")->where('id',$id)->field('parent_id')->find();
+            $narr = [];
+            
+            if( $info['parent_id'] == 0 ){
+                $arr = DB::name("$table")->where('parent_id',$id)->field('id')->select();
+                if($arr){
+                    foreach( $arr as $item ){
+                        $narr[] = $item['id'];
+                    }
+                }
+            }
+            $narr[] = $id;
+            
+            if( $str ){
+                $res = implode(',',$narr);
+            }else{
+                $res = $narr;
+            }
+            
+            return $res;
+        }
+    }
+
+
+    if(!function_exists('unlinkPhoto')){
+        /**
+         * 删除图片
+         * @param $path    图片路径
+         * @return array
+         */
+        function unlinkPhoto($path){
+            $npath = [];
+            if( !is_array($path) ){
+                
+                $npath[] = $path; 
+
+            }else{
+                $npath = $path;
+            }
+            
+            $root_path = \think\facade\Env::get('root_path').'public';
+            
+            foreach( $npath as $item ){
+                if( file_exists($root_path.$item) ){
+                     unlink($root_path.$item);
+                }
+            }
+
+        }
+    }
+
+    if(!function_exists('spec_data_select')){
+        /**
+         * 子定义表格绑定数据字典查询字典信息
+         * @param $data    图片路径
+         * @return array
+         */
+        function spec_data_select($data,$d_son_sn){
+            $nlist = [];
+            $spec_data = DB::name('spec_data')->where('d_son_sn',$d_son_sn)->select();
+            
+            foreach( $data as $key=>$item ){
+                $data[$key]['datacate'] = 0;
+                $data[$key]['cid'] = 0;
+                $data[$key]['types'] = 0;
+
+                if( $item['type'] == 'radio' || $item['type'] == 'checkbox' ){
+                    foreach($spec_data as $i){
+                        if( $item['name'] == $i['class_name'] ){
+                            $data[$key]['datacate'] = $i['did'];
+                            $data[$key]['types'] = 'datacate';
+                            $res = DB::name('data_category')->where('parent_id',$i['did'])->order('sort asc')->field('name')->select();
+                            
+                            foreach( $res as $k=>$r ){
+                                $data[$key]['placeholder'][$k] = $r['name'];
+                            }
+                        }
+                    }
+                }
+                
+                if( $item['type'] == 'select' ){
+                    foreach($spec_data as $i){
+                        if( $item['name'] == $i['class_name'] ){
+                            $data[$key]['datacate'] = $i['did'];
+                            $data[$key]['types'] = $i['table_name'];
+                            $res = DB::name($i['table_name'])->where('parent_id',$i['did'])->order('sort asc')->field('name')->select();
+                            
+                            foreach( $res as $k=>$r ){
+                                $data[$key]['placeholder'][$k] = $r['name'];
+                            }
+                        }
+                    }
+                }
 
 
 
+            }
+
+            
+            return $data;
 
 
+        }
+    }
 
+
+    if(!function_exists('html_array_string')){
+        /**
+         * 打印内容 环节表单信息解析
+         * @param $path    图片路径
+         * @return array
+         */
+        function html_array_string($val,$type=""){
+            // dump($val);
+            
+
+            if( $type == 'checkbox' ){
+                if( is_array($val) ){
+                    return implode(' , ', $val);
+                }else{
+                    return $val;
+                }
+                
+            }
+            if( $type == 'file' ){
+                $val = json_html_decode($val);
+                if( $val ){
+                    $str = '<div class="s_flex_ali" style="wdith:186px;">';
+                    foreach($val as $item){
+                        $str = $str.'<img style="width:186px!important;height:186px!important;margin-right:5px;" src="'. photo_addpath($item) .'">';
+                    }
+                    $str = $str.'</div>';
+                    return $str;
+                }else{
+                    return '';
+                }
+                
+            }
+            if( $type == 'picker' ){
+                // $val = json_html_decode($val);
+                $str = '';
+                if(!empty($val['province'])){
+                    $str = $str.$val['province'];
+                }
+                if(!empty($val['city'])){
+                    $str = $str.$val['city'];
+                }
+                if(!empty($val['county'])){
+                    $str = $str.$val['county'];
+                }
+                return $str;
+            }
+            if( $type == 'textarea' ){
+                $val = html_entity_decode($val);
+                return $val;
+            }
+            if( is_array( $val ) ){
+                return json_encode($val);
+            }
+            return $val;
+
+        }
+    }
+
+
+    if(!function_exists('sel_detection_son')){
+        /**
+         * 后台检测单 信息返回
+         * @param $path    图片路径
+         * @return array
+         */
+        function sel_detection_son($val){
+            $nval = (json_html_decode($val));
+            $str = '';
+            $name = DB::name('detection_son')->where('id','in',$nval)->field('id,name')->select();
+            
+            foreach( $name as $item ){
+                $str = $str . ' → ' . $item['name'];
+            }
+            
+             $str = mb_substr($str,2);
+            return $str;
+        }
+          
+    }
+
+
+    
+    if(!function_exists('select_spec_data')){
+        /**
+         * 查询绑定的数据字典 信息返回
+         * @param $path    图片路径
+         * @return array
+         */
+        function select_spec_data($list, $oid, $d_son_sn,$sort){
+            $nlist = [];
+            $spec_data = DB::name('spec_data')->where('d_son_sn',$d_son_sn)->select();
+            
+
+            foreach( $list as $key=>$item ){
+                    
+                $val  = DB::name('order_spec')->where(['oid'=>$oid,'class_name'=>$item['name'],'sort'=>$sort])->column('content');
+				
+                if( $item['type'] == 'radio' || $item['type'] == 'checkbox' ){
+                    foreach($spec_data as $i){
+                        if( $item['name'] == $i['class_name'] ){
+                            $list[$key]['datacate'] = $i['did'];
+                            $list[$key]['types'] = 'datacate';
+                            $res = DB::name('data_category')->where('parent_id',$i['did'])->order('sort asc')->field('name')->select();
+                            
+                            foreach( $res as $k=>$r ){
+                                $list[$key]['placeholder'][$k] = trim($r['name']);
+                            }
+                        }
+                    }
+                }
+
+                if( $item['type'] == 'select' ){
+                    foreach($spec_data as $i){
+                        if( $item['name'] == $i['class_name'] ){
+                            $list[$key]['datacate'] = $i['did'];
+                            $list[$key]['types'] = $i['table_name'];
+                            $res = DB::name($i['table_name'])->where('parent_id',$i['did'])->order('sort asc')->field('name')->select();
+                            
+                            foreach( $res as $k=>$r ){
+                                $list[$key]['placeholder'][$k] = trim($r['name']);
+                            }
+                        }
+                    }
+                }
+                if( !empty( $val ) ){
+                    if( $item['type'] === 'checkbox' ){
+                        
+                        $val[0] = json_decode($val[0],true);
+
+                    }
+
+                   
+
+                    if( $item['type'] === 'picker' ){
+                        $val[0] = json_html_decode($val[0]);
+                        
+                    }
+                    if( $item['type'] === 'file' ){
+                        $list[$key]['photo'] = json_decode( html_entity_decode($val[0]), true );
+						if(!empty($list[$key]['photo'])){
+							foreach( $list[$key]['photo'] as $kp=>$p ){
+								$list[$key]['photo'][$kp] = photo_addpath($p);
+							}
+						}
+						
+                    }
+                    $list[$key]['value'] = $val[0];
+                }else{
+                    $list[$key]['value'] = '';
+                }
+                
+            }
+            return $list;
+        }
+          
+    }
+
+    if(!function_exists('isShowStatus')){
+        /**
+         * 后台检测单 信息返回
+         * @param $path    图片路径
+         * @return array
+         */
+        function isShowStatus($arr){
+            $res = [];
+            $res['composition'] = false;
+            $res['supplier'] = false;
+            $res['machine'] = false;
+            $res['contract_sn'] = false;
+            $res['remark'] = false;
+            $res['test_type'] = false;
+            if( !empty($arr) ){
+                foreach( $arr as $item ){
+                    $res[$item] = true;
+                }
+            }
+            return $res;
+        }
+          
+    }
+
+    if(!function_exists('in_array_status')){
+        /**
+         * 判断是否在数组里
+         * @param 
+         * @return array
+         */
+        function in_array_status($i,$arr){
+            if( is_array($arr) ){
+                return in_array($i, $arr);
+            }else{
+                return false;
+            }
+            
+        }
+          
+    }
+
+    if(!function_exists('get_order_cname')){
+        /**
+         * 判断是否在数组里
+         * @param 
+         * @return array
+         */
+        function get_order_cname($id,$type){
+            if( $type == 1 ){
+                $name = DB::name('staff')->where('id',$id)->value('name');
+            }else{
+                $name = DB::name('admin')->where('id',$id)->value('username');
+            }
+            
+            if( empty($name) ){
+                $name = $id;
+            }
+            return $name;
+
+        }
+          
+    }
 
 }

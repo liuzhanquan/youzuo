@@ -1,0 +1,156 @@
+{extend name="layout" /}
+{block name="content"}
+<div class="layui-tab layui-tab-brief">
+	<ul class="layui-tab-title">
+	    <li><a href="{:url('index')}">{$pathCurrent['name']}</a></li>
+	    <li class="layui-this">流程环节设置</li>
+	    <li><a href="{:url('lcoption',['id'=>$info.id])}">添加环节</a></li>
+  	</ul>
+</div>
+<div class="demoTable" style="margin-top: 25px;margin-left:30px;font-size:18px;font-weight: bold;">
+	 流程id：
+	<div class="layui-inline" style="margin-right:30px;">
+		<!-- <input class="layui-input" name="title" id="title" autocomplete="off"> -->
+		{$info.id}
+	</div>
+	<!-- <button class="layui-btn" data-type="reload">搜索</button> -->
+	流程编号：
+	<div class="layui-inline" style="margin-right:30px;">
+		<!-- <input class="layui-input" name="title" id="title" autocomplete="off"> -->
+		{$info.detection_sn}
+	</div>
+	流程名称：
+	<div class="layui-inline">
+		<!-- <input class="layui-input" name="title" id="title" autocomplete="off"> -->
+		{$info.name}
+	</div>
+</div>
+<div class="layui-card-body">
+	<div data-model="table-bind">
+		<table class="layui-hide" id="data_table" lay-filter="data_table" data-table></table>
+	</div>
+</div>
+<script type="text/html" id="barTar">
+	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
+	<a class="layui-btn layui-btn-xs" href="{{d.spec}}">表格规则</a>
+  	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
+</script>
+<script type="text/html" id="image">
+	<img src="{{d.image}}" height="30">
+</script>
+<script type="text/html" id="input_type">
+	{{#  if(d.type == 0){ }}
+  	<button type="button" class="layui-btn layui-btn-normal">单条</button>
+  	{{#  } else { }}
+  	<button type="button" class="layui-btn">多条</button>
+  	{{#  } }}
+</script>
+<script type="text/html" id="sysTar">
+	{{#  if(d.status == 1){ }}
+  	<button type="button" class="layui-btn layui-btn-normal">启用</button>
+  	{{#  } else { }}
+  	<button type="button" class="layui-btn layui-btn-danger">冻结</button>
+  	{{#  } }}
+</script>
+{/block}
+{block name="js"}
+<script type="text/javascript">
+var mixin = {};
+var SlefUrl = this.location.href;
+layui.use('table', function(){
+	var table = layui.table;
+	table.render({
+		elem: '#data_table',
+		url:SlefUrl,
+		limit:20,
+		cellMinWidth: 80,
+		cols: [[
+	      	{field:'id',width:50, title: 'ID', sort: true,align:'center'}
+	      	,{field:'d_son_sn', title: '环节编号', width:180,align:'center'}
+	      	,{field:'name', title: '环节名称'}
+	      	,{field:'content', title: '环节描述'}
+	      	,{field:'type', title: '录入类型',width:80,toolbar: '#input_type'}
+	      	,{field:'input_staff', title: '录入人员',width:150}
+	      	,{field:'sort', width:120, title: '排序(点击修改)',edit:'number',event:'sort'}
+	      	,{field:'status', width:100, title: '状态',toolbar: '#sysTar'}
+	      	,{field:'updated_time', title: '更新时间',width:150}
+	      	,{field:'op', title: '操作',toolbar: '#barTar', width:400,align:'center'}
+	    ]],
+	    page: true,
+        id: 'testReload'
+	});
+	table.on('tool(data_table)', function(obj){
+		var data = obj.data;
+		
+		data.table = "detection_son";
+		if(obj.event === 'del'){
+			layer.confirm('确定删除吗？', function(index){
+	        	layer.close(index);
+	       		form.formDel2(data,obj,'sondel');
+	      	});
+		}
+
+		if(obj.event === 'content'){
+		      //示范一个公告层
+		      layer.open({
+		        type: 1
+		        ,offset: 'auto' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+		        ,id: 'layerDemoauto' //防止重复弹出
+		        ,content: '<div style="padding: 20px 100px;">'+ data.content +'</div>'
+		        ,btn: '关 闭'
+		        ,btnAlign: 'c' //按钮居中
+		        ,shade: 0 //不显示遮罩
+		        ,yes: function(){
+		          layer.closeAll();
+		        }
+		      });
+	    }
+
+
+
+	});
+	table.on('edit(data_table)', function(obj){
+		var value = obj.value //得到修改后的值
+		,data = obj.data //得到所在行所有键值
+		,field = obj.field; //得到字段
+		var result = {}
+		result['table'] = 'detection_son';
+		result['id'] = data.id;
+		result['value'] = value;
+		result['field'] = field;
+		// layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+		$.post(webRoot+ webControl+'/modifysort',result,function(res){
+			layer.msg(res.msg);
+			if( res.code ){
+				window.onload()
+			}
+		},'json')
+	});
+    var $ = layui.$, active = {
+        reload: function(){
+            var title = $('#title');
+
+            //执行重载
+            table.reload('testReload', {
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+                ,where: {
+                    title: title.val()
+                }
+            }, 'data');
+        }
+    };
+
+    $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
+
+     
+
+
+
+});
+</script>
+{/block}

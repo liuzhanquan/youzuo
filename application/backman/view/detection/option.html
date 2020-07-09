@@ -1,9 +1,18 @@
 {extend name="layout" /}
+
 {block name="content"}
+<style>
+	.layui-form-item .layui-form-label{
+		width:140px;
+	}
+	.layui-input-block{
+		margin-left:140px;
+	}
+</style>
 <div class="layui-tab layui-tab-brief">
 	<ul class="layui-tab-title">
 	    <li><a href="{:url('index')}">{$pathCurrent['name']}</a></li>
-	    <li class="layui-this">{empty name="info"}新增{else /}编辑{/empty}流程</li>
+	    <li class="layui-this">{empty name="info"}添加{else /}编辑{/empty}分配记录</li>
   	</ul>
 </div>
 <div class="layui-card-body">
@@ -12,22 +21,53 @@
 		  	<legend>基本设置</legend>
 		</fieldset>
 		<div class="layui-form-item">
-			<label class="layui-form-label">流程编号</label>
+			<label class="layui-form-label">产品选择</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="detection_sn" value="{$info['detection_sn']}">
+				<div class="layui-input-inline">
+					<select name="goods_id" lay-verify="required" lay-search="">
+						<option value="">直接选择或搜索选择</option>
+						{foreach name="goods" item="item"}
+						<option value="{$item.id}" {if condition="$item['id'] eq $info['goods_id']['value']"} selected {/if}>{$item.title}</option>
+						{/foreach}
+					</select>
+				</div>
 			</div>
 		</div>
 		<div class="layui-form-item">
-			<label class="layui-form-label">流程名称</label>
+			<label class="layui-form-label">业务员选择</label>
 			<div class="layui-input-block">
-				<input type="text" class="layui-input" name="name" value="{$info['name']}" datatype="*">
+				<div class="layui-input-inline">
+					<select name="customer_id" lay-verify="required" lay-search="">
+						<option value="">直接选择或搜索选择</option>
+						{foreach name="customer" item="item"}
+						<option value="{$item.id}" {if condition="$item['id'] eq $info['customer_id']['value']"} selected {/if}>{$item.customer_name}</option>
+						{/foreach}
+					</select>
+				</div>
 			</div>
 		</div>
-		
 		<div class="layui-form-item">
-			<label class="layui-form-label">流程说明</label>
+			<label class="layui-form-label">起始二维码编号</label>
 			<div class="layui-input-block">
-				<textarea id="content" name="content" data-model="form-ueditor" placeholder="">{$info['content']|raw}</textarea>
+				<input type="number" class="layui-input startNum"  name="start_num" value="{$info['start_num']}">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">结束二维码编号</label>
+			<div class="layui-input-block">
+				<input type="number" class="layui-input endNum" name="end_num" value="{$info['end_num']}" datatype="*">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">配送数量</label>
+			<div class="layui-input-block">
+				<input type="number" class="layui-input countNum" readonly style="color:gray;background-color:#f1f1f1;" name="count_num" value="{$info['count_num']|default=0}" >
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">备注说明</label>
+			<div class="layui-input-block">
+				<input type="text" class="layui-input" name="remark" value="{$info['remark']}">
 			</div>
 		</div>
 		<div class="layui-form-item">
@@ -56,5 +96,31 @@
         var form = layui.form
        
     });
+
+
+
+
+
+    function countNumGet(){
+        let startNum = $('.startNum').val();
+        let endNum   = $('.endNum').val();
+        console.log(startNum);
+        console.log(endNum);
+        if( startNum == null || startNum === '' || endNum == null || endNum === '' ) return false;
+
+        $('.countNum').val(endNum - startNum + 1);
+
+
+	};
+
+
+    $('.startNum').on('keyup',function(){
+        countNumGet();
+    });
+
+    $('.endNum').on('keyup',function(){
+        countNumGet();
+    });
+
 </script>
 {/block}

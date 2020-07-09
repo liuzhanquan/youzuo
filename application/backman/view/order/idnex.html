@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<title>首页</title>
+<link href="/static/admin/css/diycss/idenx.css" rel="stylesheet">
+<script src="/static/js/jquery.js"></script>
+<script src="/static/admin/css/diycss/jQueryMigrate-v1.4.1.js"></script>
+<script src="/static/admin/css/diycss/jquery.jqprint-0.3.js"></script>
+</head>
+<body>
+	<style>
+		.img_title{
+			width:185px;
+			text-align: center;
+		}
+		.imgBoxAddI{
+			/* width:500px!important;
+			height:500px!important; */
+		}
+
+	</style>
+<div id="app">
+	<div class="s_wid1200" style="width: 1060px;">
+		<div class="header s_text_c s_po_re" style="line-height: 65px;">
+			<h1>佛山市优坐家具检测服务有限公司
+				<br>
+				检测报告
+			</h1>
+			<img class="ewm s_po_ab" src="{$qrcode}">
+		</div>
+		<div style="margin-bottom:20px;">以上信息由委托方客户提供并承担真实性：</div>
+		<ul class="s_flex_ali s_wrap">
+			<li class="s_wid33 s_mb20">检测单号：{$order.order_sn}</li>
+			<li class="s_wid33 s_mb20">客户名称：{$customer.customer_name}</li>
+			<li class="s_wid33 s_mb20">客户地址：{$customer.province}{$customer.city}{$customer.county}{$customer.address}</li>
+			<li class="s_wid33 s_mb20">产品名称：{$order.gid.text}</li>
+			<li class="s_wid33 s_mb20">产品型号：{$order.spec}</li>
+			<li class="s_wid33 s_mb20">检测流程：{$order['did']['text']}</li>
+			
+			{notempty name="$order['supplier']"}
+			<li class="s_wid33 s_mb20">供应商：{$order.supplier}</li>
+			{/notempty}
+			{notempty name="$order['composition']"}
+			<li class="s_wid33 s_mb20">材料成分：{$order.composition}</li>
+			{/notempty}
+			{notempty name="$order['machine']"}
+			<li class="s_wid33 s_mb20">注塑机台：{$order.machine}</li>
+			{/notempty}
+			{notempty name="$order['contract_sn']"}
+			<li class="s_wid33 s_mb20">合同 / 物流编号：{$order.contract_sn}</li>
+			{/notempty}
+			{notempty name="$order['test_type']['text']"}
+			<li class="s_wid33 s_mb20">检测类型：{$order.test_type.text}</li>
+			{/notempty}
+			{notempty name="$order['remark']"}
+			<li class="s_wid33 s_mb20">备注：{$order.remark}</li>
+			{/notempty}
+			<li class="s_wid33 s_mb20">建单人：{$order.sid}</li>
+			<li class="s_wid33 s_mb20">建单时间：{$order.created_time}</li>
+			<li class="s_wid33 s_mb20">检测结果：{$order.engding}</li>
+		</ul>
+		<ul class="tab s_mt30">
+			<li class="s_flex_ali s_bb1">
+				<div class="s_wid20 s_p15 s_text_c">检测项目</div>
+				<div class="s_wid80 s_p15 s_text_c tab_right">检测数据及记录</div>
+			</li>
+			{foreach name="resList" key="key" item="item"}
+			<li class="s_flex_ali">
+				<!-- 左边 -->
+				<div class="s_wid20 s_p15 s_text_c">{:html_array_string($son[$key]['name'])}</div>
+				<!-- 右边 -->
+				<div class="s_wid80 s_text_c tab_right">
+					<!-- 右边循环项 -->
+					{foreach name="item['son']" item="so"}
+					<div class="s_flex_bian s_p15 tab_right_box">
+						<!-- 右边的左边 -->
+						<div class="s_wid30 s_text_l">
+							<div class="s_c314 s_mb10">录入时间：{$so.created_time}</div>
+							<div class="s_c314 s_mb10">录入人员：{$so.name}</div>
+						</div>
+						<!-- 右边的右边 -->
+						<div class=" s_wid70 s_text_l s_flex_bian s_wrap">
+							{foreach name="so['list']" item="spec"}
+
+							{notempty name=":html_array_string($spec['value'],$spec['type'])"}
+								{if condition="$spec['type'] neq 'file'"}
+									<div class="s_c314 s_mb15 s_wid48">{$spec['title']}{:html_array_string($spec['value'],$spec['type'])}</div>
+								{else/}
+									<br/>
+									<div class="s_c314 s_mb15 s_wid48 imgCreate" style="width:100%;">{$spec['title']}<br  /><br  />{:html_array_string($spec['value'],$spec['type'])}
+									</div>
+									<!-- <div class="s_c314 s_mb15 s_wid48 imgCreate s_flex_bian" style="width:100%;">
+									</div>	 -->
+									<br/>
+								{/if}
+							{/notempty}
+							<!-- <div class="s_c314 s_mb15 s_wid48">输入框：输入框信息#</div>
+							<div class="s_c314 s_mb15 s_wid48">单选：单选</div>
+							<div class="s_c314 s_mb15 s_wid48">多选：<span class="s_c314">多选1，</span><span class="s_c314">多选2</span></div>
+							<div class="s_c314 s_mb15 s_wid48">选择：选择框信息#</div>
+							<div class="s_c314 s_mb15 s_wid48">超链接：#录入信息#</div>
+							<div class="s_c314 s_mb15 s_wid48">省市区：#录入信息#</div>
+							<div class="s_c314 s_mb15 s_wid48">图片： 
+								<div class="s_flex_ali">
+									<img src="1562989437.png"><img src="1562989437.png"><img src="1562989437.png">
+								</div>	
+							</div>
+							<div class="s_c314 s_mb15 s_wid48">富文本：富文本内容同富文本内容同富文本内容同富文本内容同富文本内容同富文本内容同 
+								<div class="s_flex_ali">
+									<img src="1562989437.png"><img src="1562989437.png">
+								</div>
+							</div> -->
+							{/foreach}
+						</div>
+					</div>
+					{/foreach}
+				</div>
+			</li>
+			{/foreach}
+			
+			
+		</ul>
+		
+	</div>
+	<div class="header s_text_c s_po_re" style="line-height: 85px;height: 85px;">
+		<h1>报告结束</h1>
+	</div>
+	<!-- <div id="imgBoxAdd" class="s_flex_bian s_wrap" style="width:1058px;margin:0 auto;">
+		
+	</div> -->
+</div>
+<div class="s_flex_center s_ptb40">
+	<div class="dayinBnt s_text_c s_c316" id="dayinBnt">打印</div>
+	<div class="dayinBnt s_text_c s_c316 s_ml20" id="close_window">关闭</div>
+</div>
+
+<script>
+	$('#dayinBnt').on('click',function(){
+        $("#app").jqprint();
+    }) 
+	$('#close_window').on('click',function(){
+		window.close();
+	})
+
+	// $(function(){
+
+	// 	$.each($('.imgCreate img'),function(index){
+	// 		console.log(index);
+	// 		var spanStr = '<span class="img_title">附大图'+(index+1)+'</span>';
+	// 		var imgStr = '<div class="s_wid48"><img class="imgBoxAddI" style="width:500px;height:500px;" src="'+ $(this).attr('src') +'" /><div style="text-align:center;line-height:30px;">附大图'+(index+1)+'</div></div>';
+	// 		$(this).parent().parent().next('div').append(spanStr);
+	// 		$('#imgBoxAdd').append(imgStr);
+
+	// 	})
+
+
+	// })
+
+</script>
+</body>
+</html>

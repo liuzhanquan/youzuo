@@ -1,5 +1,4 @@
 <?php
-
 namespace app\backman\controller;
 use \think\Controller;
 use \app\common\model\Admin;

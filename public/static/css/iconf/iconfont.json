@@ -1,0 +1,30 @@
+{
+  "id": "1574091",
+  "name": "all",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "通用",
+  "glyphs": [
+    {
+      "icon_id": "3705465",
+      "name": "二维码",
+      "font_class": "erweima",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "6557199",
+      "name": "首页",
+      "font_class": "faxian-copy",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "7840726",
+      "name": "pre_icon_我的二维码",
+      "font_class": "pre_icon_wodeerweima",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    }
+  ]
+}

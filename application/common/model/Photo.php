@@ -47,9 +47,18 @@ class Photo extends Model{
             $save = [];
             $connt = count($data['image']);
             for ($i = 0; $i < $connt; $i++) {
+
+                if( $connt <= 1 ){
+                    $name = $data['name'];
+                }else{
+                    $name = $data['name'].'-'.$i;
+                }
+
                 $save[] = [
                     'cid' => $data['cid'],
                     'image' => $data['image'][$i],
+                    'name' => $name,
+                    
                 ];
             }
             $id = $state = $this->allowField(true)->saveAll($save);

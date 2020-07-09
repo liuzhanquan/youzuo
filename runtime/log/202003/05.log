@@ -1,0 +1,1813 @@
+---------------------------------------------------------------
+
+[2020-03-05T15:29:57+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/
+[运行时间：0.423021s] [吞吐率：2.36req/s] [内存消耗：2,364.02kb] [文件加载：80]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-05T15:29:57+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/auth/login.html
+[运行时间：0.093828s] [吞吐率：10.66req/s] [内存消耗：2,464.91kb] [文件加载：80]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/auth/login.html [ array (
+) ]
+---------------------------------------------------------------
+
+[2020-03-05T15:29:59+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/captcha.html
+[运行时间：0.369412s] [吞吐率：2.71req/s] [内存消耗：1,804.33kb] [文件加载：65]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+  'rule' => 'captcha/<id?>',
+  'route' => '\\think\\captcha\\CaptchaController@index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/auth/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-05T15:29:59+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/captcha.html
+[运行时间：0.088911s] [吞吐率：11.25req/s] [内存消耗：1,804.41kb] [文件加载：65]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+  'rule' => 'captcha/<id?>',
+  'route' => '\\think\\captcha\\CaptchaController@index',
+  'option' => 
+  array (
+    'merge_rule_regex' => false,
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/auth/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+---------------------------------------------------------------
+
+[2020-03-05T15:30:00+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.724706s] [吞吐率：1.38req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:30:04+08:00] 192.168.31.181 POST nginx.youzuo.com/admin/auth/login.html
+[运行时间：0.353077s] [吞吐率：2.83req/s] [内存消耗：3,812.43kb] [文件加载：95]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/auth/login.html',
+  'origin' => 'http://nginx.youzuo.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '38',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+)
+[ info ] [ PARAM ] array (
+  'name' => 'admin',
+  'password' => 'admin',
+  'captcha' => '3306',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000584s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.027921s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.000728s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin_log` [ RunTime:0.021635s ]
+[ sql ] [ SQL ] INSERT INTO `bear_admin_log` (`user_id` , `desc` , `action` , `timestamp`) VALUES (2 , '用户登陆' , 'auth/login' , '2020-03-05 15:30:04') [ RunTime:0.026075s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:08+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/
+[运行时间：0.649882s] [吞吐率：1.54req/s] [内存消耗：4,178.83kb] [文件加载：101]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/auth/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000850s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.043779s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001587s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000809s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.095605s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001094s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.014956s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000968s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000927s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000806s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `extend` LIKE '%index%' LIMIT 1 [ RunTime:0.001764s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:08+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.105310s] [吞吐率：9.50req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:30:09+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/index/home.html
+[运行时间：0.607114s] [吞吐率：1.65req/s] [内存消耗：4,390.33kb] [文件加载：105]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/home.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000930s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.001509s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000965s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001814s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.006058s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.002006s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.002018s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.002017s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000892s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001692s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001077s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.001068s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.101056s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` WHERE  `status` >= 0 [ RunTime:0.001036s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.007096s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` >= 0 [ RunTime:0.001907s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` = 1 [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.009716s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` WHERE  `status` >= 0 [ RunTime:0.000678s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-04-01 00:00:00' AND '2020-05-01 00:00:00' [ RunTime:0.037502s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-05-01 00:00:00' AND '2020-06-01 00:00:00' [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-06-01 00:00:00' AND '2020-07-01 00:00:00' [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-07-01 00:00:00' AND '2020-08-01 00:00:00' [ RunTime:0.000357s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-08-01 00:00:00' AND '2020-09-01 00:00:00' [ RunTime:0.000753s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-09-01 00:00:00' AND '2020-10-01 00:00:00' [ RunTime:0.000863s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-10-01 00:00:00' AND '2020-11-01 00:00:00' [ RunTime:0.000819s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-11-01 00:00:00' AND '2019-12-01 00:00:00' [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2019-12-01 00:00:00' AND '2020-01-01 00:00:00' [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-01-01 00:00:00' AND '2020-02-01 00:00:00' [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-02-01 00:00:00' AND '2020-03-01 00:00:00' [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-03-01 00:00:00' AND '2020-04-01 00:00:00' [ RunTime:0.001258s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:09+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/index/home.html
+[运行时间：0.419237s] [吞吐率：2.39req/s] [内存消耗：4,390.33kb] [文件加载：105]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/home.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000665s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000906s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001026s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000682s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000759s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.042920s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` WHERE  `status` >= 0 [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.006461s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` >= 0 [ RunTime:0.001974s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` = 1 [ RunTime:0.000359s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.009520s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` WHERE  `status` >= 0 [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-04-01 00:00:00' AND '2020-05-01 00:00:00' [ RunTime:0.038604s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-05-01 00:00:00' AND '2020-06-01 00:00:00' [ RunTime:0.001074s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-06-01 00:00:00' AND '2020-07-01 00:00:00' [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-07-01 00:00:00' AND '2020-08-01 00:00:00' [ RunTime:0.000771s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-08-01 00:00:00' AND '2020-09-01 00:00:00' [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-09-01 00:00:00' AND '2020-10-01 00:00:00' [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-10-01 00:00:00' AND '2020-11-01 00:00:00' [ RunTime:0.001131s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-11-01 00:00:00' AND '2019-12-01 00:00:00' [ RunTime:0.000654s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2019-12-01 00:00:00' AND '2020-01-01 00:00:00' [ RunTime:0.002124s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-01-01 00:00:00' AND '2020-02-01 00:00:00' [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-02-01 00:00:00' AND '2020-03-01 00:00:00' [ RunTime:0.000341s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-03-01 00:00:00' AND '2020-04-01 00:00:00' [ RunTime:0.000404s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:09+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.042676s] [吞吐率：23.43req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:30:11+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/customer/index.html
+[运行时间：0.235239s] [吞吐率：4.25req/s] [内存消耗：4,315.63kb] [文件加载：104]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/customer/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+  7 => 'category',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000678s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000953s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.000960s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001092s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001095s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Customer'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000909s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001377s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Customer'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.001570s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_cus_category` [ RunTime:0.053700s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_cus_category` WHERE  `type` = 1 [ RunTime:0.000649s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:12+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.057319s] [吞吐率：17.45req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:30:12+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/customer/index.html?page=1&limit=20
+[运行时间：0.107272s] [吞吐率：9.32req/s] [内存消耗：4,125.83kb] [文件加载：101]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/customer/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000573s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000924s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001796s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000893s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000481s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001210s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Customer'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000755s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Customer'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_cus_category` [ RunTime:0.001027s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_cus_category` WHERE  `type` = 1 [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_customer` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000676s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000950s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000979s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000589s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_cus_category` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000438s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:13+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/staff/index.html
+[运行时间：0.234250s] [吞吐率：4.27req/s] [内存消耗：4,580.38kb] [文件加载：108]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/staff/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+  7 => 'category',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000677s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000987s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000751s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.000880s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000671s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001150s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000796s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001138s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000794s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.014848s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_sta_category` [ RunTime:0.014079s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_sta_category` WHERE  `type` = 1  AND `id` <> 51 [ RunTime:0.016295s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:14+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.066115s] [吞吐率：15.13req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:30:14+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/staff/index.html?page=1&limit=20
+[运行时间：0.120605s] [吞吐率：8.29req/s] [内存消耗：4,403.64kb] [文件加载：105]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/staff/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000629s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000917s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001547s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000813s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000855s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001215s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001114s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000778s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.001318s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_sta_category` [ RunTime:0.001127s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_sta_category` WHERE  `type` = 1  AND `id` <> 51 [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff_power` [ RunTime:0.008121s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff_power` [ RunTime:0.004719s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000318s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000318s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000357s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000366s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:34+08:00] 192.168.31.181 POST nginx.youzuo.com/admin/staff/savestudentimport.html
+[运行时间：3.054105s] [吞吐率：0.33req/s] [内存消耗：8,030.91kb] [文件加载：149]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/staff/index.html',
+  'origin' => 'http://nginx.youzuo.com',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarydia5SAwqUA0cC9XV',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '20688',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000755s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000899s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.000894s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000856s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001410s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'savestudentimport' LIMIT 1 [ RunTime:0.000858s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001357s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000700s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'savestudentimport' LIMIT 1 [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `extend` LIKE '%savestudentimport%' LIMIT 1 [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_sta_category` [ RunTime:0.001219s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `bear_sta_category` WHERE  `type` = 1 ORDER BY `id` ASC [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.000722s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479 [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871 [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871  AND `phone` = 13169955677 [ RunTime:0.000366s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871  AND `phone` = 13169955677  AND `phone` = 18166469396 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871  AND `phone` = 13169955677  AND `phone` = 18166469396  AND `phone` = 17688245774 [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871  AND `phone` = 13169955677  AND `phone` = 18166469396  AND `phone` = 17688245774  AND `phone` = 13642270913 [ RunTime:0.000342s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871  AND `phone` = 13169955677  AND `phone` = 18166469396  AND `phone` = 17688245774  AND `phone` = 13642270913  AND `phone` = 13728597623 [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871  AND `phone` = 13169955677  AND `phone` = 18166469396  AND `phone` = 17688245774  AND `phone` = 13642270913  AND `phone` = 13728597623  AND `phone` = 13925979958 [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871  AND `phone` = 13169955677  AND `phone` = 18166469396  AND `phone` = 17688245774  AND `phone` = 13642270913  AND `phone` = 13728597623  AND `phone` = 13925979958  AND `phone` = 13113767724 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871  AND `phone` = 13169955677  AND `phone` = 18166469396  AND `phone` = 17688245774  AND `phone` = 13642270913  AND `phone` = 13728597623  AND `phone` = 13925979958  AND `phone` = 13113767724  AND `phone` = 13420763268 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871  AND `phone` = 13169955677  AND `phone` = 18166469396  AND `phone` = 17688245774  AND `phone` = 13642270913  AND `phone` = 13728597623  AND `phone` = 13925979958  AND `phone` = 13113767724  AND `phone` = 13420763268  AND `phone` = 13172330033 [ RunTime:0.000357s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `phone` = 15177652479  AND `phone` = 17382179871  AND `phone` = 13169955677  AND `phone` = 18166469396  AND `phone` = 17688245774  AND `phone` = 13642270913  AND `phone` = 13728597623  AND `phone` = 13925979958  AND `phone` = 13113767724  AND `phone` = 13420763268  AND `phone` = 13172330033  AND `phone` = 13418830913 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] INSERT INTO `bear_staff` (`staff_sn` , `cid` , `name` , `phone` , `password` , `email` , `status`) VALUES ( 'CP200305153034829644',4,'古杰花',15177652479,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034685754',4,'李欢欢',17382179871,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034319775',4,'刘燕',13169955677,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034987138',4,'李云杰',18166469396,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034263434',4,'农秋露',17688245774,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034485791',4,'潘汝奇',13642270913,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034199490',4,'王平',13728597623,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034721739',4,'吴启忠',13925979958,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034864021',4,'杨进美',13113767724,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034863289',4,'蒋安翠',13420763268,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034432719',4,'宋燕',13172330033,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) , ( 'CP200305153034975237',4,'林安良',13418830913,'###14e1b600b1fd579f47433b88e8d85291',NULL,1 ) [ RunTime:0.029029s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:41+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/
+[运行时间：0.072270s] [吞吐率：13.84req/s] [内存消耗：4,034.65kb] [文件加载：99]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/auth/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000624s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000909s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.000828s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000938s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000417s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000937s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000965s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001017s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `extend` LIKE '%index%' LIMIT 1 [ RunTime:0.000483s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:41+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.086011s] [吞吐率：11.63req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:30:41+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/index/home.html
+[运行时间：0.179790s] [吞吐率：5.56req/s] [内存消耗：4,183.48kb] [文件加载：103]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/home.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000841s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.001514s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000818s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001757s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001199s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000750s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000753s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001146s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.001487s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001301s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000937s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.001078s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.002204s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` WHERE  `status` >= 0 [ RunTime:0.001471s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.001846s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` >= 0 [ RunTime:0.000717s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` = 1 [ RunTime:0.002857s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.001449s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` WHERE  `status` >= 0 [ RunTime:0.000631s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-04-01 00:00:00' AND '2020-05-01 00:00:00' [ RunTime:0.000733s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-05-01 00:00:00' AND '2020-06-01 00:00:00' [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-06-01 00:00:00' AND '2020-07-01 00:00:00' [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-07-01 00:00:00' AND '2020-08-01 00:00:00' [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-08-01 00:00:00' AND '2020-09-01 00:00:00' [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-09-01 00:00:00' AND '2020-10-01 00:00:00' [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-10-01 00:00:00' AND '2020-11-01 00:00:00' [ RunTime:0.000631s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-11-01 00:00:00' AND '2019-12-01 00:00:00' [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2019-12-01 00:00:00' AND '2020-01-01 00:00:00' [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-01-01 00:00:00' AND '2020-02-01 00:00:00' [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-02-01 00:00:00' AND '2020-03-01 00:00:00' [ RunTime:0.000863s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-03-01 00:00:00' AND '2020-04-01 00:00:00' [ RunTime:0.001780s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:41+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/index/home.html
+[运行时间：0.104201s] [吞吐率：9.60req/s] [内存消耗：4,183.48kb] [文件加载：103]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/home.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000735s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.001248s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001065s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000872s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001796s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000829s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.001591s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` WHERE  `status` >= 0 [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.000986s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` >= 0 [ RunTime:0.000500s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` = 1 [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.000722s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` WHERE  `status` >= 0 [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-04-01 00:00:00' AND '2020-05-01 00:00:00' [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-05-01 00:00:00' AND '2020-06-01 00:00:00' [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-06-01 00:00:00' AND '2020-07-01 00:00:00' [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-07-01 00:00:00' AND '2020-08-01 00:00:00' [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-08-01 00:00:00' AND '2020-09-01 00:00:00' [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-09-01 00:00:00' AND '2020-10-01 00:00:00' [ RunTime:0.000366s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-10-01 00:00:00' AND '2020-11-01 00:00:00' [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-11-01 00:00:00' AND '2019-12-01 00:00:00' [ RunTime:0.000359s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2019-12-01 00:00:00' AND '2020-01-01 00:00:00' [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-01-01 00:00:00' AND '2020-02-01 00:00:00' [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-02-01 00:00:00' AND '2020-03-01 00:00:00' [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-03-01 00:00:00' AND '2020-04-01 00:00:00' [ RunTime:0.000374s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:41+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.050996s] [吞吐率：19.61req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:30:44+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/staff/index.html
+[运行时间：0.108412s] [吞吐率：9.22req/s] [内存消耗：4,429.73kb] [文件加载：106]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/staff/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+  7 => 'category',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000829s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.001033s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.000947s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000724s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001296s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.001670s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` [ RunTime:0.000511s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_sta_category` [ RunTime:0.001421s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_sta_category` WHERE  `type` = 1  AND `id` <> 51 [ RunTime:0.000518s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:30:44+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.061181s] [吞吐率：16.34req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:30:44+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/staff/index.html?page=1&limit=20
+[运行时间：0.118782s] [吞吐率：8.42req/s] [内存消耗：4,407.63kb] [文件加载：105]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/staff/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000670s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000945s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000744s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000357s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000726s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000887s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000684s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.000957s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_sta_category` [ RunTime:0.000743s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_sta_category` WHERE  `type` = 1  AND `id` <> 51 [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff_power` [ RunTime:0.000816s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff_power` [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000376s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000316s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000324s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000730s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000347s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000356s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000316s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000552s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000874s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000314s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000365s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:35:56+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/
+[运行时间：0.097098s] [吞吐率：10.30req/s] [内存消耗：4,034.65kb] [文件加载：99]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/auth/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000936s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.001447s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.001237s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001126s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000855s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001344s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000662s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001517s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `extend` LIKE '%index%' LIMIT 1 [ RunTime:0.000374s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:35:57+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.090428s] [吞吐率：11.06req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:35:57+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/index/home.html
+[运行时间：0.172689s] [吞吐率：5.79req/s] [内存消耗：4,183.48kb] [文件加载：103]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/home.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000653s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000916s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001132s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001281s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001603s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001635s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.002351s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000823s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001153s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001047s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.001710s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.001657s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` WHERE  `status` >= 0 [ RunTime:0.001141s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.002154s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` >= 0 [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` = 1 [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.001491s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` WHERE  `status` >= 0 [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-04-01 00:00:00' AND '2020-05-01 00:00:00' [ RunTime:0.000686s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-05-01 00:00:00' AND '2020-06-01 00:00:00' [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-06-01 00:00:00' AND '2020-07-01 00:00:00' [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-07-01 00:00:00' AND '2020-08-01 00:00:00' [ RunTime:0.000836s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-08-01 00:00:00' AND '2020-09-01 00:00:00' [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-09-01 00:00:00' AND '2020-10-01 00:00:00' [ RunTime:0.001584s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-10-01 00:00:00' AND '2020-11-01 00:00:00' [ RunTime:0.000721s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-11-01 00:00:00' AND '2019-12-01 00:00:00' [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2019-12-01 00:00:00' AND '2020-01-01 00:00:00' [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-01-01 00:00:00' AND '2020-02-01 00:00:00' [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-02-01 00:00:00' AND '2020-03-01 00:00:00' [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-03-01 00:00:00' AND '2020-04-01 00:00:00' [ RunTime:0.000460s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:35:57+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/index/home.html
+[运行时间：0.099792s] [吞吐率：10.02req/s] [内存消耗：4,183.48kb] [文件加载：103]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/home.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000697s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.001030s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000676s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000958s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.000879s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` WHERE  `status` >= 0 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.001520s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` >= 0 [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` = 1 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.000971s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` WHERE  `status` >= 0 [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-04-01 00:00:00' AND '2020-05-01 00:00:00' [ RunTime:0.000354s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-05-01 00:00:00' AND '2020-06-01 00:00:00' [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-06-01 00:00:00' AND '2020-07-01 00:00:00' [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-07-01 00:00:00' AND '2020-08-01 00:00:00' [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-08-01 00:00:00' AND '2020-09-01 00:00:00' [ RunTime:0.000339s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-09-01 00:00:00' AND '2020-10-01 00:00:00' [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-10-01 00:00:00' AND '2020-11-01 00:00:00' [ RunTime:0.000337s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-11-01 00:00:00' AND '2019-12-01 00:00:00' [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2019-12-01 00:00:00' AND '2020-01-01 00:00:00' [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-01-01 00:00:00' AND '2020-02-01 00:00:00' [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-02-01 00:00:00' AND '2020-03-01 00:00:00' [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-03-01 00:00:00' AND '2020-04-01 00:00:00' [ RunTime:0.000389s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:35:57+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.068554s] [吞吐率：14.59req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:36:00+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/staff/index.html
+[运行时间：0.100964s] [吞吐率：9.90req/s] [内存消耗：4,429.73kb] [文件加载：106]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/staff/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+  7 => 'category',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000615s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000903s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000661s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001753s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001018s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001015s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000841s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001032s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.002029s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.001333s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_sta_category` [ RunTime:0.002098s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_sta_category` WHERE  `type` = 1  AND `id` <> 51 [ RunTime:0.001034s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:36:00+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.055208s] [吞吐率：18.11req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:36:00+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/staff/index.html?page=1&limit=20
+[运行时间：0.132575s] [吞吐率：7.54req/s] [内存消耗：4,407.63kb] [文件加载：105]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/staff/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000769s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.001422s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000719s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001046s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000682s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000352s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000827s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000430s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.001921s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_sta_category` [ RunTime:0.000779s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_sta_category` WHERE  `type` = 1  AND `id` <> 51 [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff_power` [ RunTime:0.000925s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff_power` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000319s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000316s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.001627s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.001065s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000634s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000413s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:36:02+08:00] 192.168.31.181 POST nginx.youzuo.com/admin/staff/del
+[运行时间：0.126665s] [吞吐率：7.89req/s] [内存消耗：4,377.55kb] [文件加载：106]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/staff/index.html',
+  'origin' => 'http://nginx.youzuo.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '17',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '24',
+  'table' => 'staff',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000784s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.001110s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001378s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001290s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000828s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'del' LIMIT 1 [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000780s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000974s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'del' LIMIT 1 [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `extend` LIKE '%del%' LIMIT 1 [ RunTime:0.000981s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.001518s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_staff` WHERE  `id` = 24 LIMIT 1 [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.001051s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `sid` = '林安良' [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin_log` [ RunTime:0.000723s ]
+[ sql ] [ SQL ] INSERT INTO `bear_admin_log` (`user_id` , `desc` , `action` , `timestamp`) VALUES (2 , '删除员工【24】信息' , 'staff/del' , '2020-03-05 15:36:02') [ RunTime:0.001192s ]
+[ error ] [0]类型错误: Argument 1 passed to think\db\Query::update() must be of the type array, string given, called in /www/web/youzuo/application/backman/controller/Staff.php on line 245[/www/web/youzuo/thinkphp/library/think/db/Query.php:2897]
+---------------------------------------------------------------
+
+[2020-03-05T15:39:20+08:00] 192.168.31.181 POST nginx.youzuo.com/admin/staff/del
+[运行时间：0.105923s] [吞吐率：9.44req/s] [内存消耗：4,377.61kb] [文件加载：106]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/staff/index.html',
+  'origin' => 'http://nginx.youzuo.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '17',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '24',
+  'table' => 'staff',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000655s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.000897s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'del' LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001403s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000934s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'del' LIMIT 1 [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `extend` LIKE '%del%' LIMIT 1 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.000947s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_staff` WHERE  `id` = 24 LIMIT 1 [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.000913s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `sid` = '24'  AND `s_type` = 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin_log` [ RunTime:0.000693s ]
+[ sql ] [ SQL ] INSERT INTO `bear_admin_log` (`user_id` , `desc` , `action` , `timestamp`) VALUES (2 , '删除员工【24】信息' , 'staff/del' , '2020-03-05 15:39:20') [ RunTime:0.001156s ]
+[ error ] [0]类型错误: Argument 1 passed to think\db\Query::update() must be of the type array, string given, called in /www/web/youzuo/application/backman/controller/Staff.php on line 246[/www/web/youzuo/thinkphp/library/think/db/Query.php:2897]
+---------------------------------------------------------------
+
+[2020-03-05T15:39:46+08:00] 192.168.31.181 POST nginx.youzuo.com/admin/staff/del
+[运行时间：0.151905s] [吞吐率：6.58req/s] [内存消耗：4,261.70kb] [文件加载：101]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/staff/index.html',
+  'origin' => 'http://nginx.youzuo.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '17',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '24',
+  'table' => 'staff',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000766s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.001400s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001446s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001130s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000778s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001252s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'del' LIMIT 1 [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001090s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'del' LIMIT 1 [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `extend` LIKE '%del%' LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.000793s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_staff` WHERE  `id` = 24 LIMIT 1 [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.000777s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `sid` = '24'  AND `s_type` = 1 [ RunTime:0.000410s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:40:52+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/
+[运行时间：0.076693s] [吞吐率：13.04req/s] [内存消耗：4,034.65kb] [文件加载：99]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/auth/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000583s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001111s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000879s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000464s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `extend` LIKE '%index%' LIMIT 1 [ RunTime:0.000542s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:40:52+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.096612s] [吞吐率：10.35req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:40:52+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/index/home.html
+[运行时间：0.224667s] [吞吐率：4.45req/s] [内存消耗：4,183.48kb] [文件加载：103]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/home.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001708s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.003526s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.001897s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.004874s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001391s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.002753s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001871s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001303s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001125s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000659s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001124s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001918s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.001307s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.003281s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` WHERE  `status` >= 0 [ RunTime:0.001386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.004380s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` >= 0 [ RunTime:0.002559s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` = 1 [ RunTime:0.002685s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.004040s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` WHERE  `status` >= 0 [ RunTime:0.001567s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-04-01 00:00:00' AND '2020-05-01 00:00:00' [ RunTime:0.002689s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-05-01 00:00:00' AND '2020-06-01 00:00:00' [ RunTime:0.001898s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-06-01 00:00:00' AND '2020-07-01 00:00:00' [ RunTime:0.001677s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-07-01 00:00:00' AND '2020-08-01 00:00:00' [ RunTime:0.002840s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-08-01 00:00:00' AND '2020-09-01 00:00:00' [ RunTime:0.001670s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-09-01 00:00:00' AND '2020-10-01 00:00:00' [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-10-01 00:00:00' AND '2020-11-01 00:00:00' [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-11-01 00:00:00' AND '2019-12-01 00:00:00' [ RunTime:0.002411s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2019-12-01 00:00:00' AND '2020-01-01 00:00:00' [ RunTime:0.001179s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-01-01 00:00:00' AND '2020-02-01 00:00:00' [ RunTime:0.000642s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-02-01 00:00:00' AND '2020-03-01 00:00:00' [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-03-01 00:00:00' AND '2020-04-01 00:00:00' [ RunTime:0.000351s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:40:52+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/index/home.html
+[运行时间：0.136663s] [吞吐率：7.32req/s] [内存消耗：4,183.48kb] [文件加载：103]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/index/home.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001003s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.003063s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.001577s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.003176s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.002276s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001786s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000806s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001746s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.001758s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001902s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001603s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.001494s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.002043s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` WHERE  `status` >= 0 [ RunTime:0.001229s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.002201s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` >= 0 [ RunTime:0.001923s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` = 1 [ RunTime:0.001378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.002510s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` WHERE  `status` >= 0 [ RunTime:0.001308s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-04-01 00:00:00' AND '2020-05-01 00:00:00' [ RunTime:0.001096s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-05-01 00:00:00' AND '2020-06-01 00:00:00' [ RunTime:0.001212s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-06-01 00:00:00' AND '2020-07-01 00:00:00' [ RunTime:0.000890s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-07-01 00:00:00' AND '2020-08-01 00:00:00' [ RunTime:0.001215s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-08-01 00:00:00' AND '2020-09-01 00:00:00' [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-09-01 00:00:00' AND '2020-10-01 00:00:00' [ RunTime:0.001357s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-10-01 00:00:00' AND '2020-11-01 00:00:00' [ RunTime:0.000832s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-11-01 00:00:00' AND '2019-12-01 00:00:00' [ RunTime:0.001163s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2019-12-01 00:00:00' AND '2020-01-01 00:00:00' [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-01-01 00:00:00' AND '2020-02-01 00:00:00' [ RunTime:0.001053s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-02-01 00:00:00' AND '2020-03-01 00:00:00' [ RunTime:0.001319s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `created_time` BETWEEN '2020-03-01 00:00:00' AND '2020-04-01 00:00:00' [ RunTime:0.001549s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:40:53+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.060689s] [吞吐率：16.48req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:40:55+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/staff/index.html
+[运行时间：0.091237s] [吞吐率：10.96req/s] [内存消耗：4,430.23kb] [文件加载：106]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/youzuo/application/backman/view/staff/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+  7 => 'category',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000691s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.000826s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000408s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000771s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001249s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000845s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.001122s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `status` = 1 [ RunTime:0.000444s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_sta_category` [ RunTime:0.000780s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_sta_category` WHERE  `type` = 1  AND `id` <> 51 [ RunTime:0.000468s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:40:55+08:00] 192.168.31.181 GET nginx.youzuo.com/static/iview/iview.min.js.map
+[运行时间：0.058331s] [吞吐率：17.14req/s] [内存消耗：2,235.64kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-03-05T15:40:55+08:00] 192.168.31.181 GET nginx.youzuo.com/admin/staff/index.html?page=1&limit=20
+[运行时间：0.125301s] [吞吐率：7.98req/s] [内存消耗：4,408.20kb] [文件加载：105]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/staff/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000670s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.000997s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000625s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.000939s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001331s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000846s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001102s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000706s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000600s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.000921s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_staff` WHERE  `status` = 1 [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_sta_category` [ RunTime:0.000877s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_sta_category` WHERE  `type` = 1  AND `id` <> 51 [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff_power` [ RunTime:0.001243s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff_power` [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff` WHERE  `status` = 1 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000337s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000315s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000482s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000311s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000367s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000645s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000360s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000350s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 10 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 6 LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 11 LIMIT 1 [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000331s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_sta_category` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000315s ]
+---------------------------------------------------------------
+
+[2020-03-05T15:41:30+08:00] 192.168.31.181 POST nginx.youzuo.com/admin/staff/del
+[运行时间：0.100201s] [吞吐率：9.98req/s] [内存消耗：4,316.81kb] [文件加载：104]
+[ info ] [ LANG ] /www/web/youzuo/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'Hm_lvt_514ab2fc3786256b672f9f1f68e9063e=1575721171; PHPSESSID=9e6pm14v0ff6gvqhuuubmr4r0k; userId=2; login_time=1583393404',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.youzuo.com/admin/staff/index.html',
+  'origin' => 'http://nginx.youzuo.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '17',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.youzuo.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '24',
+  'table' => 'staff',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000951s ] mysql:host=127.0.0.1;dbname=youzuo;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.001171s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.001629s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.002189s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.000923s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.000622s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'del' LIMIT 1 [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000709s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001198s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `action` = 'del' LIMIT 1 [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Staff'  AND `extend` LIKE '%del%' LIMIT 1 [ RunTime:0.000499s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.000868s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bear_staff` WHERE  `id` = 24 LIMIT 1 [ RunTime:0.000365s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.000841s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `sid` = '24'  AND `s_type` = 1 [ RunTime:0.000484s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin_log` [ RunTime:0.000753s ]
+[ sql ] [ SQL ] INSERT INTO `bear_admin_log` (`user_id` , `desc` , `action` , `timestamp`) VALUES (2 , '删除员工【24】信息' , 'staff/del' , '2020-03-05 15:41:30') [ RunTime:0.001524s ]
+[ sql ] [ SQL ] UPDATE `bear_staff`  SET `status` = -1  WHERE  `id` = 24 [ RunTime:0.001281s ]

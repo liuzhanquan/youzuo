@@ -23,18 +23,16 @@ class Customer extends AuthBack{
     }
 
     public function index(){
-        $model = new CustomerItem;
-        $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
         $name = isset($_GET['name']) ? $_GET['name'] : '';
         $phone = isset($_GET['phone']) ? $_GET['phone'] : '';
         $where = [];
-        if($name){
-            $where[] = ['name','like',"%{$name}%"];
+        if( !empty(input('title')) ){
+            $where[] = ['customer_sn|customer_name|phone|content', 'like', "%".input('title')."%"];
         }
-        if($phone){
-            $where[] = ['phone','like',"%{$phone}%"];
-        }
+
+
         $totalNum = CustomerItem::where($where)->count();
+        
         if(request()->isAjax()){
             $page = isset($_GET['page']) ? $_GET['page'] : '1';
             $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
@@ -70,28 +68,32 @@ class Customer extends AuthBack{
 
 
     /**
-     * 编辑代理信息
+     * 编辑业务员信息
      * @param int $id
      * @return \think\response\View|void
      */
     public function option($id = 0){
         if(!request()->isPost()){
-            $list = CusCategory::where('type','1')->where([['id','neq',51]])->select();
-            $cateObj = new \lib\Category(['id','parent_id','name','cname']);
-            $relist = $cateObj->getTree($list);
             $info = CustomerItem::get($id);
+            
             $this->assign('info',$info);
-            $this->assign('list',$relist);
             return view();
         }else{
             $obj = new CustomerItem();
+
+            if( !empty($this->data['phone']) ){
+                if( !phoneNum($this->data['phone']) ){
+                    return $this->error('请输入正确的手机号');
+                }
+            }
+
             if($this->data['id']){
                 // 编辑
-                AdminLog($this->admin['id'],'修改客户【'.$this->data['customer_name'].'】信息');
+                AdminLog($this->admin['id'],'修改业务员【'.$this->data['customer_name'].'】信息');
                 $state = $obj->saveData($this->data,'edit');
             }else{
                 // 新增
-                AdminLog($this->admin['id'],'新增客户【'.$this->data['customer_name'].'】');
+                AdminLog($this->admin['id'],'添加业务员【'.$this->data['customer_name'].'】');
                 $state = $obj->saveData($this->data);
             }
             if($state){
@@ -111,10 +113,11 @@ class Customer extends AuthBack{
         return view();
     }
 
-    public function category_op($id = 0){
+    public function category_op($id = 0,$parent_id = 0){
         if(!request()->isPost()){
             $info = CusCategory::get($id);
             $group = CusCategory::where('parent_id','0')->where('type','1')->select();
+            $this->assign('parent_id',$parent_id);
             $this->assign('group',$group);
             $this->assign('info',$info);
             return view();
@@ -136,6 +139,29 @@ class Customer extends AuthBack{
             }
         }
     }
+
+    /**
+     * 客户删除
+     */
+    public function del(){
+        $count = DB::name('order')->where('cid',$this->data['id'])->count();
+        if( $count ){
+            return $this->error('该客户有绑定的订单，无法删除');
+        }else{
+            AdminLog($this->admin['id'],'删除客户【'.$this->data['id'].'】信息');
+            $res = DB::name('customer')->where('id',$this->data['id'])->delete();
+            if( $res ){
+                return $this->success('操作成功',url('index'));
+            }else{
+                return $this->error('删除失败');
+            }
+        }
+
+    }
+
+
+
+
 
 
 }

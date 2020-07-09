@@ -6,6 +6,7 @@ use \app\common\model\Admin;
 use \app\common\model\Group;
 use \app\common\model\Menu;
 use \app\common\model\Config;
+// use \think\Config.php;
 use think\Db;
 
 class AuthBack extends Controller{
@@ -54,6 +55,9 @@ class AuthBack extends Controller{
         if(!empty($config)){
             foreach($config as $k=>$vo){
                 $configArr[$vo['name']] = $vo['value'];
+                if( $vo['name'] == 'QNcdn' ){
+                    config('PHOTOPATH', $vo['value']);
+                }
             }
         }
         $this->config = $configArr;
@@ -124,6 +128,10 @@ class AuthBack extends Controller{
         $list = $li->makeTree($menu,array('parent_key'=>'parent_id','expanded'=>true));
         $this->assign('topNav', $list);
     }
+    /**
+     * 
+     * @return bool
+     */
     private function getPath(){
         $topKey = $this->request->controller(); // 控制器
         $action = $this->request->action(); // 操作方法
@@ -144,29 +152,35 @@ class AuthBack extends Controller{
             $categroy = new \lib\Category(['id','parent_id','name','cname']);
             $path = $categroy->getPath($data,$info['id']);
         }
-       
         $this->assign('pathCurrent',$info);
         $this->assign('path',$path);
     }
 
-
+    /**
+     * 删除方法
+     * @return bool
+     */
     public function del(){
         if(request()->isAjax()){
             $data = $this->request->param();
             $table = $this->table($data['table']);
             AdminLog($this->admin['id'],'删除了'.$table.'【 id ： '.$this->data['id'].'】');
-            //$res = DB::name($data['table'])->where('id',$data['id'])->delete();
+            $res = DB::name($data['table'])->where('id',$data['id'])->delete();
 
-            // if(!$res){
-            //     return $this->error('删除失败');
-            // }
+            if(!$res){
+                return $this->error('删除失败');
+            }
             return $this->success('操作成功');
             
         }
 
     }
 
-    private function table($table){
+    /**
+     * 删除操作记录返回
+     * @return string
+     */
+    public function table($table){
         $name = '';
         switch( $table ){
             case 'goods':
@@ -193,6 +207,14 @@ class AuthBack extends Controller{
                 $name = '员工分类【'.$table.'】';
                 break;
 
+            case 'detection':
+                $name = '检测流程列表【'.$table.'】';
+                break;
+            
+            case 'detection_son':
+                $name = '检测环节【'.$table.'】';
+                break;
+
             default: 
                 $name = $table;
                 break;
@@ -200,5 +222,36 @@ class AuthBack extends Controller{
         }
         return $name;
     }
+
+
+    /**
+     * 
+     * sort排序修改
+     * 
+     */
+    public function modifysort(){
+        if(request()->isAjax()){
+            $data = $this->request->param();
+            $table = $this->table($data['table']);
+            AdminLog($this->admin['id'],'修改了'.$table.'【 id ： '.$this->data['id'].'】排序');
+            if( $data['field'] == 'sort' ){
+                $update['sort'] = $data['value'];
+            
+                $res = DB::name($data['table'])->where('id',$data['id'])->update($update);
+            }
+            if( empty($res) ){
+                return $this->error('删除失败');
+            }
+            return $this->success('操作成功');
+            
+        }
+
+    }
+
+
+
+
+
+
 
 }

@@ -3,14 +3,15 @@
 <div class="layui-tab layui-tab-brief">
 	<ul class="layui-tab-title">
 	    <li class="layui-this">{$pathCurrent['name']}</li>
-	    <li><a href="{:url('option')}">添加客户</a></li>
+	    <li><a href="{:url('option')}">添加业务员</a></li>
   	</ul>
 </div>
-<div class="demoTable" style="margin-top: 25px;">
-	客户名称：
-	<div class="layui-inline">
-		<input class="layui-input" name="title" id="title" autocomplete="off">
+<div class="demoTable" style="margin-top: 25px;margin-left:20px;">
+	客户信息：
+	<div class="layui-inline" style="width:250px;">
+		<input class="layui-input" name="title" id="title" placeholder="编号、姓名、手机号码、备注" autocomplete="off">
 	</div>
+
 	<button class="layui-btn" data-type="reload">搜索</button>
 </div>
 <div class="layui-card-body">
@@ -46,14 +47,11 @@ layui.use('table', function(){
 		cellMinWidth: 80,
 		cols: [[
 	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
-	      	,{field:'customer_sn', title: '客户编号', width:80,align:'center'}
-	      	,{field:'customer_name', title: '客户名称'}
+	      	,{field:'customer_sn', title: '业务员编号', width:180,align:'center'}
+	      	,{field:'customer_name', title: '业务员名称'}
 	      	// ,{field:'price', title: '产品价格'}
-	      	,{field:'text', title: '客户分类'}
-	      	,{field:'name', title: '负责人'}
-	      	,{field:'phone', title: '手机号'}
-	      	,{field:'status', width:100, title: '状态',toolbar: '#sysTar'}
-	      	,{field:'sort', title: '排序',width:60,sort: true,align:'center'}
+            ,{field:'phone', title: '手机号'}
+            ,{field:'content', title: '备注'}
 	      	,{field:'timestamp', title: '添加时间',width:150}
 	      	,{field:'op', title: '操作',toolbar: '#barTar', width:150,align:'center'}
 	    ]],
@@ -73,6 +71,7 @@ layui.use('table', function(){
     var $ = layui.$, active = {
         reload: function(){
             var title = $('#title');
+			var cid = $('#cid');
 
             //执行重载
             table.reload('testReload', {
@@ -81,6 +80,7 @@ layui.use('table', function(){
                 }
                 ,where: {
                     title: title.val()
+					,cid: cid.val()
                 }
             }, 'data');
         }

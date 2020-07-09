@@ -13,7 +13,9 @@
 </div>
 <script type="text/html" id="barTar">
 	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
-  	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
+	{{#  if(d.id != 2){ }}
+	  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
+	{{#  } }}
 </script>
 <script type="text/html" id="sysTar">
 	{{#  if(d.status == 1){ }}

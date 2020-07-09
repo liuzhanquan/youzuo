@@ -3,13 +3,31 @@
 <div class="layui-tab layui-tab-brief">
 	<ul class="layui-tab-title">
 	    <li class="layui-this">{$pathCurrent['name']}</li>
-	    <li><a href="{:url('option')}">添加员工</a></li>
+	    <li><a href="{:url('option')}">添加核销账号</a></li>
   	</ul>
 </div>
-<div class="demoTable" style="margin-top: 25px;">
-	客户名称：
+
+<div class="demoTable" style="margin-top: 25px;margin-left:20px;">
+	姓名：
+	<div class="layui-inline" style="width:250px;">
+		<input type="text" class="layui-input" name="name" id="name" placeholder="请输入姓名" autocomplete="off">
+	</div>
+	&nbsp;
+	账号：
+	<div class="layui-inline" style="width:250px;">
+		<input type="text" class="layui-input" name="phone" id="phone" placeholder="请输入核销员账号" autocomplete="off">
+	</div>
+	&nbsp;
+	账号状态：
 	<div class="layui-inline">
-		<input class="layui-input" name="title" id="title" autocomplete="off">
+		<form class="layui-form">
+			<select class="layui-input" name="status" id="status" lay-filter="cid">
+				<option value="">请选择状态</option>
+				<option value="1">正常</option>
+				<option value="-1">冻结</option>
+				
+			</select>
+		</form>
 	</div>
 	<button class="layui-btn" data-type="reload">搜索</button>
 </div>
@@ -29,7 +47,7 @@
 	{{#  if(d.status == 1){ }}
   	<button type="button" class="layui-btn layui-btn-normal">正常</button>
   	{{#  } else { }}
-  	<button type="button" class="layui-btn layui-btn-danger">关闭</button>
+  	<button type="button" class="layui-btn layui-btn-danger">禁用</button>
   	{{#  } }}
 </script>
 {/block}
@@ -37,8 +55,9 @@
 <script type="text/javascript">
 var mixin = {};
 var SlefUrl = this.location.href;
-layui.use('table', function(){
-	var table = layui.table;
+layui.use(['table','upload'], function(){
+	var table = layui.table
+		,upload = layui.upload;
 	table.render({
 		elem: '#data_table',
 		url:SlefUrl,
@@ -46,13 +65,9 @@ layui.use('table', function(){
 		cellMinWidth: 80,
 		cols: [[
 	      	{field:'id',width:80, title: 'ID', sort: true,align:'center'}
-	      	,{field:'staff_sn', title: '员工编号', width:80,align:'center'}
-	      	,{field:'name', title: '员工名称'}
-	      	// ,{field:'price', title: '产品价格'}
-	      	,{field:'text', title: '分类'}
-	      	,{field:'phone', title: '手机号'}
-	      	,{field:'power', title: '权限'}
-	      	,{field:'status', width:100, title: '状态',toolbar: '#sysTar'}
+	      	,{field:'name',width:180, title: '姓名'}
+	      	,{field:'phone', title: '账号'}
+	      	,{field:'status', title: '状态',toolbar: '#sysTar'}
 	      	,{field:'timestamp', title: '添加时间',width:150}
 	      	,{field:'op', title: '操作',toolbar: '#barTar', width:150,align:'center'}
 	    ]],
@@ -72,6 +87,8 @@ layui.use('table', function(){
     var $ = layui.$, active = {
         reload: function(){
             var title = $('#title');
+            var cid = $('#cid');
+            var status = $('#status');
 
             //执行重载
             table.reload('testReload', {
@@ -80,6 +97,57 @@ layui.use('table', function(){
                 }
                 ,where: {
                     title: title.val()
+                    ,cid: cid.val()
+                    ,status: status.val()
+                }
+            }, 'data');
+        },
+		excelDemo: function(){
+            window.location.href = '/excel/staff_demo.xls'
+        }
+    };
+
+	upload.render({
+		elem: '#uploadExcel'
+		,url: '{:url("savestudentImport")}'
+		,accept: 'file' //普通文件
+		,auto:'xlsx|xls|csv'
+		,done: function(res){
+			layer.alert(res.msg);
+			// setInterval(function(){
+			// 	window.location.reload();
+			// },3000)
+			
+		}
+	});
+
+
+
+    $('.demoTable .layui-btn').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
+
+	$('#excelDemo').on('click', function(){
+        var type = $(this).data('type');
+        active[type] ? active[type].call(this) : '';
+    });
+
+    var $ = layui.$, active = {
+        reload: function(){
+            var name = $('#name');
+            var phone = $('#phone');
+            var status = $('#status');
+
+            //执行重载
+            table.reload('testReload', {
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+                ,where: {
+                    name: name.val()
+                    ,phone: phone.val()
+                    ,status: status.val()
                 }
             }, 'data');
         }
@@ -89,6 +157,7 @@ layui.use('table', function(){
         var type = $(this).data('type');
         active[type] ? active[type].call(this) : '';
     });
+
 });
 </script>
 {/block}
