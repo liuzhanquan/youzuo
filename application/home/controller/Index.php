@@ -1,5 +1,5 @@
 <?php
-namespace app\api\controller;
+namespace app\home\controller;
 
 use app\common\model\Goods;
 use app\common\model\Staff;
@@ -14,15 +14,8 @@ use hg\Code;
 use think\Db;
 use think\facade\App;
 
-$origin = request()->header('Origin');
-if (!$origin) $origin = 'codecheck.c.qiema.cc';
-header('Access-Control-Allow-Origin:'.$origin);
-header('Access-Control-Allow-Credentials:true');
-header('Access-Control-Allow-Methods:GET,POST,OPTIONS');
-header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
-header('Access-Control-Allow-Headers: content-type,token,dealerauth,mstoreauth,Authorization');
 
-class Index extends ApiController
+class Index extends Controller
 {	
 	/**
      * @var \think\Request Request实例
@@ -67,10 +60,9 @@ class Index extends ApiController
     }
     
     public function index(){
-        $power['power'] = $this->userPower['power'];
-        return_ajax(200,'成功', $power );
 
-        
+
+        return view();
     }
 
     /**
@@ -88,8 +80,9 @@ class Index extends ApiController
     // 核销录入订单信息
     public function checkOrder(){
 
-    	$data = $this->data;
-		$orderM = new CodeLogInDb( $this->userInfo );
+    	$data = input();
+	    $userInfo = userdecode($data['userInfo']);
+		$orderM = new CodeLogInDb( $userInfo );
 		$res = $orderM->order($data['keyword']);
 		return_ajax($res['code'],$res['msg'],$res['data']);
 

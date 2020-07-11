@@ -14,6 +14,14 @@ use app\common\model\DetectionSon;
 use app\common\model\DetectionSpec;
 use think\Db;
 
+
+$origin = request()->header('Origin');
+if (!$origin) $origin = 'codecheck.c.qiema.cc';
+header('Access-Control-Allow-Origin:'.$origin);
+header('Access-Control-Allow-Credentials:true');
+header('Access-Control-Allow-Methods:GET,POST,OPTIONS');
+header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
+header('Access-Control-Allow-Headers: content-type,token,dealerauth,mstoreauth,Authorization');
 /**
  * ApiController 入口文件基类，需要控制权限的控制器都应该继承该类
  */

@@ -1,5 +1,5 @@
 <?php
-namespace app\api\controller;
+namespace app\home\controller;
 
 use app\common\model\Goods;
 use think\Controller;
@@ -9,13 +9,8 @@ use hg\ServerResponse;
 use hg\Code;
 use think\Db;
 
-$origin = request()->header('Origin');
-if (!$origin) $origin = 'codecheck.c.qiema.cc';
-header('Access-Control-Allow-Origin:'.$origin);
-header('Access-Control-Allow-Credentials:true');
-header('Access-Control-Allow-Methods:GET,POST,OPTIONS');
-header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
-header('Access-Control-Allow-Headers: content-type,token,dealerauth,mstoreauth,Authorization');
+
+
 
 class Login
 {	
@@ -65,30 +60,8 @@ class Login
 
 
     public function login(){
-        $data = input();
-        empty($data['username']) ? return_ajax("登录账号不能为空",400) : $username = $data['username'];
-        empty($data['password']) ? return_ajax("登录账号不能为空",400) : $password = $data['password'];
 
-		$info = db('staff')->where('phone',$username)->find();
-
-        if( empty($info) ){
-			return_ajax(400,'账号不存在');
-        }
-
-        if( $info['status'] != 1 ){
-			return_ajax(400,'账号已被冻结！');
-        }else {
-			$state = sp_compare_password($data['password'],$info['password']);
-        }
-		if( $state ){
-			$userinfo = ['id'=>$info['id'],'log_time'=>time(),'sn'=>$info['staff_sn']];
-            $userinfo = userencode($userinfo);
-			return_ajax( 200, '登录成功', ["token"=>$userinfo,'name'=>$info['name']]);
-		}else{
-            return_ajax( 400, '密码不正确！');
-        }
-		return_ajax( 400, '登录失败');
-            
+        return view();
 
     }
 
