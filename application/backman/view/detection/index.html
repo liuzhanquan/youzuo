@@ -7,9 +7,42 @@
   	</ul>
 </div>
 <div class="demoTable" style="margin-top: 25px;margin-left:20px;">
-	关键词：
+	建单时间：
+	<div class="layui-inline">
+		<input type="text" class="layui-input" id="start_time" name="start_time" placeholder="yyyy-MM-dd HH:mm:ss">
+	</div>
+	-
+	<div class="layui-inline">
+		<input type="text" class="layui-input" id="end_time" name="end_time" placeholder="yyyy-MM-dd HH:mm:ss">
+	</div>
+	<br>
+	<br>
+
+	产品：
+	<div class="layui-inline">
+		<form class="layui-form">
+			<select class="layui-input" name="goods_id" id="goods_id" lay-filter="goods_id">
+				<option value="">请选择产品</option>
+				{foreach $goods as $vo}
+				<option value="{$vo['id']}">{$vo['title']}</option>
+				{/foreach}
+			</select>
+		</form>
+	</div>
+	业务员：
+	<div class="layui-inline">
+		<form class="layui-form">
+			<select class="layui-input" name="customer_id" id="customer_id" lay-filter="customer_id">
+				<option value="">请选择业务员：</option>
+				{foreach $customer as $vo}
+				<option value="{$vo['id']}">{$vo['customer_name']}</option>
+				{/foreach}
+			</select>
+		</form>
+	</div>
+	备注：
 	<div class="layui-inline" style="width:200px;">
-		<input class="layui-input" name="title" id="title" placeholder="流程编号、流程名称、流程备注" autocomplete="off">
+		<input class="layui-input" name="title" id="title" placeholder="备注" autocomplete="off">
 	</div>
 	<button class="layui-btn" data-type="reload">搜索</button>
 </div>
@@ -19,7 +52,6 @@
 	</div>
 </div>
 <script type="text/html" id="barTar">
-	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
   	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
 </script>
 <script type="text/html" id="image">

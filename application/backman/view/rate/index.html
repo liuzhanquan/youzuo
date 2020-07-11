@@ -16,16 +16,6 @@
 	<div class="layui-inline">
 		<input class="layui-input" name="title" id="title" placeholder="产品编号、产品名称" style="width:220px;" autocomplete="off">
 	</div>
-	<!-- <div class="layui-inline">
-		<form class="layui-form">
-			<select class="layui-input" name="gid" id="gid" lay-filter="gid">
-				<option value="">请选择产品分类</option>
-				{foreach $category as $vo}
-				<option value="{$vo['id']}">{$vo['cname']|raw}</option>
-				{/foreach}
-			</select>
-		</form>
-	</div> -->
 	产品型号：
 	<div class="layui-inline">
 		<input class="layui-input" name="spec" id="spec" placeholder="产品型号" style="width:220px;" autocomplete="off">
@@ -34,16 +24,7 @@
 	<div class="layui-inline">
 		<input class="layui-input" name="customer" id="customer" placeholder="客户编号、客户名称、手机号、负责人" style="width:220px;"  autocomplete="off">
 	</div>
-	<!-- <div class="layui-inline">
-		<form class="layui-form">
-			<select class="layui-input" name="cid" id="cid" lay-filter="cid">
-				<option value="">请选择客户分类</option>
-				{foreach $cus_category as $vo}
-				<option value="{$vo['id']}">{$vo['cname']|raw}</option>
-				{/foreach}
-			</select>
-		</form>
-	</div> -->
+
 	
 	<button class="layui-btn" data-type="reload">搜索</button>
 </div>
@@ -89,13 +70,10 @@ layui.use(['table','upload'], function(){
 		cellMinWidth: 80,
 		cols: [[
 	      	// {field:'id',width:80, title: 'ID', sort: true,align:'center'}
-	      	{field:'good_sn', title: '产品编号', width:180,align:'center'}
-	      	,{field:'good_name', title: '产品名称'}
-	      	// ,{field:'price', title: '产品价格'}
-	      	,{field:'spec', title: '产品型号'}
-	      	// ,{field:'status', width:100, title: '商品状态',toolbar: '#sysTar'}
-	      	,{field:'pass', title: '合格率',sort: true,align:'center'}
-	      	,{field:'warn', title: '警告率',sort: true,align:'center'}
+	      	{field:'sn', title: '业务员编号', width:180,align:'center'}
+	      	,{field:'name', title: '业务员名称'}
+	      	,{field:'c_num', title: '分配数量'}
+	      	,{field:'res_num', title: '已核销数量',sort: true,align:'center'}
 	      	// ,{field:'unpass', title: '不合格率',sort: true,align:'center'}
 	      	// ,{field:'runing', title: '待评价',sort: true,align:'center'}
 	      	,{field:'count', title: '产品总数',sort: true,align:'center'}

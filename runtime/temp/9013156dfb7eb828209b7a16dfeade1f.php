@@ -1,4 +1,4 @@
-<?php /*a:3:{s:64:"/www/web/codecheck/application/backman/view/detection/index.html";i:1594311455;s:55:"/www/web/codecheck/application/backman/view/layout.html";i:1594223536;s:52:"/www/web/codecheck/application/backman/view/nav.html";i:1594223536;}*/ ?>
+<?php /*a:3:{s:64:"/www/web/codecheck/application/backman/view/detection/index.html";i:1594418808;s:55:"/www/web/codecheck/application/backman/view/layout.html";i:1594223536;s:52:"/www/web/codecheck/application/backman/view/nav.html";i:1594223536;}*/ ?>
 <!DOCTYPE html>
 <html class="admin-sm">
 <head>
@@ -54,7 +54,6 @@
 	</div>
 </div>
 <script type="text/html" id="barTar">
-	<a class="layui-btn layui-btn-xs" href="{{d.op}}">编辑</a>
   	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="user">删除</a>
 </script>
 <script type="text/html" id="image">

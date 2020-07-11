@@ -3,7 +3,7 @@ namespace app\backman\controller;
 use app\backman\model\Meal;
 use \app\common\controller\AuthBack;
 use \app\common\model\Category;
-use \app\common\model\CusCategory;
+use \app\common\model\Detection;
 use app\common\model\Comment;
 use \app\common\model\Goods;
 use \app\common\model\Customer;
@@ -21,24 +21,7 @@ class Rate extends AuthBack{
 
     public function index(){
         $type = 1;
-
-        $where[] = ['gid','neq',''];
-        $where[] = ['spec','neq',''];
-        $where[] = ['status','egt','2'];
-        if( !empty(input('title')) ){
-            $type = 1;
-            $Gwhere[] = ['title', 'like', "%".input('title')."%"];
-            $gid = Goods::where($Gwhere)->field('id')->select();
-            $dgid = [];
-            if( $gid ){
-                foreach( $gid as $item ){
-                    $dgid[] = $item['id'];
-                }
-            }
-            $dgid[] = 0;
-            
-            $where[] = ['gid','in',$dgid];
-        }
+		$where = [];
         if( !empty(input('gid')) ){
             $type = 1;
             $gid = categorySelSon('category',input('gid'),true);
@@ -52,51 +35,39 @@ class Rate extends AuthBack{
             $type = 2;
             $Cwhere[] = ['customer_name|phone|name|customer_sn', 'like', "%".input('customer')."%"];
         }
-        if( !empty(input('cid')) ){
-            $type = 2;
-            $cid = categorySelSon('cus_category',input('cid'),true);
-            $Cwhere[] = ['cid','in',$cid];
-        }
-        $whereArr = [];
-        if( $type != 1 ){
-            // 获取客户id
-            $cidArr = Customer::where($Cwhere)->field('id')->select();
-            
-            // 根据 客户id查询客户相关的检测单 获取产品id
-            // $gid = DB::name('order')->where($whereArr)->distinct(true)->field('gid,spec')->select();
-            $dcid = [];
-            if( $cidArr ){
-                foreach( $cidArr as $item ){
-                    $dcid[] = $item['id'];
-                }
-            }
-            $dcid[] = '0';
-            $where[] = ['cid','in',$dcid];
-            
-            
-        }
         //查询产品分类
-        
-        
-        $totalNum = Order::where($where)->group('spec,gid')->count();
-        
-        $list = Category::where('type','1')->where([['id','neq',51]])->select();
-        $cateObj = new \lib\Category(['id','parent_id','name','cname']);
-        $category = $cateObj->getTree($list);
-        //查询客户分类
-        $cus_list = CusCategory::where('type','1')->where([['id','neq',51]])->select();
-        $cus_cateObj = new \lib\Category(['id','parent_id','name','cname']);
-        $cus_category = $cus_cateObj->getTree($cus_list);
+		if( $type == 1 ){
+			$totalNum = Detection::alias('d')->join('order o','d.goods_id = o.goods_id')->join('customer c','d.customer_id = c.id')->where($where)->group('d.id')->count();
+		} else {
+			$totalNum = Goods::alias('g')->join('detection d','g.id = d.goods_id')->join('order o','g.id = o.goods_id')->where($where)->group('g.id')->count();
+		}
 
         if(request()->isAjax()){
             $page = isset($_GET['page']) ? $_GET['page'] : '1';
             $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
-
             $startNum = ($page - 1) * $limit;
             $totalPage = ceil($totalNum/$limit);
-            
-            
-            $list = Order::where($where)->limit($startNum.','.$limit)->distinct(true)->field('spec,gid')->select();
+
+	        if( $type == 2 ){
+		        $list = Detection::alias('d')
+			            ->join('customer c','c.id = d.customer_id')
+			            ->where($where)
+			            ->group('d.customer_id')
+			            ->field('c.customer_sn as sn, c.customer_name as name, c.id, sum(d.count_num) as c_num')
+			            ->order('c_num desc')
+			            ->limit($startNum.','.$limit)
+			            ->select();
+	        } else {
+		        $list = Detection::alias('d')
+				        ->join('goods g','g.id = d.goods_id')
+				        ->where($where)
+				        ->group('d.goods_id')
+				        ->field('g.good_sn as sn, g.title as name, g.id,sum(d.count_num) as c_num')
+				        ->order('c_num desc')
+				        ->limit($startNum.','.$limit)
+				        ->select();
+	        }
+
             
             if(empty($list)){
                 return json(['code'=>0,'data'=>[],'total'=>$totalPage,'count'=>$totalNum]);
@@ -106,16 +77,18 @@ class Rate extends AuthBack{
                 $nList = array();
                 if(!empty($list)){
                     foreach($list as $k=>$vo){
-                        $rate = $this->rateTotal($vo,$whereArr);
+//                        $rate = $this->rateTotal($vo,$whereArr);
                         $nList[$k] = $vo;
-                        $nList[$k]['count'] = $rate['count'];
-                        $nList[$k]['good_sn'] = $vo['gid']['good_sn'];
-                        $nList[$k]['good_name'] = $vo['gid']['text'];
-                        $nList[$k]['pass'] = $rate['pass'];
-                        $nList[$k]['warn'] = $rate['warn'];
-                        $nList[$k]['unpass'] = $rate['unpass'];
-                        $nList[$k]['runing'] = $rate['runing'];
-                        $nList[$k]['text'] = $vo['cid']['text'];
+                        $nList[$k]['sn'] = $vo['sn'];
+                        $nList[$k]['name'] = $vo['name'];
+	                    $nList[$k]['c_num'] = $vo['c_num'];
+	                    if( $type == 1 ){
+		                    $nList[$k]['res_num'] = Order::where('customer_id',$vo['id'])->count();
+	                    } else {
+		                    $nList[$k]['res_num'] = Order::where('goods_id',$vo['id'])->count();
+	                    }
+
+
                         // $nList[$k]['op'] = url('option',['id'=>$vo['id']]);
                     }
                 }
@@ -128,8 +101,6 @@ class Rate extends AuthBack{
                 return json($return);
             }
         }else{
-            $this->assign('category',$category);
-            $this->assign('cus_category',$cus_category);
             $this->assign('totalNum',$totalNum);
             return view();
         }

@@ -21,25 +21,19 @@ class Order extends Model{
      * @param $value
      * @return mixed
      */
-    public function getCidAttr($value)
+    public function getCustomerIdAttr($value)
     {
         $info = Customer::where('id',$value)->value('customer_name');
         return ['text' => $info, 'value' => (int)$value];
     }
-    public function getTestTypeAttr($value)
-    {
-        $info = OrderTestType::where('id',$value)->value('name');
-        return ['text' => $info, 'value' => (int)$value];
-    }
-    public function getIsShowAttr($value)
-    {
-        
-        if( $value ){
-            $arr = explode(',',$value);
-        }else{
-            $arr = [];
-        }
-        return $arr;
+	public function getGoodsIdAttr($value)
+	{
+		$info = Goods::where('id',$value)->value('title');
+		return ['text' => $info, 'value' => (int)$value];
+	}
+    public function getStaffIdAttr( $value ){
+    	$info = Staff::where('id',$value)->value('name');
+    	return ['text'=> $info, 'value'=>(int)$value];
     }
     public function getRequiredStatusAttr($value)
     {

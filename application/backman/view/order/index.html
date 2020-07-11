@@ -20,62 +20,11 @@
 <div class="layui-tab layui-tab-brief">
     <ul class="layui-tab-title">
         <li class="layui-this">{$pathCurrent['name']}</li>
-        <li><a href="{:url('option')}">添加检测单</a></li>
+        <!--<li><a href="{:url('option')}">添加检测单</a></li>-->
     </ul>
 </div>
 <div class="demoTable" style="margin-top: 25px;margin-left:20px;">
-    关键词：
-    <div class="layui-inline" style="width:360px;">
-        <input class="layui-input" name="like" id="like" placeholder="检测单号、客户名称、产品编号、名称、产品类型、建单人、备注" autocomplete="off">
-    </div>
-    
-     客户：
-    <div class="layui-inline">
-		<form class="layui-form">
-			<select class="layui-input" name="customer" id="customer" lay-filter="customer">
-				<option value="">请选择客户：</option>
-				{foreach $customer as $vo}
-				<option value="{$vo['id']}">{$vo['customer_name']}</option>
-				{/foreach}
-			</select>
-		</form>
-    </div>
-     产品：
-    <div class="layui-inline">
-		<form class="layui-form">
-			<select class="layui-input" name="goods" id="goods" lay-filter="goods">
-				<option value="">请选择产品</option>
-				{foreach $goods as $vo}
-				<option value="{$vo['id']}">{$vo['title']}</option>
-				{/foreach}
-			</select>
-		</form>
-    </div>
-     检测流程：
-    <div class="layui-inline">
-		<form class="layui-form">
-			<select class="layui-input" name="detection" id="detection" lay-filter="detection">
-				<option value="">请选择检测流程</option>
-				{foreach $detection as $vo}
-				<option value="{$vo['id']}">{$vo['name']}</option>
-				{/foreach}
-			</select>
-		</form>
-    </div>
-    <br>
-    <br>
-    
-    检测结果：
-    <div class="layui-inline" style="width: 200px;">
-        <select class="layui-input" name="status" id="status" autocomplete="off">
-            <option value="">请选择订单状态</option>
-            <option value="0">未开始</option>
-            <option value="1">进行中</option>
-            <option value="2">已完成</option>
-            <option value="3">审核不通过</option>
-        </select>
-    </div>
-     建单时间：
+    建单时间：
     <div class="layui-inline">
         <input type="text" class="layui-input" id="start_time" name="start_time" placeholder="yyyy-MM-dd HH:mm:ss">
     </div>
@@ -83,6 +32,47 @@
     <div class="layui-inline">
         <input type="text" class="layui-input" id="end_time" name="end_time" placeholder="yyyy-MM-dd HH:mm:ss">
     </div>
+    二维码：
+    <div class="layui-inline" style="width:360px;">
+        <input class="layui-input" name="like" id="like" placeholder="防伪码、流水号" autocomplete="off">
+    </div>
+    核销人：
+    <div class="layui-inline">
+        <form class="layui-form">
+            <select class="layui-input" name="staff_id" id="staff_id" lay-filter="staff_id">
+                <option value="">请选择核销人</option>
+                {foreach $staff as $vo}
+                <option value="{$vo['id']}">{$vo['name']}</option>
+                {/foreach}
+            </select>
+        </form>
+    </div>
+    <br>
+    <br>
+
+     产品：
+    <div class="layui-inline">
+		<form class="layui-form">
+			<select class="layui-input" name="goods_id" id="goods_id" lay-filter="goods_id">
+				<option value="">请选择产品</option>
+				{foreach $goods as $vo}
+				<option value="{$vo['id']}">{$vo['title']}</option>
+				{/foreach}
+			</select>
+		</form>
+    </div>
+    业务员：
+    <div class="layui-inline">
+        <form class="layui-form">
+            <select class="layui-input" name="customer_id" id="customer_id" lay-filter="customer_id">
+                <option value="">请选择业务员：</option>
+                {foreach $customer as $vo}
+                <option value="{$vo['id']}">{$vo['customer_name']}</option>
+                {/foreach}
+            </select>
+        </form>
+    </div>
+
     <button class="layui-btn" data-type="reload"> 搜索</button>
 </div>
 <div class="layui-card-body">
@@ -92,52 +82,15 @@
 </div>
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-group">
-        <button class="layui-btn tableHBtn" data-type="getNewData">批量建单</button>
-        <button class="layui-btn tableHBtn" data-type="getDownQuecode" style="margin-left:10px!important;">批量下载二维码</button>
-        <button class="layui-btn tableHBtn" data-type="getDelData" style="margin-left:10px!important;">批量删除</button>
+
       </div>
 </script>
-<script type="text/html" id="barTar">
-    <a class="layui-btn layui-btn-xs" href="{{d.op}}">修改</a>
-    {{#  if(d.status > 0){ }}
-    <a class="layui-btn layui-btn-xs" lay-event="modify" >审核</a>
-    {{#  } }}
-    <a class="layui-btn layui-btn-xs" lay-event="copy" >复制</a>
-    <br>
-    {{#  if(d.status > 1){ }}
-    <a class="layui-btn layui-btn-xs" href="{{d.print}}" target="_blank" >打印</a>
-    {{#  } }}
-    <a class="layui-btn layui-btn-xs" lay-event="code" >二维码</a>
-    <a class="layui-btn layui-btn-xs" href="{{d.lc}}">信息管理</a>
-    {{#  if(d.status <= 0){ }}
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" data-del data-id="{{d.id}}" data-table="staff">删除</a>
-    {{#  } }}
-</script>
+
 <script type="text/html" id="image">
     <img src="{{d.image}}" height="30">
 </script>
-<script type="text/html" id="sysTar">
-    {{#  if(d.status == 1){ }}
-    <button type="button" class="layui-btn ">进行中</button>
-    {{#  } else if(d.status == 2) { }}
-    <button type="button" class="layui-btn layui-btn-normal">已完成</button>
-    {{#  } else if(d.status == 3) { }}
-    <button type="button" class="layui-btn layui-btn-danger">审核不通过</button>
-    {{#  } else { }}
-    <button type="button" class="layui-btn layui-btn-warm">未开始</button>
-    {{#  } }}
-</script>
-<script type="text/html" id="ending"">
-    {{#  if(d.engding == 1){ }}
-    <button type="button" class="layui-btn layui-btn-normal">合格</button>
-    {{#  } else if(d.engding == 2) { }}
-    <button type="button" class="layui-btn layui-btn-warm">风险警告</button>
-    {{#  } else if(d.engding == 3) { }}
-    <button type="button" class="layui-btn layui-btn-warm">不合格</button>
-    {{#  } else { }}
-    <button type="button" class="layui-btn layui-btn-danger">待定</button>
-    {{#  } }}
-</script>
+
+
 {/block}
 {block name="js"}
 <script type="text/javascript">
@@ -165,22 +118,15 @@
             cols: [[
                 {type: 'checkbox'}
                 ,{field:'id', title: 'id', width:80, sort: true,align:'left'}
-                ,{field:'order_sn', title: '订单号', width:200, sort: true,align:'left'}
-                ,{field:'customer_name', title: '客户名称', sort: true,align:'left'}
-                ,{field:'goods_title', title: '产品名称',  sort: true,align:'left'}
-                ,{field:'spec', title: '产品型号', sort: true,align:'left'}
-                ,{field:'supplier', title: '供应商', sort: true,align:'left'}
-                ,{field:'staff', title: '建单人',width:120, sort: true,align:'left'}
-                ,{field:'detection_name', title: '检测流程', sort: true,align:'left'}
-                // ,{field:'contract_sn', title: '合同/物流编号', sort: true,align:'left'}
-                // ,{field:'test_type_text', title: '检测类型', sort: true,align:'left'}
-                
-                // ,{field:'created_time', title: '建单时间', width:160, sort: true,align:'left'}
-                ,{field:'status', title: '流程状态', sort: true,align:'left',toolbar:'#sysTar'}
-                ,{field:'engding', title: '检测结果', sort: true,align:'left',toolbar:'#ending'}
+                ,{field:'staff_name', title: '核销人姓名', width:150, sort: true,align:'left'}
+                ,{field:'order_sn', title: '二维码', width:200, sort: true,align:'left'}
+                ,{field:'code', title: '流水号', width:100, sort: true,align:'left'}
+                ,{field:'goods_title', title: '产品名称', sort: true,align:'left'}
+                ,{field:'customer_name', title: '业务员名称',  sort: true,align:'left'}
+                ,{field:'create_time', title: '核销时间', sort: true,align:'left'}
                 // ,{field:'remark', title: '备注', sort: true,align:'left'}
                 
-                ,{field:'op', title: '操作',toolbar: '#barTar',width:300,align:'center',fixed: 'right'}
+                // ,{field:'op', title: '操作',toolbar: '#barTar',width:300,align:'center',fixed: 'right'}
             ]],
             page: true,
             id: 'testReload'
@@ -375,11 +321,10 @@
             
         var $ = layui.$, active = {
             reload: function(){
-                var customer = $('#customer');
-                var goods = $('#goods');
-                var detection = $('#detection');
+                var customer_id = $('#customer_id');
+                var goods_id = $('#goods_id');
+                var staff_id = $('#staff_id');
                 var like = $('#like');
-                var status = $('#status');
                 var start_time = $('#start_time');
                 var end_time = $('#end_time');
 
@@ -389,7 +334,7 @@
                         curr: 1 //重新从第 1 页开始
                     }
                     ,where: {
-                        customer: customer.val(), goods: goods.val(),detection:detection.val(),like:like.val(),status:status.val(),start_time:start_time.val(),end_time:end_time.val()
+                        customer_id: customer_id.val(), goods_id: goods_id.val(),staff_id:staff_id.val(),like:like.val(),start_time:start_time.val(),end_time:end_time.val()
                     }
                 }, 'data');
             },

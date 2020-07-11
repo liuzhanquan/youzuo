@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fe57270-c87a-4853-bfb7-f1c8a184a2e3" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/application/common/services/QemCodeCheck.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/common/services/CodeLogInDb.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/beiyan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/beiyan.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/api/controller/Api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/api/controller/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/api/controller/Login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/api/controller/Oauth.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/application/api/controller/Send.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/application/api/controller/Uploads.php" beforeDir="false" />
@@ -35,6 +37,8 @@
       <change beforePath="$PROJECT_DIR$/application/backman/controller/Detection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Detection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/backman/controller/Goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Goods.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/backman/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/controller/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/controller/Rate.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Rate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/backman/controller/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Setting.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/backman/controller/Staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Staff.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/backman/controller/Upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/controller/Upload.php" afterDir="false" />
@@ -107,6 +111,7 @@
       <change beforePath="$PROJECT_DIR$/application/backman/view/order/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/order/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/backman/view/order/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/order/option.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/backman/view/order/wait.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/order/wait.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/backman/view/rate/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/rate/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/backman/view/recharge_money/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/recharge_money/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/backman/view/recharge_money/option.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/recharge_money/option.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/backman/view/recharge_money/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/backman/view/recharge_money/order.html" afterDir="false" />
@@ -159,14 +164,25 @@
       <change beforePath="$PROJECT_DIR$/application/common/model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Customer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/common/model/Detection.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Detection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/common/model/Goods.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Goods.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/OrderDS.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/OrderS.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/OrderSpec.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/model/OrderTestType.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/application/common/model/Photo.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Photo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/common/model/Staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Staff.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/common/model/Uploads.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/model/Uploads.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/services/QemCodeCheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/services/QemCodeCheck.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/common/services/QrcodeServer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/common/services/QrcodeServer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/byj_qiema_vip.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codecheck.sql" beforeDir="false" afterPath="$PROJECT_DIR$/codecheck.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jiaoben6254.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/php-beast.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/static/iview/iview.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/static/iview/iview.css" afterDir="false" />
@@ -367,36 +383,122 @@
       <change beforePath="$PROJECT_DIR$/public/uploads/user/user_100000.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/uploads/user/user_27.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/uploads/user/weixin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/publichttp_/q44kmcp7r.bkt.clouddn.com/JC19123018103910297/JC19123018103910297.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/route/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/route/route.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/log/201912/09.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/log/201912/10.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/log/201912/1575968545-10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202001/13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202001/14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202001/15.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202001/1578898948-13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202001/1578902995-13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202001/1578904235-13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202002/17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202002/18.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202002/21.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202002/24.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202002/25.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202002/26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202003/05.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202003/10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202003/14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202003/24.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202003/25.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/08.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/09.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594303428-09.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/0023aea6831f59a060cc09576c26464c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/008034dee09602621f76299035cbaef2.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/01473f36117c764ad8e85ba665772526.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/0b732578a87aa1ac3f0f3ba787c80964.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/12fafcc7b3d99df8608e2b1a87ffdc30.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/14520410df5c5783f4fbda4951ee7605.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/148fed23f258a35db98f2a3cdf6853e0.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/159d64e0dd11f262ad7da7293508ddb4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/22219ffc77a3c79a62bfa3b1acefd99d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/239e8bc2989620a82915f811bd212654.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/26c8c461f67d4aaed29834689d859138.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/2780c14de88aa949974d02ae2c609ecc.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/2822250e74a7f8c10d48c43f2ea2e723.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/28a3010f7ae6de05390b1d91499e47f3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2bcf5022cb5d6a7cd9f08ac5aadbdb4d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2f8ca3ccf68a7e069f21878476ce46c7.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2fc38189931f3d98e5a1e95a47f4a5a9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/319a7d0aa4a8c5f8ee2ee013286d4321.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/395c72c7d471f105518a1c324bbce164.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/3c8d70d4fdb12c8e7db2360edf641658.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/3e2b940c113662e988032683c97f93a9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/402c4d455e9cef5a36e17dd6be15e9d7.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/40fa56ce2ca7ae761641467f72fa4707.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/43ffdf20496cb4d670137508f60354e3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/45071b62584d42853906677d426889c2.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/4575422498bf02f36d200108deef299f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/47035d0c762ede6709571927b8bf1f0f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/4b49d93de9416ddef60736999eb9d74b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/4db3c637e3f15a946b530628fbb1339a.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/4e679e2695970a40cc07faba016702db.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/51e6943fab735b8b3b188156dfaa74d2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/52c84f86404a11c9ad887662c278af62.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/594568c117a96c3c9444875c1df1a500.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/5ce417653bf3160842bcb113637b0c9c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/5e3fc702beb3ee6f5a73bd2dea472284.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/60d5811a7acc233572f6a779157bb267.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/65f212792ce08476944550dd96c009df.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/6e5d3b8e269502567fdc505529cb5f90.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/782fad9d1d9319c1c0c025d790662931.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/795ff6a22ad15ef9d5774214727b94d0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/7dccb593dc85687c1fcc032f002cd7ba.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/8315b4c543c5ea7bb2d7432535ebcca8.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/8a8c71bf8492bdf718df8a9cc3eecd87.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/9013156dfb7eb828209b7a16dfeade1f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/9036bda5b7fd58d3d4323a3c9bd19735.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/9051819ffa4d6541448ef3bd996972e0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/93aa5d656284f40f96cba81c94701390.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/997bd29a81fd9fa28ece36e75d2fab1c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/99d2787cc9d8dbd7bdd6cfb2eaa31e71.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/9a14917b2f0c960df422c7e8f552d8e2.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/9b48c6d7baa555194c705a1400424f7a.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/9e028f90cca276a0685a2e160c16cbbb.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/a3e6a958008d9301b9d217d25748caf5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/a5b17fedbbe6e0457209509ff490793b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/a7bf890bdd76cb4617dc2b78cd065be9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/a86d4deccad77d65d70101b91aa790e1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/aa531206c60fe48dda4c1ba299b548a5.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/ab3a27eb8b56088a6bb117bf77867b18.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/b42f0a1e46609eb08a69d03edc499857.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/b4da02c5debe62e7cbe27294b8ec4c5c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/b6da2376374645954401af0eb9dcb8b4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/ba5590f79820eec6a5eeaaa6d4991d98.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/bb66e461db4a3485c688e72c98ad5411.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/c296b1ed5761648582e7547f3744c4d7.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/c9a6e901f9c9efd7d927a2b1b46cee66.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/ca0ce09ea527b89d67579645180ed7ad.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/cab6f27611a45b27991dca6c7bf9eefd.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/cd1e9df27b83cf4f73c530ac3f0233c1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/d1418a54ee6956d6242dce113ddc5c5e.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/d1e76ec6036f152ca50b77042f1652f5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/d2dc9628c354fd6a0fb31b4397c7b202.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/d36f2b2e8b2ca5829607aee65c9330b1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/d88416d156369dc4d1afdd7abb6563f9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/dd83227ca20a0ac2e2fff33fceacd86d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/decfc8ab8727b524ae8376962ef7c859.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/dfa4c94f8c00115a7a80a300254bfb28.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/e291822c6cd12edf71776e739fc219f9.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/e7e9d055310a2c714141658b18e19044.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/ed2bce29c8cad54e0c5ff9ff602882ae.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/ed7d92c1dc5a30945b5ba7ef1d016e10.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f2001114221cbc80c7c01cda5ebe34b0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f2681e603db399d3adaadcf6c5700a08.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f3a513967234d4d804a5c2b5fc53f928.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f70b6fb3f3ba77db109a62c09fb43d32.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runtime/temp/f78f9baccd7c1cae5e46aaf1482171ff.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f80dab1f2b745968db45b3f6f8a163fe.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f8561b75af30979bb0e1510e49f648e5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/fc2993a0e38100bc62ac738e2ad429fe.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/thinkphp/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/thinkphp/base.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/youzuo.sql" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -438,26 +540,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="21" />
-          <entry key="php" value="37" />
+          <entry key="html" value="24" />
+          <entry key="php" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="21" />
-          <entry key="PHP" value="37" />
+          <entry key="HTML" value="24" />
+          <entry key="PHP" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1144" />
-          <entry key="php" value="2851" />
+          <entry key="dummy" value="2" />
+          <entry key="html" value="1347" />
+          <entry key="php" value="9192" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1144" />
-          <entry key="PHP" value="2851" />
+          <entry key="HTML" value="1347" />
+          <entry key="PHP" value="9192" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -465,22 +569,52 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/backman/controller/Staff.php">
+        <entry file="file://$PROJECT_DIR$/application/common/model/Order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="241" column="35" selection-start-line="241" selection-start-column="35" selection-end-line="241" selection-end-column="35" />
+            <state relative-caret-position="513">
+              <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/api/controller/Index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="84" column="53" lean-forward="true" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="53" />
               <folding>
-                <element signature="e#40#67#0#PHP" expanded="true" />
+                <element signature="e#37#64#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/api/controller/Login.php">
+        <entry file="file://$PROJECT_DIR$/application/backman/view/detection/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            <state relative-caret-position="378">
+              <caret line="26" column="67" lean-forward="true" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/backman/controller/Order.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="1264" column="8" selection-start-line="1264" selection-start-column="8" selection-end-line="1264" selection-end-column="63" />
+              <folding>
+                <element signature="e#42#69#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/common/services/CodeLogInDb.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="945">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding>
                 <element signature="e#37#64#0#PHP" expanded="true" />
               </folding>
@@ -489,10 +623,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/api/controller/Index.php">
+        <entry file="file://$PROJECT_DIR$/application/api/controller/Login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="270">
+              <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
               <folding>
                 <element signature="e#37#64#0#PHP" expanded="true" />
               </folding>
@@ -503,35 +637,59 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/common/services/QemCodeCheck.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="38" column="72" lean-forward="true" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="72" />
+            <state relative-caret-position="473">
+              <caret line="43" column="82" lean-forward="true" selection-start-line="43" selection-start-column="82" selection-end-line="43" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/common.php">
+        <entry file="file://$PROJECT_DIR$/application/backman/view/order/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10">
-              <caret line="179" column="13" selection-start-line="179" selection-start-column="9" selection-end-line="179" selection-end-column="13" />
+            <state relative-caret-position="-3267">
+              <caret line="125" column="49" selection-start-line="125" selection-start-column="49" selection-end-line="125" selection-end-column="49" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#2;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/common/controller/ApiController.php">
+        <entry file="file://$PROJECT_DIR$/application/backman/controller/Rate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+            <state relative-caret-position="415">
+              <caret line="90" selection-start-line="90" selection-end-line="90" />
+              <folding>
+                <element signature="e#40#67#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/backman/view/detection/index.html">
+        <entry file="file://$PROJECT_DIR$/application/backman/view/rate/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+            <state relative-caret-position="486">
+              <caret line="90" column="39" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -548,14 +706,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>freightCalculations</find>
-      <find>status</find>
-      <find>notify2</find>
-      <find>pay_status</find>
-      <find>notify_z</find>
-      <find>创建</find>
-      <find>代理申请</find>
-      <find>meal_details</find>
       <find>getTeamAchievement</find>
       <find>进货</find>
       <find>uid</find>
@@ -576,8 +726,16 @@
       <find>layui-form-label</find>
       <find>getPower</find>
       <find>checkOrder</find>
-      <find>name</find>
       <find>post</find>
+      <find>modify</find>
+      <find>name</find>
+      <find>o.ci</find>
+      <find>index</find>
+      <find>spec</find>
+      <find>cid</find>
+      <find>getGoodsTitle</find>
+      <find>物流</find>
+      <find>load_excel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -586,12 +744,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/backman/view/finance/index.html" />
-        <option value="$PROJECT_DIR$/extend/lib/CashStatus.php" />
-        <option value="$PROJECT_DIR$/application/backman/view/finance/cash.html" />
-        <option value="$PROJECT_DIR$/application/api/job/CashPay.php" />
-        <option value="$PROJECT_DIR$/application/backman/controller/Finance.php" />
-        <option value="$PROJECT_DIR$/application/api/job/Agent.php" />
         <option value="$PROJECT_DIR$/application/api/job/AgentGrade.php" />
         <option value="$PROJECT_DIR$/application/common/model/ZOrderLog.php" />
         <option value="$PROJECT_DIR$/application/common/model/ZOrder.php" />
@@ -601,7 +753,6 @@
         <option value="$PROJECT_DIR$/application/api/controller/v1/Pay.php" />
         <option value="$PROJECT_DIR$/application/api/controller/v1/Notifyss.php" />
         <option value="$PROJECT_DIR$/application/api/controller/v1/Order.php" />
-        <option value="$PROJECT_DIR$/application/backman/controller/Order.php" />
         <option value="$PROJECT_DIR$/application/command.php" />
         <option value="$PROJECT_DIR$/application/api/command/ConfirmAcceptance.php" />
         <option value="$PROJECT_DIR$/application/api/controller/v1/Cheshi.php" />
@@ -625,18 +776,25 @@
         <option value="$PROJECT_DIR$/application/backman/view/customer/index.html" />
         <option value="$PROJECT_DIR$/application/backman/view/staff/option.html" />
         <option value="$PROJECT_DIR$/application/backman/view/staff/index.html" />
-        <option value="$PROJECT_DIR$/application/common/model/Staff.php" />
         <option value="$PROJECT_DIR$/application/backman/controller/Goods.php" />
         <option value="$PROJECT_DIR$/application/backman/view/goods/option.html" />
-        <option value="$PROJECT_DIR$/application/backman/controller/Detection.php" />
         <option value="$PROJECT_DIR$/application/backman/view/detection/option.html" />
         <option value="$PROJECT_DIR$/application/common/model/Detection.php" />
-        <option value="$PROJECT_DIR$/application/backman/view/detection/index.html" />
         <option value="$PROJECT_DIR$/application/common/controller/ApiController.php" />
         <option value="$PROJECT_DIR$/application/backman/controller/Staff.php" />
-        <option value="$PROJECT_DIR$/application/api/controller/Login.php" />
-        <option value="$PROJECT_DIR$/application/common/services/QemCodeCheck.php" />
+        <option value="$PROJECT_DIR$/application/backman/controller/Index.php" />
         <option value="$PROJECT_DIR$/application/api/controller/Index.php" />
+        <option value="$PROJECT_DIR$/application/common/model/Staff.php" />
+        <option value="$PROJECT_DIR$/application/common/model/Order.php" />
+        <option value="$PROJECT_DIR$/application/backman/controller/Order.php" />
+        <option value="$PROJECT_DIR$/application/backman/controller/Rate.php" />
+        <option value="$PROJECT_DIR$/application/backman/view/rate/index.html" />
+        <option value="$PROJECT_DIR$/application/backman/controller/Detection.php" />
+        <option value="$PROJECT_DIR$/application/backman/view/detection/index.html" />
+        <option value="$PROJECT_DIR$/application/backman/view/order/index.html" />
+        <option value="$PROJECT_DIR$/application/common/services/CodeLogInDb.php" />
+        <option value="$PROJECT_DIR$/application/common/services/QemCodeCheck.php" />
+        <option value="$PROJECT_DIR$/application/api/controller/Login.php" />
       </list>
     </option>
   </component>
@@ -747,31 +905,35 @@
               <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
               <item name="codecheck" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="backman" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="backman" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="backman" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="backman" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="detection" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
               <item name="codecheck" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
-              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="library" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
@@ -779,6 +941,11 @@
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codecheck" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codecheck" type="462c0819:PsiDirectoryNode" />
+              <item name="runtime" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -797,6 +964,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\web\codecheck\application\common\services" />
       <recent name="Z:\web\codecheck\application\backman\view\goods" />
       <recent name="G:\www\beiyan\application\backman\view\agent" />
       <recent name="G:\www\beiyan\application\api\controller\v1" />
@@ -889,12 +1057,12 @@
       <workItem from="1574783341701" duration="1851000" />
       <workItem from="1576478343359" duration="5000" />
       <workItem from="1594175429285" duration="974000" />
-      <workItem from="1594180985929" duration="32577000" />
+      <workItem from="1594180985929" duration="56426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="737347000" />
+    <option name="totallyTimeSpent" value="761196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -928,20 +1096,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Finance.php" />
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Shops.php" />
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Material.php" />
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Bank.php" />
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Agent.php" />
     <entry file="file://$PROJECT_DIR$/application/api/controller/v1/Agent.php" />
     <entry file="file://$PROJECT_DIR$/application/api/controller/v1/ZOrderAgent.php" />
-    <entry file="file://$PROJECT_DIR$/application/common/model/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/backman/view/agent/z_order_details.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2781">
@@ -989,32 +1145,6 @@
     <entry file="file://$PROJECT_DIR$/application/backman/view/goods/option_bak.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/order/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="189" column="11" selection-start-line="188" selection-start-column="8" selection-end-line="196" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#1;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#2;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/font/common.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
@@ -1051,13 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/common/model/Staff.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1148,16 +1271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Detection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="61" column="47" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="47" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/common/model/Detection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="655">
@@ -1172,36 +1285,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#42#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/controller/Staff.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="241" column="35" selection-start-line="241" selection-start-column="35" selection-end-line="241" selection-end-column="35" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/api/controller/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#37#64#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1236,13 +1319,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/backman/view/detection/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/common/controller/ApiController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -1264,17 +1340,147 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/common/services/QemCodeCheck.php">
+    <entry file="file://$PROJECT_DIR$/application/api/controller/Staff.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="38" column="72" lean-forward="true" selection-start-line="38" selection-start-column="72" selection-end-line="38" selection-end-column="72" />
+        <state relative-caret-position="-665">
+          <caret line="96" column="45" lean-forward="true" selection-start-line="96" selection-start-column="45" selection-end-line="96" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/model/Staff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="64" column="67" selection-start-line="64" selection-start-column="67" selection-end-line="64" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Staff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="254" column="36" selection-start-line="254" selection-start-column="36" selection-end-line="254" selection-end-column="36" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Rate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/rate/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="90" column="39" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/model/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Detection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2008">
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/api/controller/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="301">
+          <caret line="84" column="53" lean-forward="true" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="53" />
+          <folding>
+            <element signature="e#37#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/order/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3267">
+          <caret line="125" column="49" selection-start-line="125" selection-start-column="49" selection-end-line="125" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#2;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/view/detection/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="26" column="67" lean-forward="true" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/services/QemCodeCheck.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="43" column="82" lean-forward="true" selection-start-line="43" selection-start-column="82" selection-end-line="43" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common/services/CodeLogInDb.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="e#37#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/backman/controller/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="1264" column="8" selection-start-line="1264" selection-start-column="8" selection-end-line="1264" selection-end-column="63" />
+          <folding>
+            <element signature="e#42#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/api/controller/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
           <folding>
             <element signature="e#37#64#0#PHP" expanded="true" />
           </folding>

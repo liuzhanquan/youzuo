@@ -82,22 +82,15 @@ class Detection extends AuthBack{
 
 
     /**
-     * 检测流程删除
+     * 分配记录删除
      */
     public function del(){
-        $count = DB::name('order')->where('did',$this->data['id'])->count();
+        $count = DB::name('order')->where('detection_id',$this->data['id'])->count();
         if( $count ){
             return $this->error('该检测流程有绑定的订单，无法删除');
         }else{
             AdminLog($this->admin['id'],'删除检测流程【'.$this->data['id'].'】信息');
             $res = DB::name('detection')->where('id',$this->data['id'])->delete();
-            $son = DB::name('detection_son')->where('parent_id',$this->data['id'])->field('d_son_sn')->select();
-            $sonArr = [];
-            foreach( $son as $item ){  
-                $sonArr[] = $item['d_son_sn'];
-            }
-            DB::name('detection_son')->where('parent_id',$this->data['id'])->delete();
-            DB::name('detection_spec')->where('d_son_sn','in',$sonArr)->delete();
 
             if( $res ){
                 return $this->success('操作成功',url('index'));

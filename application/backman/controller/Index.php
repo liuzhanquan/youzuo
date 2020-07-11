@@ -62,7 +62,7 @@ class Index extends AuthBack{
         
        
         for( $i = 0; $i < count($time)-1; $i++ ){
-            $yearArr['total'][] = DB::name('order')->where('created_time','between time',[$time[$i],$time[$i+1]])->count();
+            $yearArr['total'][] = DB::name('order')->where('create_time','between time',[$time[$i],$time[$i+1]])->count();
         }
         
         $info['time'] = json_encode( $yearArr['time']  );

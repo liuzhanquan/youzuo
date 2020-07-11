@@ -3,7 +3,9 @@ namespace app\api\controller;
 
 use app\common\model\Goods;
 use app\common\model\Staff;
+use app\common\services\CodeLogInDb;
 use app\common\services\QemCodeCheck;
+use app\common\model\Order;
 use think\Controller;
 use think\Request;
 use app\common\controller\ApiController;
@@ -76,19 +78,58 @@ class Index extends ApiController
         
     }
 
+    // 核销录入订单信息
     public function checkOrder(){
 
     	$data = $this->data;
-    	$qemCodeCheck = new QemCodeCheck('http://120.76.23.183:838','YOjGScn9tZK2AcKG');
-		$codeCheck = $qemCodeCheck->codeCheck($data['keyword']);
-		$res = $codeCheck;
-		if( $res['code'] != 400 ){
+		$orderM = new CodeLogInDb( $this->userInfo );
+		$res = $orderM->order($data['keyword']);
+		return_ajax($res['code'],$res['msg'],$res['data']);
 
-		}else{
-			return_ajax(400,$res['msg']);
-		}
 
     }
+
+    // 获取核销录入信息
+	public function orderList(){
+    	$limit = input('limit',4);
+    	$order = new Order();
+    	$list = $order->where('staff_id',$this->userInfo['id'])->order('create_time desc')->field('id, goods_id, code, create_time')->paginate($limit)->toArray();
+    	return_ajax(200,'成功', ['data'=>$list['data'],'count'=>$list['total']]);
+	}
+
+	public function getUserInfo(){
+    	$info = Db::name('staff')->where('id',$this->userInfo['id'])->find();
+    	if( $info ){
+    		return_ajax(200, '成功', $info);
+	    }else{
+    		return_ajax(400, '用户不存在');
+	    }
+	}
+
+	// 修改密码
+	public function modifyPass(){
+
+		$obj = new Staff();
+		$info = Staff::get($this->userInfo['id']);
+
+		if( $this->data['password'] == ''){
+			$this->data['password'] = $info['password'];
+			$this->data['password_show'] = $info['password_show'];
+		}else{
+			$oldpassword = sp_password($this->data['oldpassword']);
+			if( $oldpassword !== $info['password'] ){
+				return_ajax(40001,'原密码不正确！');
+			}
+			$this->data['password_show'] = $this->data['password'];
+			$this->data['password'] = sp_password($this->data['password']);
+		}
+		$res = $obj->modifyInfo($this->data, $this->userInfo);
+		if( $res ){
+			return_ajax(200,'修改成功');
+		}else{
+			return_ajax(40002,$obj->error);
+		}
+	}
 
 	/**
 	 * 空方法

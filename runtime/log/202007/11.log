@@ -1,0 +1,1158 @@
+---------------------------------------------------------------
+
+[2020-07-11T05:33:24+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/
+[运行时间：0.194939s] [吞吐率：5.13req/s] [内存消耗：4,157.70kb] [文件加载：101]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/codecheck/application/backman/view/index/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004748s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.004949s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.003420s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001428s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001403s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001493s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001100s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000756s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `extend` LIKE '%index%' LIMIT 1 [ RunTime:0.000571s ]
+---------------------------------------------------------------
+
+[2020-07-11T05:33:24+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/index/home.html
+[运行时间：0.153883s] [吞吐率：6.50req/s] [内存消耗：4,361.70kb] [文件加载：105]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/codecheck/application/backman/view/index/home.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001197s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.002704s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.001436s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001843s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000526s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001771s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001115s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001136s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.002073s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000661s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.001746s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` WHERE  `status` >= 0 [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.005198s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` >= 0 [ RunTime:0.006170s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` = 1 [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.002893s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` WHERE  `status` >= 0 [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-08-01 00:00:00' AND '2020-09-01 00:00:00' [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-09-01 00:00:00' AND '2020-10-01 00:00:00' [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-10-01 00:00:00' AND '2020-11-01 00:00:00' [ RunTime:0.000313s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-11-01 00:00:00' AND '2019-12-01 00:00:00' [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2019-12-01 00:00:00' AND '2020-01-01 00:00:00' [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-01-01 00:00:00' AND '2020-02-01 00:00:00' [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-02-01 00:00:00' AND '2020-03-01 00:00:00' [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-03-01 00:00:00' AND '2020-04-01 00:00:00' [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-04-01 00:00:00' AND '2020-05-01 00:00:00' [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-05-01 00:00:00' AND '2020-06-01 00:00:00' [ RunTime:0.000307s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-06-01 00:00:00' AND '2020-07-01 00:00:00' [ RunTime:0.000332s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-07-01 00:00:00' AND '2020-08-01 00:00:00' [ RunTime:0.000397s ]
+---------------------------------------------------------------
+
+[2020-07-11T05:33:25+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/index/home.html
+[运行时间：0.138967s] [吞吐率：7.20req/s] [内存消耗：4,154.98kb] [文件加载：103]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/codecheck/application/backman/view/index/home.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'info',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001069s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.004992s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000753s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.002178s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000866s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001524s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001603s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.002193s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001594s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Index'  AND `action` = 'home' LIMIT 1 [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.002152s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_customer` WHERE  `status` >= 0 [ RunTime:0.001111s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.004463s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` >= 0 [ RunTime:0.000755s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `status` = 1 [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.002578s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` WHERE  `status` >= 0 [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-08-01 00:00:00' AND '2020-09-01 00:00:00' [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-09-01 00:00:00' AND '2020-10-01 00:00:00' [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-10-01 00:00:00' AND '2020-11-01 00:00:00' [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-11-01 00:00:00' AND '2019-12-01 00:00:00' [ RunTime:0.001793s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2019-12-01 00:00:00' AND '2020-01-01 00:00:00' [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-01-01 00:00:00' AND '2020-02-01 00:00:00' [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-02-01 00:00:00' AND '2020-03-01 00:00:00' [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-03-01 00:00:00' AND '2020-04-01 00:00:00' [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-04-01 00:00:00' AND '2020-05-01 00:00:00' [ RunTime:0.000316s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-05-01 00:00:00' AND '2020-06-01 00:00:00' [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-06-01 00:00:00' AND '2020-07-01 00:00:00' [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `create_time` BETWEEN '2020-07-01 00:00:00' AND '2020-08-01 00:00:00' [ RunTime:0.000294s ]
+---------------------------------------------------------------
+
+[2020-07-11T05:33:25+08:00] 192.168.1.138 GET nginx.codecheck.com/static/iview/iview.min.js.map
+[运行时间：0.165150s] [吞吐率：6.06req/s] [内存消耗：2,251.25kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-07-11T05:33:25+08:00] 192.168.1.138 GET nginx.codecheck.com/static/iview/iview.min.js.map
+[运行时间：0.063509s] [吞吐率：15.75req/s] [内存消耗：2,251.25kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-07-11T06:00:01+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/detection/index.html
+[运行时间：0.341190s] [吞吐率：2.93req/s] [内存消耗：4,242.77kb] [文件加载：103]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/codecheck/application/backman/view/detection/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.019902s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.007774s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.010852s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.006313s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.005190s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001296s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.005360s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.002538s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.003818s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001406s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.002680s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.015409s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` [ RunTime:0.062867s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:00:02+08:00] 192.168.1.138 GET nginx.codecheck.com/static/iview/iview.min.js.map
+[运行时间：0.073572s] [吞吐率：13.59req/s] [内存消耗：2,251.25kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-07-11T06:00:03+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/detection/index.html?page=1&limit=20
+[运行时间：0.365389s] [吞吐率：2.74req/s] [内存消耗：4,114.41kb] [文件加载：102]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/detection/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001039s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.002873s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000936s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.003605s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.002133s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001480s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000592s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000942s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.001445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.004798s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` [ RunTime:0.001679s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_detection` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_goods` [ RunTime:0.002757s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.002031s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000328s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000337s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000317s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:00:11+08:00] 192.168.1.138 POST nginx.codecheck.com/admin/detection/del
+[运行时间：0.199289s] [吞吐率：5.02req/s] [内存消耗：4,100.22kb] [文件加载：104]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/detection/index.html',
+  'origin' => 'http://nginx.codecheck.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '19',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+  'table' => 'customer',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000907s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.006659s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.001743s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.002846s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000859s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.004331s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001630s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.002116s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'del' LIMIT 1 [ RunTime:0.001970s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.004013s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.002183s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'del' LIMIT 1 [ RunTime:0.001239s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `extend` LIKE '%del%' LIMIT 1 [ RunTime:0.006385s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.007144s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'did' in 'where clause'[/www/web/codecheck/thinkphp/library/think/db/Connection.php:687]
+---------------------------------------------------------------
+
+[2020-07-11T06:01:23+08:00] 192.168.1.138 POST nginx.codecheck.com/admin/detection/del
+[运行时间：0.130909s] [吞吐率：7.64req/s] [内存消耗：4,095.09kb] [文件加载：104]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/detection/index.html',
+  'origin' => 'http://nginx.codecheck.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '19',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+  'table' => 'customer',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001581s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.002421s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.003418s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.002008s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000450s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001581s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001438s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'del' LIMIT 1 [ RunTime:0.001048s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001678s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001414s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'del' LIMIT 1 [ RunTime:0.001490s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `extend` LIKE '%del%' LIMIT 1 [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.001855s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'detection' in 'where clause'[/www/web/codecheck/thinkphp/library/think/db/Connection.php:687]
+---------------------------------------------------------------
+
+[2020-07-11T06:01:42+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/detection/index.html
+[运行时间：0.172288s] [吞吐率：5.80req/s] [内存消耗：4,079.09kb] [文件加载：101]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/codecheck/application/backman/view/detection/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001608s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.004835s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.002010s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000900s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.002756s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001490s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.002220s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001669s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000832s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000927s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001119s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.006110s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.002442s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` [ RunTime:0.015523s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:01:43+08:00] 192.168.1.138 GET nginx.codecheck.com/static/iview/iview.min.js.map
+[运行时间：0.081462s] [吞吐率：12.28req/s] [内存消耗：2,251.25kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-07-11T06:01:43+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/detection/index.html?page=1&limit=20
+[运行时间：0.193969s] [吞吐率：5.16req/s] [内存消耗：4,109.31kb] [文件加载：102]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/detection/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000812s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.006277s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.002808s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.008041s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.001509s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.004655s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000956s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.003364s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.002244s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.002056s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001065s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.002034s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` [ RunTime:0.012362s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_detection` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.001548s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_goods` [ RunTime:0.007045s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001189s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.002864s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001943s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000952s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000336s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:01:45+08:00] 192.168.1.138 POST nginx.codecheck.com/admin/detection/del
+[运行时间：0.157994s] [吞吐率：6.33req/s] [内存消耗：4,095.16kb] [文件加载：104]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/detection/index.html',
+  'origin' => 'http://nginx.codecheck.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '19',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+  'table' => 'customer',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001076s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.002889s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000691s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.006894s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.003324s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000709s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.002792s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'del' LIMIT 1 [ RunTime:0.001035s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.003045s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'del' LIMIT 1 [ RunTime:0.001225s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `extend` LIKE '%del%' LIMIT 1 [ RunTime:0.001331s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.002933s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'detection_id' in 'where clause'[/www/web/codecheck/thinkphp/library/think/db/Connection.php:687]
+---------------------------------------------------------------
+
+[2020-07-11T06:03:40+08:00] 192.168.1.138 POST nginx.codecheck.com/admin/detection/del
+[运行时间：0.159498s] [吞吐率：6.27req/s] [内存消耗：4,012.63kb] [文件加载：100]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/detection/index.html',
+  'origin' => 'http://nginx.codecheck.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '19',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+  'table' => 'customer',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001116s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.002952s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.006239s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000764s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001614s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001560s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'del' LIMIT 1 [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000935s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'del' LIMIT 1 [ RunTime:0.001008s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `extend` LIKE '%del%' LIMIT 1 [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.001905s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `detection_id` = 1 [ RunTime:0.000786s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin_log` [ RunTime:0.001474s ]
+[ sql ] [ SQL ] INSERT INTO `bear_admin_log` (`user_id` , `desc` , `action` , `timestamp`) VALUES (2 , '删除检测流程【1】信息' , 'detection/del' , '2020-07-11 06:03:40') [ RunTime:0.019059s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.004780s ]
+[ sql ] [ SQL ] DELETE FROM `bear_detection` WHERE  `id` = 1 [ RunTime:0.015246s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:07:57+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/order/index.html
+[运行时间：0.181253s] [吞吐率：5.52req/s] [内存消耗：4,807.29kb] [文件加载：110]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/codecheck/application/backman/view/order/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+  7 => 'customer',
+  8 => 'staff',
+  9 => 'goods',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000750s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.015411s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000536s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001491s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.002321s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000668s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001936s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001305s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000922s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.002716s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` `o` [ RunTime:0.005878s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.003206s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `bear_customer` WHERE  `status` = 1 [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_goods` [ RunTime:0.001462s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `bear_goods` WHERE  `status` = 1 [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.002847s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `bear_staff` WHERE  `status` = 1 [ RunTime:0.000898s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:07:58+08:00] 192.168.1.138 GET nginx.codecheck.com/static/iview/iview.min.js.map
+[运行时间：0.113072s] [吞吐率：8.84req/s] [内存消耗：2,251.25kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-07-11T06:07:58+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/order/index.html?page=1&limit=10
+[运行时间：0.136786s] [吞吐率：7.31req/s] [内存消耗：4,568.09kb] [文件加载：107]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/order/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000974s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.004364s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.006248s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001849s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001363s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001243s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001811s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000690s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.007361s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.004408s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` `o` [ RunTime:0.001247s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.002248s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `bear_customer` WHERE  `status` = 1 [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_goods` [ RunTime:0.001420s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `bear_goods` WHERE  `status` = 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.002688s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `bear_staff` WHERE  `status` = 1 [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SELECT `o`.`id`,`o`.`order_sn`,`o`.`customer_id`,`o`.`goods_id`,`o`.`staff_id`,`o`.`code`,`o`.`status`,`o`.`create_time`,`o`.`update_time` FROM `bear_order` `o` ORDER BY `o`.`create_time` DESC LIMIT 0,10 [ RunTime:0.000419s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:08:01+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/detection/index.html
+[运行时间：0.130758s] [吞吐率：7.65req/s] [内存消耗：4,233.66kb] [文件加载：103]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/codecheck/application/backman/view/detection/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000828s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.002602s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001703s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001205s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000296s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.003467s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.001271s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000892s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.002933s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` [ RunTime:0.030972s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:08:01+08:00] 192.168.1.138 GET nginx.codecheck.com/static/iview/iview.min.js.map
+[运行时间：0.064012s] [吞吐率：15.62req/s] [内存消耗：2,251.25kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-07-11T06:08:01+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/detection/index.html?page=1&limit=20
+[运行时间：0.111832s] [吞吐率：8.94req/s] [内存消耗：4,107.78kb] [文件加载：102]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/detection/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000820s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.005702s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.002015s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.002175s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001395s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000512s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.002674s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.003182s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.001197s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001307s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.004273s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` [ RunTime:0.001356s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_detection` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_goods` [ RunTime:0.001943s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.002606s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000345s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:08:13+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/detection/index.html?page=1&limit=20&title=%E7%AC%AC%E4%B8%80%E4%B8%AA
+[运行时间：0.159882s] [吞吐率：6.25req/s] [内存消耗：4,134.47kb] [文件加载：106]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/detection/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+  'title' => '第一个',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000902s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.003046s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.001972s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000798s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.002500s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.002587s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000965s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001031s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000867s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000974s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.002943s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` [ RunTime:0.023185s ]
+[ error ] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'detection_sn' in 'where clause'[/www/web/codecheck/thinkphp/library/think/db/Connection.php:687]
+---------------------------------------------------------------
+
+[2020-07-11T06:11:50+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/order/index.html
+[运行时间：0.145594s] [吞吐率：6.87req/s] [内存消耗：4,606.67kb] [文件加载：108]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/codecheck/application/backman/view/order/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+  7 => 'customer',
+  8 => 'staff',
+  9 => 'goods',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000885s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.002569s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000471s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.002239s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000480s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.001888s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001211s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000477s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000577s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.002905s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` `o` [ RunTime:0.010718s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.002676s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `bear_customer` WHERE  `status` = 1 [ RunTime:0.000957s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_goods` [ RunTime:0.001832s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `bear_goods` WHERE  `status` = 1 [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.001862s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `bear_staff` WHERE  `status` = 1 [ RunTime:0.000312s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:11:50+08:00] 192.168.1.138 GET nginx.codecheck.com/static/iview/iview.min.js.map
+[运行时间：0.097179s] [吞吐率：10.29req/s] [内存消耗：2,251.25kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-07-11T06:11:50+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/order/index.html?page=1&limit=10
+[运行时间：0.177142s] [吞吐率：5.65req/s] [内存消耗：4,568.09kb] [文件加载：107]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/order/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.003125s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.002890s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.003494s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.001604s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001446s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.001170s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Order'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000892s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.002843s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` `o` [ RunTime:0.001722s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.002559s ]
+[ sql ] [ SQL ] SELECT `id`,`customer_name` FROM `bear_customer` WHERE  `status` = 1 [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_goods` [ RunTime:0.002387s ]
+[ sql ] [ SQL ] SELECT `id`,`title` FROM `bear_goods` WHERE  `status` = 1 [ RunTime:0.000903s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.004274s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `bear_staff` WHERE  `status` = 1 [ RunTime:0.000764s ]
+[ sql ] [ SQL ] SELECT `o`.`id`,`o`.`order_sn`,`o`.`customer_id`,`o`.`goods_id`,`o`.`staff_id`,`o`.`code`,`o`.`status`,`o`.`create_time`,`o`.`update_time` FROM `bear_order` `o` ORDER BY `o`.`create_time` DESC LIMIT 0,10 [ RunTime:0.000778s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:11:57+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/detection/index.html
+[运行时间：0.124854s] [吞吐率：8.01req/s] [内存消耗：4,079.02kb] [文件加载：101]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/web/codecheck/application/backman/view/detection/index.html [ array (
+  0 => 'config',
+  1 => 'admin',
+  2 => 'adminGroup',
+  3 => 'topNav',
+  4 => 'pathCurrent',
+  5 => 'path',
+  6 => 'totalNum',
+) ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000834s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.002412s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.003772s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000770s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.002569s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000802s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000315s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.002708s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.001178s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.003415s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.000937s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.001559s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` [ RunTime:0.017430s ]
+---------------------------------------------------------------
+
+[2020-07-11T06:11:57+08:00] 192.168.1.138 GET nginx.codecheck.com/static/iview/iview.min.js.map
+[运行时间：0.060215s] [吞吐率：16.61req/s] [内存消耗：2,251.25kb] [文件加载：86]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+---------------------------------------------------------------
+
+[2020-07-11T06:11:57+08:00] 192.168.1.138 GET nginx.codecheck.com/admin/detection/index.html?page=1&limit=20
+[运行时间：0.113615s] [吞吐率：8.80req/s] [内存消耗：4,107.78kb] [文件加载：102]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ BIND ] 'backman'
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=qjlbmsq2ob64ep88raqvktccmo; userId=2; login_time=1594233018',
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://nginx.codecheck.com/admin/detection/index.html',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002235s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.004622s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` [ RunTime:0.000677s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_admin` [ RunTime:0.002670s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_admin` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_group` [ RunTime:0.002849s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001511s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_menu` [ RunTime:0.002205s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000709s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.000958s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` [ RunTime:0.002219s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_menu` WHERE  `model` = 'Detection'  AND `action` = 'index' LIMIT 1 [ RunTime:0.000940s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_detection` [ RunTime:0.005878s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_detection` [ RunTime:0.006553s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_detection` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.000466s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_goods` [ RunTime:0.001494s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_customer` [ RunTime:0.001181s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000925s ]
+[ sql ] [ SQL ] SELECT `title` FROM `bear_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000714s ]
+[ sql ] [ SQL ] SELECT `customer_name` FROM `bear_customer` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000348s ]
+---------------------------------------------------------------
+
+[2020-07-11T08:28:05+08:00] 192.168.1.138 POST nginx.codecheck.com/api/Index/orderList
+[运行时间：0.095615s] [吞吐率：10.46req/s] [内存消耗：4,363.92kb] [文件加载：110]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.1.138:8080/',
+  'origin' => 'http://192.168.1.138:8080',
+  'userinfo' => '3932iK1VwTIqmi7u8LyHyPiFf8Gg0lwxtQwN3Z4FbPGeoyAmoa/kYPTK51WmhHHtBjsAnkjFj4ze/U/jssBNoeda+/gEk1yL/gtUk33Eh3ncmmudE1c',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'content-type' => 'application/json;charset=UTF-8',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '10',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+)
+[ info ] [ PARAM ] array (
+  'page' => 1,
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001205s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.004230s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` WHERE  `is_sys` = 1 [ RunTime:0.001404s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.001797s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `staff_id` = 1 [ RunTime:0.006823s ]
+[ sql ] [ SQL ] SELECT `id`,`goods_id`,`code`,`create_time` FROM `bear_order` WHERE  `staff_id` = 1 ORDER BY `create_time` DESC LIMIT 0,4 [ RunTime:0.000424s ]
+---------------------------------------------------------------
+
+[2020-07-11T08:30:01+08:00] 192.168.1.138 POST nginx.codecheck.com/api/Index/orderList
+[运行时间：0.199254s] [吞吐率：5.02req/s] [内存消耗：4,363.92kb] [文件加载：110]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.1.138:8080/',
+  'origin' => 'http://192.168.1.138:8080',
+  'userinfo' => '3932iK1VwTIqmi7u8LyHyPiFf8Gg0lwxtQwN3Z4FbPGeoyAmoa/kYPTK51WmhHHtBjsAnkjFj4ze/U/jssBNoeda+/gEk1yL/gtUk33Eh3ncmmudE1c',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'content-type' => 'application/json;charset=UTF-8',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '10',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+)
+[ info ] [ PARAM ] array (
+  'page' => 1,
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001067s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.003628s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` WHERE  `is_sys` = 1 [ RunTime:0.000940s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_order` [ RunTime:0.003086s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bear_order` WHERE  `staff_id` = 1 [ RunTime:0.011485s ]
+[ sql ] [ SQL ] SELECT `id`,`goods_id`,`code`,`create_time` FROM `bear_order` WHERE  `staff_id` = 1 ORDER BY `create_time` DESC LIMIT 0,4 [ RunTime:0.001574s ]
+---------------------------------------------------------------
+
+[2020-07-11T08:30:03+08:00] 192.168.1.138 POST nginx.codecheck.com/api/index/getUserInfo
+[运行时间：0.087421s] [吞吐率：11.44req/s] [内存消耗：3,870.95kb] [文件加载：99]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.1.138:8080/',
+  'origin' => 'http://192.168.1.138:8080',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'userinfo' => '3932iK1VwTIqmi7u8LyHyPiFf8Gg0lwxtQwN3Z4FbPGeoyAmoa/kYPTK51WmhHHtBjsAnkjFj4ze/U/jssBNoeda+/gEk1yL/gtUk33Eh3ncmmudE1c',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001048s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_config` [ RunTime:0.003216s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_config` WHERE  `is_sys` = 1 [ RunTime:0.000610s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.003431s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000821s ]
+---------------------------------------------------------------
+
+[2020-07-11T08:30:08+08:00] 192.168.1.138 POST nginx.codecheck.com/api/login/login
+[运行时间：0.113118s] [吞吐率：8.84req/s] [内存消耗：3,738.26kb] [文件加载：96]
+[ info ] [ LANG ] /www/web/codecheck/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://192.168.1.138:8080/',
+  'origin' => 'http://192.168.1.138:8080',
+  'content-type' => 'application/json;charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'application/json, text/plain, */*',
+  'content-length' => '41',
+  'connection' => 'keep-alive',
+  'host' => 'nginx.codecheck.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => '123456',
+  'password' => '123456',
+)
+[ info ] [ DB ] INIT mysql
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000974s ] mysql:host=127.0.0.1;dbname=codecheck;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bear_staff` [ RunTime:0.003335s ]
+[ sql ] [ SQL ] SELECT * FROM `bear_staff` WHERE  `phone` = '123456' LIMIT 1 [ RunTime:0.000777s ]

@@ -44,7 +44,7 @@ class Staff extends Model{
             }
             $count = $this->where($nwhere)->count();
             if( $count ){
-                $this->error = '手机号已存在';
+                $this->error = '账号已存在';
                 return false;
             }
         }else{

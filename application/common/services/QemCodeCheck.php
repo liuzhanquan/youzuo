@@ -35,7 +35,34 @@ Class QemCodeCheck{
 		$data = json_decode($data,true);
 
 		if( !isset( $data['parameter']['ID'] ) ) return ['code'=>400,'msg'=>"请求失败"];
-		if( empty( $data['parameter']['ID'] ) ) return ['code'=>400,'msg'=>"防伪码有误"];
+		if( empty( $data['parameter']['ID'] ) ) return ['code'=>400,'msg'=>"核销失败，该防伪码不存在"];
+		switch( $data['result'] ){
+			case 0:
+				return ['code'=>400,'msg'=>"必要参数为空!"];
+				break;
+			case 1:
+				return ['code'=>$data['result'],'code'=>$data['parameter']['ID']];
+				break;
+			case 2:
+				return ['code'=>$data['result'],'code'=>$data['parameter']['ID']];
+				break;
+			case 3:
+				return ['code'=>400,'msg'=>"错误，不存在!"];
+				break;
+			case 5:
+				return ['code'=>400,'msg'=>"系统维护!"];
+				break;
+			case 6:
+				return ['code'=>400,'msg'=>"IP被限制!"];
+				break;
+			case 7:
+				return ['code'=>400,'msg'=>"接口秘钥错误!"];
+				break;
+			default:
+				return ['code'=>400,'msg'=>"请求失败!"];
+				break;
+
+		}
 		return ['code'=>$data['result'],'id'=>$data['parameter']['ID']];
 
 

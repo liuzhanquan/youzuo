@@ -59,6 +59,7 @@ class Login
 
     public function login(){
         $data = rawPost();
+
         empty($data['username']) ? return_ajax("登录账号不能为空",400) : $username = $data['username'];
         empty($data['password']) ? return_ajax("登录账号不能为空",400) : $password = $data['password'];
 

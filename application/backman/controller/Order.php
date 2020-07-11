@@ -38,224 +38,98 @@ class Order extends AuthBack{
     public function index(){
 
         $like       = isset($_GET['like']) ? $_GET['like'] : '';
-
         $customer   = isset($_GET['customer']) ? $_GET['customer'] : '';
-
         $goods      = isset($_GET['goods']) ? $_GET['goods'] : '';
-
         $detection  = isset($_GET['detection']) ? $_GET['detection'] : '';
-
         $status     = isset($_GET['status']) ? $_GET['status'] : '';
-
         $start_time = isset($_GET['start_time']) ? $_GET['start_time'] : '';
-
         $end_time   = isset($_GET['end_time']) ? $_GET['end_time'] : '';
 
-
-
-        $where[] = ['o.id','neq',0];
-
+		$where = [];
         if(!empty(input('like'))){
-
-            // 检测单号、客户名称、产品编号、名称、规格、建单人、备注
-
-            $where[] = ['o.order_sn|c.customer_name|g.good_sn|g.title|o.spec|o.sid|o.remark','like',"%".input('like')."%"];
-
+            // 防伪号、流水号
+            $where[] = ['o.order_sn|o.code','like',"%".input('like')."%"];
         }
 
-
-
-        if( !empty(input('customer')) ){
-
-            $where[] = ['o.cid','eq',input('customer')];
-
+        if( !empty(input('customer_id')) ){
+            $where[] = ['o.customer_id','eq',input('customer_id')];
         }
 
-        if( !empty(input('goods')) ){
-
-            $where[] = ['o.gid','eq',input('goods')];
-
+        if( !empty(input('goods_id')) ){
+            $where[] = ['o.goods_id','eq',input('goods_id')];
         }
 
-        if( !empty(input('detection')) ){
-
-            $where[] = ['o.did','eq',input('detection')];
-
-        }
-
-        if( !empty(input('status')) || input('status') === '0' ){
-
-            $where[] = ['o.status','eq',input('status')];
-
+        if( !empty(input('staff_id')) ){
+            $where[] = ['o.staff_id','eq',input('staff_id')];
         }
 
         
 
         if( !empty(input('start_time')) && !empty(input('end_time')) ){
-
-            $where[] = ['o.created_time','between',input('start_time').','.input('end_time')];
-
+            $where[] = ['o.create_time','between',input('start_time').','.input('end_time')];
         }else{
-
             if( !empty(input('start_time')) ){
-
-                $where[] = ['o.created_time','>=',input('start_time')];
-
+                $where[] = ['o.create_time','>=',input('start_time')];
             }
-
             if( !empty(input('end_time')) ){
-
-                $where[] = ['o.created_time','<=',input('end_time')];
-
+                $where[] = ['o.create_time','<=',input('end_time')];
             }
-
         }
 
-        
-        if( !empty(input('customer')) || !empty(input('goods')) || !empty(input('detection')) || !empty(input('like')) ){
-            $totalNum   = OrderItem::alias('o')
-
-                        ->join('customer c','c.id = o.cid')
-
-                        ->join('goods g','g.id = o.gid')
-
-                        ->join('detection d','d.id = o.did')
-
-                        ->where($where)
-
-                        ->count();
-        }else{
-            $totalNum   = OrderItem::alias('o')
-            
-                        ->where($where)
-
-                        ->count();
-        }
+        $totalNum   = OrderItem::alias('o')
+                    ->where($where)
+                    ->count();
 
         $customer   = Customer::where('status',1)->field('id,customer_name')->select();
 
         $goods   = Goods::where('status',1)->field('id,title')->select();
 
-        $detection   = Detection::where('status',1)->field('id,name')->select();
+        $staff   = Staff::where('status',1)->field('id,name')->select();
 
         if(request()->isAjax()){
 
             $page = isset($_GET['page']) ? $_GET['page'] : '1';
-
             $limit = isset($_GET['limit']) ? $_GET['limit'] : '20';
-
             $startNum = ($page - 1) * $limit;
-
             $totalPage = ceil($totalNum/$limit);
 
-            
+            $list = OrderItem::alias('o')
+                            ->where($where)
+                            ->field('o.id,o.order_sn,o.customer_id,o.goods_id,o.staff_id,o.code,o.status,o.create_time,o.update_time')
+                            ->limit($startNum.','.$limit)
+                            ->order('o.create_time desc')
+                            ->select();
 
-            if( !empty(input('customer')) || !empty(input('goods')) || !empty(input('detection')) || !empty(input('like')) ){
-                $list = OrderItem::alias('o')
-
-                                ->join('customer c','c.id = o.cid')
-
-                                ->join('goods g','g.id = o.gid')
-
-                                ->join('detection d','d.id = o.did')
-
-                                ->where($where)
-
-                                ->field('o.id,o.order_sn,o.cid,o.gid,o.did,o.gsid,o.sid,o.s_type,o.spec,o.supplier,o.machine,o.composition,o.status,o.engding,o.remark,o.is_show,o.created_time,o.updated_time,o.test_type,o.contract_sn')
-
-                                ->limit($startNum.','.$limit)
-
-                                ->order('o.id desc')
-
-                                ->select();
-
-            }else{
-                $list = OrderItem::alias('o')
-
-                                ->where($where)
-
-                                ->field('o.id,o.order_sn,o.cid,o.gid,o.did,o.gsid,o.sid,o.s_type,o.spec,o.supplier,o.machine,o.composition,o.status,o.engding,o.remark,o.is_show,o.created_time,o.updated_time,o.test_type,o.contract_sn')
-
-                                ->limit($startNum.','.$limit)
-
-                                ->order('o.id desc')
-
-                                ->select();
-
-            }
 
             if(empty($list)){
-
                 return json(['code'=>0,'data'=>[],'total'=>$totalPage,'count'=>$totalNum]);
-
             }elseif($page > $totalPage){
-
                 return json(['code'=>0,'data'=>[],'total'=>$totalPage+1,'count'=>$totalNum]);
-
             }else{
-
                 $nList = array();
-
                 if(!empty($list)){
-
                     foreach($list as $k=>$vo){
-
                         $nList[$k] = $vo;
-
-                        $nList[$k]['customer_name'] = $vo['cid']['text'];
-
-                        $nList[$k]['goods_title'] = $vo['gid']['text'];
-
-                        $nList[$k]['detection_name'] = $vo['did']['text'];
-
-                        $nList[$k]['staff'] = ($vo['s_type'] == 1 ? '员工:':'管理员:') .get_order_cname($vo['sid'],$vo['s_type']);
-
-                        $nList[$k]['test_type_text'] = $vo['test_type']['text'];
-
-                        $nList[$k]['op'] = url('option',['id'=>$vo['id']]);
-
-                        $nList[$k]['print'] = url('idnex',['id'=>$vo['id'],'sid'=>$vo['did']['value']]);
-
-                        $nList[$k]['lc'] = url('lcindex',['id'=>$vo['id'],'did'=>$vo['did']['value']]);
-
-                        
-
+                        $nList[$k]['customer_name'] = $vo['customer_id']['text'];
+                        $nList[$k]['goods_title'] = $vo['goods_id']['text'];
+                        $nList[$k]['staff_name'] = $vo['staff_id']['text'];
                     }
-
                 }
 
-
-
-                
-
                 $return = [
-
                     'code'=>0,
-
                     'msg'=>'',
-
                     'count'=>$totalNum,
-
                     'data'=>$nList
-
                 ];
-
                 return json($return);
-
             }
 
         }else{
-
-            
-
             $this->assign('totalNum',$totalNum);
-
             $this->assign('customer',$customer);
-
-            $this->assign('detection',$detection);
-
+            $this->assign('staff',$staff);
             $this->assign('goods',$goods);
-
             return view();
 
         }
@@ -1425,17 +1299,11 @@ class Order extends AuthBack{
         
         
         $like       = isset($_GET['like']) ? $_GET['like'] : '';
-
         $customer   = isset($_GET['customer']) ? $_GET['customer'] : '';
-
         $goods      = isset($_GET['goods']) ? $_GET['goods'] : '';
-
         $detection  = isset($_GET['detection']) ? $_GET['detection'] : '';
-
         $status     = isset($_GET['status']) ? $_GET['status'] : '';
-
         $start_time = isset($_GET['start_time']) ? $_GET['start_time'] : '';
-
         $end_time   = isset($_GET['end_time']) ? $_GET['end_time'] : '';
 
 
